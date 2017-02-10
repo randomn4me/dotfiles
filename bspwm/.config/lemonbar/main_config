@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+. ${HOME}/.config/lemonbar/global_config
+
+PANEL_FIFO=/tmp/panel-main-fifo
+

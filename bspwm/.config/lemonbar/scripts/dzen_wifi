@@ -1,0 +1,18 @@
+#!/bin/bash
+
+. ${HOME}/.config/lemonbar/main_config
+
+NETWORK_INTERFACE="wlan0"
+
+[ -z "$(iwgetid -r)" ] && echo "Wifi not connected" && exit 0
+
+SSID=$( [[ -z "$(iwgetid -r)" ]] && echo "None" || echo "$(iwgetid -r)")
+CHANNEL=$(iwlist ${NETWORK_INTERFACE} channel | grep "Current" | cut -d"(" -f2 | sed "s/)//")
+
+INFOS="\n${SSID}\n${CHANNEL}"
+LINES=$(echo ${INFOS} | wc -l)
+LINES=$((LINES + 1))
+
+(
+echo "wifi infos";
+echo -e "${INFOS}") | dzen2 -x 650 -y 35 -w 185 -h 17 -l ${LINES} -sa c -fn "Misc Ohsnap:size=9" -p 5 -e 'onstart=uncollapse;button1=exit;'

@@ -1,0 +1,57 @@
+#!/bin/sh
+
+. ${HOME}/.config/lemonbar/colors
+
+num_mon=$(bspc query -M | wc -l)
+PADDING=" "
+
+while read -r line ; do
+    # bspwm internal state
+    wm_infos=""
+    IFS=':'
+    set -- ${line#?}
+    while [ $# -gt 0 ] ; do
+        item=$1
+        name=${item#?}
+        case $item in
+            M*)
+                # active monitor
+                if [ $num_mon -gt 1 ] ; then
+                    wm_infos="$wm_infos %{F$cyan2}%{B$background}$PADDING${name}$PADDING%{B-}%{F-}  "
+                fi
+                ;;
+            m*)
+                # inactive monitor
+                if [ $num_mon -gt 1 ] ; then
+                    wm_infos="$wm_infos %{F$white2}%{B$black2}$PADDING${name}$PADDING%{B-}%{F-}  "
+                fi
+                ;;
+            O*)
+                # focused occupied desktop
+                wm_infos="${wm_infos}%{F$foreground}%{B$blue1}%{U$blue1}%{+u}$PADDING${name}$PADDING%{-u}%{B-}%{F-}"
+                ;;
+            F*)
+                # focused free desktop
+                wm_infos="${wm_infos}%{F$background}%{B$blue1}%{U$blue1}%{+u}$PADDING${name}$PADDING%{-u}%{B-}%{F-}"
+                ;;
+            U*)
+                # focused urgent desktop
+                wm_infos="${wm_infos}%{F$urgent}%{B$blue1}%{U$blue1}%{+u}$PADDING${name}$PADDING%{-u}%{B-}%{F-}"
+                ;;
+            o*)
+                # occupied desktop
+                wm_infos="${wm_infos}%{F$foreground}%{B$background}%{A:bspc desktop -f ${name}:}$PADDING${name}$PADDING%{A}%{B-}%{F-}"
+                ;;
+            f*)
+                # free desktop
+                wm_infos="${wm_infos}%{F$blue1}%{B$background}%{A:bspc desktop -f ${name}:}$PADDING${name}$PADDING%{A}%{B-}%{F-}"
+                ;;
+            u*)
+                # urgent desktop
+                wm_infos="${wm_infos}%{F$foreground}%{B$urgent}$PADDING${name}$PADDING%{B-}%{F-}"
+                ;;
+        esac
+        shift
+    done
+    printf "%s\n" "%{c}${wm_infos}"
+done 

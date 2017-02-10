@@ -1,0 +1,156 @@
+################################################################################
+# wm independent hotkeys                                                       #
+################################################################################
+
+# terminal emulator
+super + Return
+	urxvt	
+
+# program launcher
+super + space
+	menu
+
+# open shutdown menu
+super + shift + q
+	shutdown-menu
+
+# new wallpaper
+super + shift + d
+	wal -i ${HOME}/usr/pics/wallpapers -o wal-after
+
+# reload sxhkd
+super + x
+	pkill -USR1 sxhkd && notify "Reload sxhkd config"
+################################################################################
+# bspwm hotkeys                                                                #
+################################################################################
+
+# quit bspwm normally
+super + shift + {z, x}
+	{ownlogout, kill -s 10 sxhkd}
+
+# close
+super + q
+	bspc node -c
+
+# Change gap size on the fly 
+super + {minus,plus}
+	bspc config -m focused window_gap $((`bspc config -d focused window_gap` {+,-} 5 )) && wal-after
+super + equal 
+	bspc config -m focused window_gap 20 && wal-after
+
+################################################################################
+# state / flags                                                                #
+################################################################################
+
+# set the window state
+super + {t,s,f}
+	bspc node -t {tiled,floating,fullscreen}
+
+################################################################################
+# focus / swap                                                                 #
+################################################################################
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the node for the given path jump
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous node
+super + {_,shift + }c
+	bspc node -f {next,prev}
+
+# focus the next/previous desktop
+super + bracket{left,right}
+	bspc desktop -f {prev,next}
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+################################################################################
+# preselect                                                                    #
+################################################################################
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+################################################################################
+# resize tiled / floating                                                      #
+################################################################################
+
+# expand the tiled space in the given direction
+alt + {h,j,k,l}
+	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+
+# contract the tiled space in the given direction
+alt + shift + {h,j,k,l}
+	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
+
+# move a floating window
+super + {h,j,k,l}
+	xdo move {-x -20,-y +20,-y -20,-x +20}
+
+################################################################################
+# pointer focus / move / resize                                                #
+################################################################################
+
+# focus
+~button1
+	bspc pointer -g focus
+
+# start move/resize
+super + button{1-3}
+	; bspc pointer -g {move,resize_side,resize_corner}
+
+# end move/resize
+super + @button{1-3}
+	bspc pointer -u
+
+################################################################################
+# multimedia keys                                                              #
+################################################################################
+
+# volume
+XF86Audio{Mute,LowerVolume,RaiseVolume}
+	pamixer -{t,-decrease 5,-increase 5}
+
+# brightness
+XF86MonBrightness{Down,Up}
+	xbacklight -{dec 10,inc 10}
+
+# music 
+XF86Audio{Play,Next,Prev}
+	mpc -q {toggle,next,prev}
+
+super + Print
+	scrot -d 1 ~/usr/pics/screenshots/%Y-%m-%d-%H%M%S_screenshot.png && notify "Screenshot taken"
+
+XF86{Sleep,ScreenSaver}
+	lock

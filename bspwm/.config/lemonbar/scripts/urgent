@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+. ${HOME}/.config/lemonbar/global_config
+
+STATE=$(bspc wm -g)
+
+( [ $(grep -o "u" <<< ${STATE} | wc -l) -gt 0 ] && echo "%{F${color15}}\uf0f3%{F-}" ) || echo "\uf0f3"

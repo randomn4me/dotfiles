@@ -1,0 +1,251 @@
+################################################################################
+# configuration                                                                #
+################################################################################
+
+font pango:                         Misc Ohsnap 8
+
+hide_edge_borders                   none
+new_window                          pixel 3
+# smart_borders                       on
+
+floating_modifier                   $mod
+
+################################################################################
+# variables                                                                    #
+################################################################################
+
+set $mod                            Mod4
+
+set $up                             k
+set $down                           j
+set $left                           h
+set $right                          l
+
+set $workspace1                     "1:"
+set $workspace2                     "2"
+set $workspace3                     "3"
+set $workspace4                     "4:"
+set $workspace5                     "5:"
+set $workspace6                     "6:"
+set $workspace7                     "7"
+set $workspace8                     "8:"
+set $workspace9                     "9:"
+set $workspace10                    "10:"
+
+set $default_gaps_inner             5
+set $default_gaps_outer             25
+
+################################################################################
+# colors                                                                       #
+################################################################################
+
+set_from_resource $darkblack        color0  #000000
+set_from_resource $black            color8  #000000
+
+set_from_resource $darkred          color1  #000000
+set_from_resource $red              color9  #000000
+
+set_from_resource $darkgreen        color2  #000000
+set_from_resource $green            color10 #000000
+
+set_from_resource $darkyellow       color3  #000000
+set_from_resource $yellow           color11 #000000
+
+set_from_resource $darkblue         color4  #000000
+set_from_resource $blue             color12 #000000
+
+set_from_resource $darkmagenta      color5  #000000
+set_from_resource $magenta          color13 #000000
+
+set_from_resource $darkleafgreen    color6  #000000
+set_from_resource $leafgreen        color14 #000000
+
+set_from_resource $darkwhite        color7  #000000
+set_from_resource $white            color15 #000000
+
+set $transparent                    #00000000
+
+set $fg                             $magenta
+set $bg                             $red
+
+#                                   BORDER          BACKGROUND      TEXT            INDICATOR       CHILD_BORDER
+client.focused                      $magenta        $black          $black          $magenta        $magenta
+client.unfocused                    $black          $black          $black          $black          $black
+client.focused_inactive             $black          $black          $black          $black          $black
+client.urgent                       $darkred        $darkred        $black          $darkred        $darkred
+client.background                   $black
+
+################################################################################
+# gaps settings                                                                #
+################################################################################
+
+# smart_gaps                          on
+
+gaps inner                          $default_gaps_inner
+gaps outer                          $default_gaps_outer
+
+################################################################################
+# workspace related                                                            #
+################################################################################
+
+bindsym $mod+g                      split h
+bindsym $mod+v                      split v
+
+bindsym $mod+1                      workspace $workspace1
+bindsym $mod+2                      workspace $workspace2
+bindsym $mod+3                      workspace $workspace3
+bindsym $mod+4                      workspace $workspace4
+bindsym $mod+5                      workspace $workspace5
+bindsym $mod+6                      workspace $workspace6
+bindsym $mod+7                      workspace $workspace7
+bindsym $mod+8                      workspace $workspace8
+bindsym $mod+9                      workspace $workspace9
+bindsym $mod+0                      workspace $workspace10
+
+# cycle between prev and current ws
+bindsym $mod+Tab                    workspace back_and_forth
+
+bindsym $mod+Shift+1                move container to workspace $workspace1
+bindsym $mod+Shift+2                move container to workspace $workspace2
+bindsym $mod+Shift+3                move container to workspace $workspace3
+bindsym $mod+Shift+4                move container to workspace $workspace4
+bindsym $mod+Shift+5                move container to workspace $workspace5
+bindsym $mod+Shift+6                move container to workspace $workspace6
+bindsym $mod+Shift+7                move container to workspace $workspace7
+bindsym $mod+Shift+8                move container to workspace $workspace8
+bindsym $mod+Shift+9                move container to workspace $workspace9
+bindsym $mod+Shift+10               move container to workspace $workspace10
+
+force_display_urgency_hint          0 ms
+focus_on_window_activation          urgent
+
+################################################################################
+# navigation                                                                   #
+################################################################################
+
+focus_follows_mouse                 no
+
+bindsym $mod+$left                  focus left
+bindsym $mod+$down                  focus down
+bindsym $mod+$up                    focus up
+bindsym $mod+$right                 focus right
+
+bindsym $mod+Shift+$left            move left
+bindsym $mod+Shift+$down            move down
+bindsym $mod+Shift+$up              move up
+bindsym $mod+Shift+$right           move right
+
+bindsym $mod+a                      focus parent
+bindsym $mod+c                      focus child
+
+################################################################################
+# programs                                                                     #
+################################################################################
+
+bindsym $mod+Return                 exec --no-startup-id urxvt
+bindsym $mod+space                  exec rofi -show run
+bindsym $mod+Control+Delete         exec --no-startup-id shutdown-menu
+bindsym $mod+Shift+q                exec --no-startup-id shutdown-menu
+
+# # # # # # # # # # # # # # # # # # # #  # # # # # # # # # # # # # # # # # # # #  
+
+# assign [class="Firefox"]                $workspace5
+assign [class="Chromium"]               $workspace5
+assign [class="Vlc"]                    $workspace10
+assign [class="Thunderbird"]            $workspace4
+
+for_window [class="meh"]                floating enable
+
+for_window [window_role="bubble"]       floating enable
+for_window [window_role="task_dialog"]  floating enable
+for_window [window_role="Preferences"]  floating enable
+
+for_window [class="bar"]                floating enable
+
+for_window [window_type="dialog"]       floating enable
+for_window [window_type="menu"]         floating enable
+
+# # # # # # # # # # # # # # # # # # # #  # # # # # # # # # # # # # # # # # # # #  
+
+bindsym $mod+q                      kill
+bindsym $mod+f                      fullscreen toggle
+bindsym $mod+n                      layout tabbed
+bindsym $mod+m                      layout toggle split
+bindsym $mod+Shift+space            floating toggle
+
+################################################################################
+# multimedia buttons                                                           #
+################################################################################
+
+# backlight bindings #
+bindsym XF86MonBrightnessDown       exec --no-startup-id xbacklight -dec 10
+bindsym XF86MonBrightnessUp         exec --no-startup-id xbacklight -inc 10
+
+# audio bindings # 
+bindsym XF86AudioMute               exec --no-startup-id pamixer -t
+bindsym XF86AudioLowerVolume        exec --no-startup-id pamixer --decrease 5
+bindsym XF86AudioRaiseVolume        exec --no-startup-id pamixer --increase 5
+
+bindsym XF86AudioPlay               exec --no-startup-id "mpc toggle"
+bindsym XF86AudioNext               exec --no-startup-id "mpc next"
+bindsym XF86AudioPrev               exec --no-startup-id "mpc prev"
+
+# lock screen #
+bindsym XF86Sleep                   exec --no-startup-id lock
+bindsym XF86ScreenSaver             exec --no-startup-id lock
+
+# print #
+bindsym $mod+Print                  exec --no-startup-id "scrot ~/usr/pics/screenshots/%Y-%m-%d-%H%M%S_screenshot.png && notify-send -u low 'Screenshot taken'"
+
+################################################################################
+# i3 power control                                                             #
+################################################################################
+
+bindsym $mod+z                      reload
+bindsym $mod+Shift+x                restart
+bindsym $mod+Shift+z                exec --no-startup-id i3-msg exit
+
+################################################################################
+# modes                                                                        #
+################################################################################
+
+mode "resize" {
+    bindsym $left                   resize shrink width 10 px or 10 ppt
+    bindsym $down                   resize grow height 10 px or 10 ppt
+    bindsym $up                     resize shrink height 10 px or 10 ppt
+    bindsym $right                  resize grow width 10 px or 10 ppt
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+bindsym $mod+s mode "resize"
+
+################################################################################
+# bar                                                                          #
+################################################################################
+
+# bar {
+#     status_command i3blocks
+#     i3bar_command i3bar -t
+#     position top
+#     strip_workspace_numbers yes
+#     font pango:Misc Ohsnap, FontAwesome 8
+#     separator_symbol "|"
+#     tray_padding 0
+#     height 16
+#     colors {
+#         statusline          $white
+#         # background          #00000000
+#         background          #00000088
+#         separator           $magenta
+# 
+# #                           BORDER        BACKGROUND    TEXT
+#         focused_workspace   $transparent  $magenta      #101010
+#         inactive_workspace  $transparent  $transparent  $white
+#         active_workspace    $transparent  $transparent  $white
+#         urgent_workspace    $darkred      $darkred      #101010
+#         binding_mode        $darkred      $darkred      #101010
+#     }
+# }
+ 
+

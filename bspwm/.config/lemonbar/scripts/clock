@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+. ${HOME}/.config/lemonbar/main_config
+
+URGENT_TIME=2300
+
+if [ ${URGENT_TIME} -le $(date +%k%M) ]; then
+    echo "%{F${color15}}\uf017 $(date +"%I:%M")%{F-}"
+else
+    echo "\uf017 $(date +"%I:%M")"
+fi

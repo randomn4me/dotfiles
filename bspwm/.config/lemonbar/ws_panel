@@ -1,0 +1,36 @@
+#!/usr/bin/zsh
+
+. ${HOME}/.config/lemonbar/ws_config
+
+if [ $(pgrep -cx ws_panel) -gt 1 ] ; then
+    printf "%s\n" "The panel is already running." >&2
+    exit 1
+fi
+
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+bspc config top_padding $GEOMETRY_HEIGHT
+
+################################################################################
+# workspaces to fifo                                                           #
+################################################################################
+
+# bspc subscribe > ${PANEL_FIFO} &
+# wm_state=$(bspc wm -g)
+
+################################################################################
+
+num_mon=$(bspc query -M | wc -l)
+PADDING=" "
+
+bspc subscribe | while read -r line; do
+    # bspwm internal state
+    wm_infos=$(${SCRIPT_DIR}/bspc_wm_parse ${line} /home/phil/.config/lemonbar/colors)
+
+    (printf "%s\n" "%{c}${wm_infos}"; sleep 1) | lemonbar -g ${GEOMETRY_WIDTH}x${GEOMETRY_HEIGHT}${GEOMETRY_X}${GEOMETRY_Y} -f "$PANEL_FONT" -f "$ICON_FONT" -F "$foreground" -B "$background" -u 2 -a 10 | zsh &
+done 
+
+################################################################################
+
+wait

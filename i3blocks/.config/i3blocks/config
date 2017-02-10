@@ -1,0 +1,37 @@
+separator=false
+border_top=0
+border_left=0
+border_right=0
+border=#b2fe00
+separator_block_width=3
+
+[weather]
+command=$HOME/.script/blocks/weather.py 2938913
+interval=300
+
+[volume]
+label= 
+command=$HOME/.script/blocks/volume_control.py i3blocks
+interval=10
+signal=1
+markup=pango
+
+[brightness]
+label=  
+command=printf "%.0f " $(xbacklight -get)
+interval=1
+signal=2
+
+[wifi]
+label= 
+command=( [[ -z "$(iwgetid -r)" ]] && echo " None ") || echo " $(iwgetid -r) "
+interval=2
+
+[battery]
+interval=5
+command=cat /sys/class/power_supply/BAT0
+
+[date]
+command=echo "   `date +'%d %b'`  `date +'%I:%M %p'` "
+interval=1
+markup=pango

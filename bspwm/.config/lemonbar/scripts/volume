@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+. ${HOME}/.config/lemonbar/main_config
+
+# headphones code \uf025
+
+ALSA_VOLUME=$(amixer get Master | grep 'Front Left: Playback' | grep -o '...%' | sed 's/\[//' | sed 's/%//' | sed 's/ //')
+ALSA_STATE=$(amixer get Master | grep 'Front Left: Playback' | grep -o '\[on]')
+
+if [ -n $ALSA_STATE ]; then
+    LEVEL=$(( ( ALSA_VOLUME + 45 ) / 50 ))
+    ICON="\uf0$(( 26 + LEVEL ))"
+
+    if [[ $(pamixer --get-mute) == "true" ]]; then
+        echo "%{F${color1}}${ICON} ${ALSA_VOLUME}%{F-}"
+    else
+        echo "${ICON} ${ALSA_VOLUME}"
+    fi
+fi
+

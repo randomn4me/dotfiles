@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+. ${HOME}/.config/lemonbar/main_config
+
+thermal_dir="/sys/class/thermal"
+
+temp0=$(cat ${thermal_dir}/thermal_zone0/temp)
+temp1=$(cat ${thermal_dir}/thermal_zone2/temp)
+
+temp=$([ ${temp0} -gt ${temp1} ] && echo $((temp0 / 1000)) || echo $((temp1 / 1000)))
+
+([ 75 -le ${temp} ] && echo "%{F${color15}}\uf06d ${temp}%{F-}") || echo "\uf06d ${temp}"

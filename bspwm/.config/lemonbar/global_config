@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+PANEL_FONT="misc ohsnap:size=7"
+ICON_FONT="fontawesome:size=8"
+
+GEOMETRY_WIDTH="243"
+GEOMETRY_HEIGHT="22"
+GEOMETRY_X="+$(( (1600 - 10 - ${GEOMETRY_WIDTH} ) / 2 ))"
+GEOMETRY_Y="+5"
+
+SCRIPT_DIR="${HOME}/.config/lemonbar/scripts"
+
+. ${HOME}/.config/lemonbar/colors
