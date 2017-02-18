@@ -19,8 +19,9 @@ URxvt.letterSpace:      -1
 URxvt.transparent:      true
 URxvt.shading:          10
 URxvt.scrollBar:        false
-URxvt.internalBorder:   4
-URxvt.externalBorder:   0
+
+URxvt.internalBorder:		6
+URxvt.externalBorder:		0
 
 URxvt.cursorBlink:      false
 URxvt.cursorColor:      #888888
