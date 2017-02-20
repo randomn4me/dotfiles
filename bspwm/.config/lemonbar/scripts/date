@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-. ${HOME}/.config/lemonbar/main_config
-
-echo "\uf073 $(date +'%d/%m')"
