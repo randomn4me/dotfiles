@@ -3,6 +3,7 @@
 #
 
 export PS1="\w >> "
+
 export EDITOR="vim"
 export PATH="$PATH:${HOME}/bin"
 export XDG_CONFIG_HOME="${HOME}/.config"
@@ -33,9 +34,22 @@ shopt -s checkwinsize
 
 t() {
 	# summing numbers of files with format (num # comment\n)*
-	times=()
+	test "$#" = "0" && printf "%s\n" "Usage : t file file [..]" 1>&2 && return
+	time=0
 	for file in "$@"; do
-		times+=$(cat $file | cut -d# -f1 | paste -s -d+ | bc -l)
+		newtime="$(cat $file | sed 's/#.*$//' | paste -s -d+ | bc -l)"
+		time=$(echo "$time + $newtime" | bc -l)
 	done
-	echo ${times[@]} | paste -s -d+ | bc -l
+	echo "$time"
 }
+
+short() {
+  curl -F"shorten=$*" https://0x0.st
+}
+
+md() {
+    pandoc -s -f markdown -t man "$*" | man -l -
+}
+
+trap 'echo -ne "\033]2;$(history 1 | sed "s/^[ ]*[0-9]*[ ]*//g")\007"' DEBUG
+
