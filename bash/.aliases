@@ -19,6 +19,7 @@ alias tep='cd ${HOME}/usr/docs/work/hda/hda_edv_hiwi/tep_tool'
 alias ".."="cd ../"
 alias musicdl='youtube-dl -x --audio-format mp3'
 alias rm-orphans='pacaur -R $(pacaur -Qdt | cut -d" " -f1)'
+alias wanip="curl -s https://4.ifcfg.me/ | grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b'"
 
 # renew commands
 alias cp="cp -r"
@@ -42,7 +43,11 @@ alias tree='tree -CAFa -I "CVS|*.*.package|.svn|.git|.hg|node_modules|bower_comp
 alias matrix="cmatrix -b"
 alias tempwatch="while :; do clear && sensors; sleep 1; done;"
 alias future="toilet -t -f future"
+alias ascii="toilet -t -f 3d"
+alias rusto="toilet -t -f rusto"
+alias rustofat="toilet -t -f rustofat"
 alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
+alias antivirus="sudo freshclam && sudo clamscan"
 
 # read markdown files like manpages
 md() {
