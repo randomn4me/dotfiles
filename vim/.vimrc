@@ -30,7 +30,7 @@ set nobackup
 set noswapfile
 set backupdir=${HOME}/.vim/backup
 
-" tab behaviour
+" tab behaviour and indentation
 set tabstop=2
 set shiftwidth=2
 set softtabstop=0
@@ -38,9 +38,12 @@ set autoindent
 set smartindent
 set cindent
 
+" autocommands for different filetypes
 autocmd FileType make setlocal noexpandtab tabstop=4 shiftwidth=4
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType hs setlocal expandtab
+au BufRead /tmp/mutt-* set tw=72
+
 
 " statusbar settings
 set laststatus=2
@@ -49,3 +52,6 @@ set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 set number
 
 syntax enable
+
+" run :! commands in interactive mode (enables aliases)
+set shell=/bin/bash\ -i
