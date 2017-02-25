@@ -9,11 +9,11 @@ xsetroot -cursor_name left_ptr
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 sxhkd &
-wal -i ${HOME}/usr/pics/wallpapers -o wal-after &
 compton -f -D 5 &
+wal -i "${HOME}/usr/pics/wallpapers" -o wal-after &
 mpd &
-ownchrome &
-thunderbird &
+firefox &
 unclutter --timeout 2 &
+lamas &
 
 exec bspwm
