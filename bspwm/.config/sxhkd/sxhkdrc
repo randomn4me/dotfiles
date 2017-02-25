@@ -20,7 +20,11 @@ super + shift + d
 
 # reload sxhkd
 super + x
-	pkill -USR1 sxhkd && notify "Reload sxhkd config"
+	pkill -USR1 -x sxhkd && notify "Reload sxhkd config"
+
+super + n
+	notify "$(echo "Connected to $(test -n "$(iwgetid)" && (iwgetid | grep -oE '\".*\"') || echo "no network")")"
+
 ################################################################################
 # bspwm hotkeys                                                                #
 ################################################################################
@@ -68,8 +72,8 @@ super + bracket{left,right}
 	bspc desktop -f {prev,next}
 
 # focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
+super + {Tab,grave}
+	bspc {node,desktop} -f last{.local,}
 
 # focus the older or newer node in the focus history
 super + {o,i}
