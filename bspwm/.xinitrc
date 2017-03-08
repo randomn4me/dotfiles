@@ -9,7 +9,6 @@ xsetroot -cursor_name left_ptr
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 sxhkd &
-compton -f -D 5 &
 wal -i "${HOME}/usr/pics/wallpapers" -o wal-after &
 mpd &
 firefox &
