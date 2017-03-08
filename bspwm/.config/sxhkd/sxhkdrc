@@ -22,8 +22,11 @@ super + shift + d
 super + x
 	pkill -USR1 -x sxhkd && notify "Reload sxhkd config"
 
-super + n
-	notify "$(echo "Connected to $(test -n "$(iwgetid)" && (iwgetid | grep -oE '\".*\"') || echo "no network")")"
+super + {n, t}
+	notify {"$(network)", "TODOs : $(todo -n)"}
+
+super + shift + space
+	touchpad t
 
 ################################################################################
 # bspwm hotkeys                                                                #
@@ -48,7 +51,9 @@ super + equal
 ################################################################################
 
 # set the window state
-super + {t,s,f}
+super + s
+	bspc node -t $(bspc query -N -n -n .tiled >/dev/null && echo floating || echo tiled)
+super + f 
 	bspc node -t {tiled,floating,fullscreen}
 
 ################################################################################
