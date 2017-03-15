@@ -3,6 +3,7 @@
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 external_editor = "/usr/bin/vim"
+ncmpcpp_directory = "~/.config/ncmpcpp"
 
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # mpd setup                                                                   #
