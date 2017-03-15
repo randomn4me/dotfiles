@@ -40,7 +40,7 @@ alias twitch-curses='twitch-curses --player mpv'
 # shorter
 alias psef="ps -ef"
 alias tree='tree -CAFa -I "CVS|*.*.package|.svn|.git|.hg|node_modules|bower_components" --dirsfirst'
-alias matrix="cmatrix -b"
+alias matrix="cmatrix"
 alias tempwatch="while :; do clear && sensors; sleep 1; done;"
 alias future="toilet -t -f future"
 alias ascii="toilet -t -f 3d"
@@ -48,6 +48,7 @@ alias rusto="toilet -t -f rusto"
 alias rustofat="toilet -t -f rustofat"
 alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
 alias antivirus="sudo freshclam && sudo clamscan"
+alias rice="curl -L git.io/rice"
 
 # read markdown files like manpages
 md() {
