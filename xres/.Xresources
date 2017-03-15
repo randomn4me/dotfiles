@@ -6,25 +6,24 @@
 *.background:       #000000
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! URXVT                                                                        !
+! urXVT                                                                        !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-#define termfont        xft:SauceCodePowerline:pixelsize=11
-URxvt.font:             termfont
-URxvt.boldFont:         termfont
-URxvt.italicFont:       termfont
-URxvt.boldItalicFont:   termfont
-URxvt.letterSpace:      -1
+urxvt*font:             xft:SauceCodePowerline:pixelsize=11
+urxvt*boldFont:
+urxvt*italicFont:
+urxvt*bolditalicFont:
+urxvt*letterSpace:      -1
 
-URxvt.transparent:      true
-URxvt.shading:          10
-URxvt.scrollBar:        false
+urxvt*transparent:      true
+urxvt*shading:          10
+urxvt*scrollBar:        false
 
-URxvt.internalBorder:		6
-URxvt.externalBorder:		0
+urxvt*internalBorder:		6
+urxvt*externalBorder:		0
 
-URxvt.cursorBlink:      false
-URxvt.cursorColor:      #888888
+urxvt*cursorBlink:      false
+urxvt*cursorColor:      #888888
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! XFT                                                                          !
