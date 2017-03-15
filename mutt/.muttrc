@@ -64,6 +64,8 @@ set crypt_replysign						=	yes
 set crypt_replysignencrypted	=	yes
 set pgp_timeout								=	3600
 
+set pgp_auto_decode
+
 
 # ┬─┐o┌┐┐┬─┐o┌┐┐┌─┐┐─┐
 # │─││││││ ││││││ ┬└─┐
