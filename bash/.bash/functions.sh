@@ -13,6 +13,12 @@ short() {
   curl -F"shorten=$*" https://0x0.st
 }
 
+# read markdown files like manpages
 md() {
     pandoc -s -f markdown -t man "$*" | man -l -
+}
+
+# read webpage like manpages
+viewpage() {
+		curl -s "$*" | pandoc -s -f html -t man | man -l -
 }
