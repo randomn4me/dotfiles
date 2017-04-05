@@ -49,13 +49,3 @@ alias rustofat="toilet -t -f rustofat"
 alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
 alias antivirus="sudo freshclam && sudo clamscan"
 alias rice="curl -L git.io/rice"
-
-# read markdown files like manpages
-md() {
-    pandoc -s -f markdown -t man "$*" | man -l -
-}
-
-# nullpointer url shortener
-short() {
-  curl -F"shorten=$*" https://0x0.st
-}
