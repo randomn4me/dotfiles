@@ -1,3 +1,6 @@
+#set vi mode
+set -o vi
+
 # shorten pwd \w
 PROMPT_DIRTRIM=2
 
