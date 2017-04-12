@@ -7,7 +7,7 @@
 bspc config border_width            5
 bspc config window_gap              20
 bspc config split_ratio             0.5
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d I II III IV V
 
 bspc config top_padding 						22
 
@@ -34,14 +34,8 @@ bspc rule -a "Zathura" desktop="^2" state=tiled
 
 bspc rule -a "Gimp" desktop="^3" state=floating
 bspc rule -a "Jameica 2.6.4" desktop="^3"
+bspc rule -a "mpv" desktop="^3"
 
-bspc rule -a "Thunderbird" desktop="^4"
+bspc rule -a "Signal Private Messenger" desktop="^4"
 
 bspc rule -a "Firefox" desktop="^5"
-
-bspc rule -a "Chromium:crx_bikioccmkafdpakkkcpdbppfkghcmihk" desktop="^6"
-
-bspc rule -a "Battle.net.exe" desktop="^8" state=floating
-
-bspc rule -a "mpv" desktop="^9"
-

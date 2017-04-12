@@ -22,11 +22,17 @@ super + shift + d
 super + x
 	pkill -USR1 -x sxhkd && notify "Reload sxhkd config"
 
-super + {n, t}
+super + shift + {n, t}
 	notify {"$(network)", "TODOs : $(todo -n)"}
 
 super + shift + space
 	touchpad t
+
+# lauch specific applications
+super + {e, n, m}
+	urxvt -e sh -c {vim, telegram-cli, mutt}
+super + b
+	signal
 
 ################################################################################
 # bspwm hotkeys                                                                #
@@ -51,10 +57,8 @@ super + equal
 ################################################################################
 
 # set the window state
-super + s
-	bspc node -t $(bspc query -N -n -n .tiled >/dev/null && echo floating || echo tiled)
-super + f 
-	bspc node -t {tiled,floating,fullscreen}
+super + {s, d, f}
+	bspc node -t {floating, tiled, fullscreen}
 
 ################################################################################
 # focus / swap                                                                 #
@@ -87,8 +91,8 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+super + {_,shift + }{1-5}
+	bspc {desktop -f,node -d} '^{1-5}'
 
 ################################################################################
 # preselect                                                                    #
