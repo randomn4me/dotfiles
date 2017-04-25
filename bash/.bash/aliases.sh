@@ -1,4 +1,4 @@
-alias ls="ls -hF --color=auto"
+alias ls="ls --color=auto"
 alias la="ls -ahF --color=auto"
 alias ll="ls -lhF --color=auto"
 alias l="ls -1hF --color=auto"
@@ -9,11 +9,7 @@ alias rm='rm -i'
 alias mv='mv -i'
 
 # cd aliases
-alias hda='cd ${HOME}/usr/docs/work/hda/'
-alias dots='cd ${HOME}/etc/bspwm_dots'
 alias uni='cd ${HOME}/usr/docs/uni/msc_itsec'
-alias copl='cd ${HOME}/usr/docs/uni/msc_itsec/copl'
-alias tep='cd ${HOME}/usr/docs/work/hda/hda_edv_hiwi/tep_tool'
 
 # useful
 alias ".."="cd ../"

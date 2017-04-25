@@ -22,3 +22,4 @@ md() {
 viewpage() {
 		curl -s "$*" | pandoc -s -f html -t man | man -l -
 }
+
