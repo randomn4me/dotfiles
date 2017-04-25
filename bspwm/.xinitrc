@@ -14,5 +14,6 @@ mpd &
 firefox &
 unclutter --timeout 2 &
 lamas &
+wmname LG3D &
 
 exec bspwm

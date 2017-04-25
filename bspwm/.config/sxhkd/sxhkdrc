@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + space
-	menu
+	menu_run
 
 # open shutdown menu
 super + shift + q
@@ -33,6 +33,13 @@ super + {e, n, m}
 	urxvt -e sh -c {vim, telegram-cli, mutt}
 super + b
 	signal
+
+# open slides
+super + u
+	uniopen
+
+super + y
+	youtube
 
 ################################################################################
 # bspwm hotkeys                                                                #
@@ -83,12 +90,6 @@ super + bracket{left,right}
 # focus the last node/desktop
 super + {Tab,grave}
 	bspc {node,desktop} -f last{.local,}
-
-# focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-5}
