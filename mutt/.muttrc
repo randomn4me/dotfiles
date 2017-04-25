@@ -49,6 +49,7 @@ mailboxes											=Inbox =Sent =Archive
 set send_charset							=	"utf-8"
 
 set mailcap_path							= ~/.mutt/mailcap
+auto_view											= text/html
 alternative_order 						text/plain text/enriched text/html
 
 set pager_stop								= yes
