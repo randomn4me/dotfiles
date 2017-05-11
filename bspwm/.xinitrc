@@ -9,11 +9,12 @@ xsetroot -cursor_name left_ptr
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 sxhkd &
-wal -i "${HOME}/usr/pics/wallpapers" -o wal-after &
+reloadwal &
 mpd &
 firefox &
 unclutter --timeout 2 &
 lamas &
 wmname LG3D &
+xautolock -locker lock -corners 00-- -cornerdelay 5 -cornerredelay 10 -time 5 -notify 15 -notifier "notify locking" -detectsleep &
 
 exec bspwm

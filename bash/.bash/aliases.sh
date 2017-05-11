@@ -9,7 +9,7 @@ alias rm='rm -i'
 alias mv='mv -i'
 
 # cd aliases
-alias uni='cd ${HOME}/usr/docs/uni/msc_itsec'
+alias uni='cd $(curterm)'
 
 # useful
 alias ".."="cd ../"
@@ -17,7 +17,8 @@ alias musicdl='youtube-dl -x --audio-format mp3'
 alias rm-orphans='pacaur -R $(pacaur -Qdt | cut -d" " -f1)'
 alias wanip="curl -s https://4.ifcfg.me/ | grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b'"
 
-# renew commands
+# shorter
+alias open="xdg-open"
 alias cp="cp -r"
 alias mkdir="mkdir -p"
 alias scp="scp -r"
@@ -28,16 +29,8 @@ alias cal='cal -m'
 alias shred='shred -u -n 15 -z'
 alias ping='ping -c 5'
 alias pingt='ping 8.8.8.8'
-alias o='xdg-open'
-alias open='xdg-open'
-alias pipes='pipes -f 25 -r 3000'
-alias twitch-curses='twitch-curses --player mpv'
-
-# shorter
 alias psef="ps -ef"
-alias tree='tree -CAFa -I "CVS|*.*.package|.svn|.git|.hg|node_modules|bower_components" --dirsfirst'
 alias matrix="cmatrix"
-alias tempwatch="while :; do clear && sensors; sleep 1; done;"
 alias future="toilet -t -f future"
 alias ascii="toilet -t -f 3d"
 alias rusto="toilet -t -f rusto"

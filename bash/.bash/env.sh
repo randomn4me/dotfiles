@@ -10,3 +10,4 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 export MAIL="$HOME/var/mail/Inbox"
 
 export BAR_FONT="misc ohsnap:size=7"
+export COLOR_FILE="$HOME/.cache/wal/colors.sh"

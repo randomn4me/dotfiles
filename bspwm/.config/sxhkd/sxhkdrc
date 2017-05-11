@@ -22,15 +22,15 @@ super + shift + d
 super + x
 	pkill -USR1 -x sxhkd && notify "Reload sxhkd config"
 
-super + shift + {n, t}
-	notify {"$(network)", "TODOs : $(todo -n)"}
+super + {w, e, r}
+	notify {"$(network)", "TODOs : $(todo -n)", "Battery time : $(bat -t)"}
 
 super + shift + space
 	touchpad t
 
 # lauch specific applications
-super + {e, n, m}
-	urxvt -e sh -c {vim, telegram-cli, mutt}
+super + {n, m}
+	urxvt -e sh -c {telegram-cli, mutt}
 super + b
 	signal
 
@@ -39,7 +39,7 @@ super + u
 	uniopen
 
 super + y
-	youtube
+	pulse t
 
 ################################################################################
 # bspwm hotkeys                                                                #
@@ -78,14 +78,6 @@ super + {_,shift + }{h,j,k,l}
 # focus the node for the given path jump
 super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
-
-# focus the next/previous node
-super + {_,shift + }c
-	bspc node -f {next,prev}
-
-# focus the next/previous desktop
-super + bracket{left,right}
-	bspc desktop -f {prev,next}
 
 # focus the last node/desktop
 super + {Tab,grave}
