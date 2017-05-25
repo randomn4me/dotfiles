@@ -16,6 +16,8 @@ alias ".."="cd ../"
 alias musicdl='youtube-dl -x --audio-format mp3'
 alias rm-orphans='pacaur -R $(pacaur -Qdt | cut -d" " -f1)'
 alias wanip="curl -s https://4.ifcfg.me/ | grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b'"
+alias kernelcodestyle="curl -s https://www.kernel.org/doc/Documentation/process/coding-style.rst | less"
+alias weather="weather Darmstadt"
 
 # shorter
 alias open="xdg-open"
@@ -38,3 +40,4 @@ alias rustofat="toilet -t -f rustofat"
 alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
 alias antivirus="sudo freshclam && sudo clamscan"
 alias rice="curl -L git.io/rice"
+alias tty-clock="tty-clock -c -b -t"

@@ -9,17 +9,17 @@ t() {
 	echo "$time"
 }
 
-short() {
-  curl -F"shorten=$*" https://0x0.st
-}
-
 # read markdown files like manpages
 md() {
-    pandoc -s -f markdown -t man "$*" | man -l -
+	test $# -eq 0 && exit 1
+	for f in "$@"; do
+		test ! -f $f && exit 1
+	done
+	pandoc -s -f markdown -t man "$@" | man -l -
 }
 
 # read webpage like manpages
 viewpage() {
-		curl -s "$*" | pandoc -s -f html -t man | man -l -
+	curl -s "$*" | pandoc -s -f html -t man | man -l -
 }
 
