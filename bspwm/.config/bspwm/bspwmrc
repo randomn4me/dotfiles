@@ -4,11 +4,13 @@
 # general                                                                     #
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
+bspc monitor -d I II III IV V
+
 bspc config border_width            5
 bspc config window_gap              20
 bspc config split_ratio             0.5
-bspc monitor -d I II III IV V
 
+bspc config focus_follows_pointer 	true
 bspc config top_padding 						$TOP_PADDING
 
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 

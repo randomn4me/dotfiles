@@ -5,14 +5,10 @@
 # terminal emulator
 super + Return
 	urxvt	
-
-# program launcher
-super + space
-	menu_run
-
-# open shutdown menu
-super + shift + q
-	shutdown-menu
+#
+# open menu
+super + {u, i, space, shift + q}
+	{uniopen, passmenu, menu_run, shutdown-menu}
 
 # new wallpaper
 super + shift + d
@@ -22,6 +18,7 @@ super + shift + d
 super + x
 	pkill -USR1 -x sxhkd && notify "Reload sxhkd config"
 
+# notify
 super + {w, e, r}
 	notify {"$(network)", "TODOs : $(todo -n)", "Battery time : $(bat -t)"}
 
@@ -29,34 +26,41 @@ super + shift + space
 	touchpad t
 
 # lauch specific applications
-super + {n, m}
-	urxvt -e sh -c {telegram-cli, mutt}
-super + b
-	signal
-
-# open slides
-super + u
-	uniopen
+super + {b, n, m}
+	urxvt -e sh -c {telegram-cli, ncmpcpp, mutt}
 
 super + y
 	sstart pulseborder t
+
+################################################################################
+# multimedia keys                                                              #
+################################################################################
+
+# volume
+XF86Audio{Mute,LowerVolume,RaiseVolume}
+	pamixer -{t,-decrease 5,-increase 5}
+
+# brightness
+XF86MonBrightness{Down,Up}
+	xbacklight -{dec 10,inc 10}
+
+# music 
+XF86Audio{Play,Next,Prev}
+	mpc -q {toggle,next,prev}
+
+super + Print
+	scrot -d 1 ~/usr/pics/screenshots/%Y-%m-%d-%H%M%S_screenshot.png && notify "Screenshot taken"
+
+XF86{Sleep,ScreenSaver}
+	lock
+
 ################################################################################
 # bspwm hotkeys                                                                #
 ################################################################################
 
-# quit bspwm normally
-super + shift + {z, x}
-	{ownlogout, kill -s 10 sxhkd}
-
 # close
 super + q
 	bspc node -c
-
-# Change gap size on the fly 
-super + {minus,plus}
-	bspc config -m focused window_gap $((`bspc config -d focused window_gap` {+,-} 5 )) && wal-after
-super + equal 
-	bspc config -m focused window_gap 20 && wal-after
 
 ################################################################################
 # state / flags                                                                #
@@ -75,8 +79,8 @@ super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+super + p
+	bspc node -f @parent
 
 # focus the last node/desktop
 super + {Tab,grave}
@@ -138,24 +142,3 @@ super + button{1-3}
 super + @button{1-3}
 	bspc pointer -u
 
-################################################################################
-# multimedia keys                                                              #
-################################################################################
-
-# volume
-XF86Audio{Mute,LowerVolume,RaiseVolume}
-	pamixer -{t,-decrease 5,-increase 5}
-
-# brightness
-XF86MonBrightness{Down,Up}
-	xbacklight -{dec 10,inc 10}
-
-# music 
-XF86Audio{Play,Next,Prev}
-	mpc -q {toggle,next,prev}
-
-super + Print
-	scrot -d 1 ~/usr/pics/screenshots/%Y-%m-%d-%H%M%S_screenshot.png && notify "Screenshot taken"
-
-XF86{Sleep,ScreenSaver}
-	lock

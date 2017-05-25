@@ -10,7 +10,7 @@ xsetroot -cursor_name left_ptr
 
 sxhkd &
 reloadwal &
-bar &
+sstart bar 1 &
 mpd &
 firefox &
 unclutter --timeout 2 &
