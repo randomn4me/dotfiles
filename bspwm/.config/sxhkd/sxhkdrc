@@ -27,7 +27,7 @@ super + shift + space
 
 # lauch specific applications
 super + {b, n, m}
-	urxvt -e sh -c {telegram-cli, ncmpcpp, mutt}
+	urxvt -e sh -c {ncmpcpp, telegram-cli, mutt}
 
 super + y
 	sstart pulseborder t
