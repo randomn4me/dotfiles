@@ -19,7 +19,7 @@ md() {
 }
 
 # read webpage like manpages
-viewpage() {
+url() {
 	curl -s "$*" | pandoc -s -f html -t man | man -l -
 }
 
