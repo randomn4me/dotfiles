@@ -2,36 +2,41 @@
 ! SPECIAL COLORS                                                               !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-*.foreground:       #f2f2f2
-*.background:       #000000
+*.foreground: #f2f2f2
+*.background: #000000
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! urXVT                                                                        !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-urxvt*font:             xft:SauceCodePowerline:pixelsize=11
+urxvt*font:                 xft:SauceCodePowerline:pixelsize=11
 urxvt*boldFont:
 urxvt*italicFont:
 urxvt*bolditalicFont:
-urxvt*letterSpace:      -1
+urxvt*letterSpace:          -1
 
-urxvt*transparent:      true
-urxvt*shading:          10
-urxvt*scrollBar:        false
+urxvt*transparent:          true
+urxvt*shading:              10
+urxvt*scrollBar:            false
 
-urxvt*internalBorder:		6
-urxvt*externalBorder:		0
+urxvt*internalBorder:       6
+urxvt*externalBorder:       0
 
-urxvt*cursorBlink:      false
-urxvt*cursorColor:      #888888
+urxvt*cursorBlink:          false
+urxvt*cursorColor:          #888888
+
+URxvt.perl-ext:             default,url-select
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.url-select.launcher:  /usr/bin/xdg-open
+URxvt.url-select.underline: true
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! XFT                                                                          !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-Xft.dpi:        96
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hintstyle:  hintmedium
-Xft.lcdfilter:  lcddefault
+Xft.dpi:       96
+Xft.antialias: true
+Xft.rgba:      rgb
+Xft.hinting:   true
+Xft.hintstyle: hintmedium
+Xft.lcdfilter: lcddefault
