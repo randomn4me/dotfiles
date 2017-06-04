@@ -16,11 +16,11 @@ super + shift + d
 
 # reload sxhkd
 super + x
-	pkill -USR1 -x sxhkd && notify "Reload sxhkd config"
+	pkill -USR1 -x sxhkd && SLEEP=2 notify "Reload sxhkd config"
 
 # notify
 super + {w, e, r}
-	notify {"$(network)", "TODOs : $(todo -n)", "Battery time : $(bat -t)"}
+	SLEEP=2 notify {"$(network)", "TODOs : $(todo -n)", "Battery time : $(bat -t)"}
 
 super + shift + space
 	touchpad t
@@ -71,7 +71,7 @@ super + {s, d, f}
 	bspc node -t {floating, tiled, fullscreen}
 
 ################################################################################
-# focus / swap                                                                 #
+# focus / rotate                                                               #
 ################################################################################
 
 # focus the node in the given direction
@@ -89,6 +89,10 @@ super + {Tab,grave}
 # focus or send to the given desktop
 super + {_,shift + }{1-5}
 	bspc {desktop -f,node -d} '^{1-5}'
+
+# rotate, balance
+super + {_,shift} + semicolon
+	bspc node $(bspc query -N -n -n .!leaf || echo @/) {-R 90,-B}
 
 ################################################################################
 # preselect                                                                    #
@@ -116,15 +120,11 @@ super + ctrl + shift + space
 
 # expand the tiled space in the given direction
 alt + {h,j,k,l}
-	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+	bspc node -z {left -10 0, bottom 0 10, top 0 -10, right 10 0}
 
 # contract the tiled space in the given direction
 alt + shift + {h,j,k,l}
-	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
-
-# move a floating window
-super + {h,j,k,l}
-	xdo move {-x -20,-y +20,-y -20,-x +20}
+	bspc node -z {right -10 0, top 0 10, bottom 0 -10, left 10 0}
 
 ################################################################################
 # pointer focus / move / resize                                                #
