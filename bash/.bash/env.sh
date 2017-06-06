@@ -11,6 +11,6 @@ export MAIL="$HOME/var/mail/Inbox"
 
 export BAR_FONT="misc ohsnap:size=7"
 export COLOR_FILE="$HOME/.cache/wal/colors.sh"
-export GAPS=20
-export TOP_PADDING=22
-export BW=5
+export GAPS=10
+export TOP_PADDING=20
+export BORDER_WIDTH=3

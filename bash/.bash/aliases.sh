@@ -14,7 +14,7 @@ alias uni='cd $(curterm)'
 # useful
 alias ".."="cd ../"
 alias musicdl='youtube-dl -x --audio-format mp3'
-alias rm-orphans='pacaur -R $(pacaur -Qdt | cut -d" " -f1)'
+alias rm-orphans='test -z "`pacaur -Qdtq`" && echo "no orphan" || pacaur -R $(pacaur -Qdtq)'
 alias wanip="curl -s https://4.ifcfg.me/ | grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b'"
 alias kernelcodestyle="curl -s https://www.kernel.org/doc/Documentation/process/coding-style.rst | less"
 alias weather="weather Darmstadt"
