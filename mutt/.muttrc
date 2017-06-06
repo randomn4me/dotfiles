@@ -56,6 +56,13 @@ set pager_stop								= yes
 set tilde											= yes
 set menu_scroll
 
+
+# ┌─┐┬─┐┬─┐┬─┐┬─┐┬─┐┐ ┬
+# │  │─┤│┬┘│ ││ ││─┤│┌┘
+# └─┘┘ ┆┆└┘┆─┘┆─┘┘ ┆└┘ 
+
+set query_command							= "khard email --parsable %s"
+
 # ┌─┐┬─┐┐ ┬┬─┐┌┐┐┌─┐
 # │  │┬┘└┌┘│─┘ │ │ │
 # └─┘┆└┘ ┆ ┆   ┆ ┘─┘
@@ -79,6 +86,8 @@ bind index,pager		L					sidebar-open
 
 # index
 bind index					<space>		sync-mailbox
+bind index					x					noop
+bind index					gg				noop
 bind index					gg				first-entry
 bind index					G					last-entry
 
@@ -93,6 +102,8 @@ bind pager					q					exit
 bind index,pager		R					group-reply
 bind index,pager		N					search-opposite
 
+bind editor 				<Tab> 		complete-query
+bind editor 				^T    		complete
 
 # ┌┌┐┬─┐┌─┐┬─┐┌─┐┐─┐
 # ││││─┤│  │┬┘│ │└─┐
