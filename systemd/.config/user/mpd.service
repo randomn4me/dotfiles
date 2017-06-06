@@ -1,0 +1,9 @@
+[Unit]
+Description=Start mpd
+Documentation=man:mpd(1)
+
+[Service]
+ExecStart=/usr/bin/mpd --no-daemon
+
+[Install]
+WantedBy=default.target

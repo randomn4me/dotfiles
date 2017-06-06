@@ -1,0 +1,10 @@
+[Unit]
+Description=Sync mails with mbsync
+Documentation=man:mbsync(1)
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/mbsync -qa
+
+[Install]
+WantedBy=default.target

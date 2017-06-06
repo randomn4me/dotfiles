@@ -1,0 +1,9 @@
+[Unit]
+Description=Start redshift
+Documentation=man:redshift(1)
+
+[Service]
+ExecStart=/usr/bin/redshift -v
+
+[Install]
+WantedBy=default.target

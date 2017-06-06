@@ -12,11 +12,10 @@ sxhkd &
 reloadwal &
 bar &
 redshift &
-mpd &
-firefox &
+wendy -m 128 -f "$MAIL/new" notimail &
 unclutter --timeout 2 &
-lamas &
 wmname LG3D &
-xautolock -locker lock -corners 00-- -cornerdelay 5 -cornerredelay 10 -time 5 -notify 15 -notifier "notify locking" -detectsleep &
+xset s 540 60 
+xss-lock -n "xbacklight -set 10" -- lock &
 
 exec bspwm
