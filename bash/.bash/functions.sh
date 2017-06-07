@@ -23,3 +23,7 @@ url() {
 	curl -s "$*" | pandoc -s -f html -t man | man -l -
 }
 
+wal() {
+	test $# -ne 1 && printf "%s\n" "Usage: wal <path>" && return
+	wal -i $1 -o wal-after
+}
