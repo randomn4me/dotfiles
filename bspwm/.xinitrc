@@ -23,15 +23,7 @@ unclutter --timeout 2 &
 # ┆─┘┘─┘└─┘┆ ┘┆┆└┘┆─┘
 
 xset s 540 60 
-xss-lock -n "xbacklight -set 10" -- lock &
-
-
-#   ┬┬─┐┐ ┬┬─┐
-# ┌ ││─┤│┌┘│─┤
-# └─┆┘ ┆└┘ ┘ ┆
-
-wmname LG3D &
-
+xss-lock -n "xbacklight -set 10 && notify locking soon" -- lock &
 
 # ┐ ┬┌┌┐
 # ││││││

@@ -19,8 +19,8 @@ super + Escape
 	pkill -USR1 -x sxhkd && SLEEP=2 notify "Reload sxhkd config"
 
 # notify
-super + {w, e, r}
-	SLEEP=2 notify {"$(network)", "TODOs : $(todo -n)", "Battery time : $(bat -t)"}
+super + {v, w, e, r}
+	SLEEP=2 notify {`mpc | head -n1`, "$(network)", "TODOs : $(todo -n)", "Battery time : $(bat -t)"}
 
 super + shift + space
 	touchpad t
@@ -38,7 +38,8 @@ super + y
 
 # volume
 XF86Audio{Mute,LowerVolume,RaiseVolume}
-	pamixer -{t,-decrease 5,-increase 5}
+	pamixer -{t,-decrease 5,-increase 5} && \
+		notivol
 
 # brightness
 XF86MonBrightness{Down,Up}
@@ -125,6 +126,10 @@ alt + {h,j,k,l}
 # contract the tiled space in the given direction
 alt + shift + {h,j,k,l}
 	bspc node -z {right -10 0, top 0 10, bottom 0 -10, left 10 0}
+
+# move floating
+super + {Left,Down,Up,Right}
+	wmv {-10 0,0 10,0 -10,10 0} `pfw`
 
 ################################################################################
 # pointer focus / move / resize                                                #
