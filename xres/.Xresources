@@ -9,10 +9,7 @@
 ! urXVT                                                                        !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-urxvt*font:                 xft:SauceCodePowerline:pixelsize=11
-urxvt*boldFont:
-urxvt*italicFont:
-urxvt*bolditalicFont:
+urxvt*font:                 xft:SourceCodePro:pixelsize=11
 urxvt*letterSpace:          -1
 
 urxvt*transparent:          true
