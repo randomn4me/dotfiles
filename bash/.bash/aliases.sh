@@ -8,11 +8,11 @@ alias lla="ls -lahF --color=auto"
 alias rm='rm -i'
 alias mv='mv -i'
 
-# cd aliases
-alias uni='cd $(curterm)'
+# cd
+alias ".."="cd ../"
+alias "uni"="cd `curterm -p`"
 
 # useful
-alias ".."="cd ../"
 alias musicdl='youtube-dl -x --audio-format mp3'
 alias rm-orphans='test -z "`pacaur -Qdtq`" && echo "no orphan" || pacaur -R $(pacaur -Qdtq)'
 alias wanip="curl -s https://4.ifcfg.me/ | grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b'"
