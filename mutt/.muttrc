@@ -87,7 +87,7 @@ bind index,pager		L					sidebar-open
 # index
 bind index					<space>		sync-mailbox
 bind index					x					noop
-bind index					gg				noop
+bind index					g					noop
 bind index					gg				first-entry
 bind index					G					last-entry
 

@@ -39,4 +39,5 @@ alias rusto="toilet -t -f rusto"
 alias rustofat="toilet -t -f rustofat"
 alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
 alias antivirus="sudo freshclam && sudo clamscan"
-alias rice="curl -L git.io/rice"
+alias rice="curl -L git.io/rice; tput sgr0"
+alias csv='column -t -s\;'

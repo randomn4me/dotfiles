@@ -1,1 +1,6 @@
-${HOME}/.cache
+$HOME/.cache
+$HOME/.vim/backup
+$HOME/.vim/swap
+$HOME/.vim/undo
+*~
+*.pyc

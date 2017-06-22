@@ -97,5 +97,8 @@ bind CS-Right unmap
 
 bind M-Left unmap
 bind M-Right unmap
+bind M-Down unmap
+bind M-Up unmap
 bind MS-Left unmap
 bind MS-Right unmap
+
