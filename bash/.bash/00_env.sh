@@ -2,11 +2,11 @@ export EDITOR="vim"
 export VISUAL="vim"
 export PAGER="less"
 
-export PATH="$HOME/bin:$PATH"
 export LC_LANG="en_US.UTF-8"
 
+echo $PATH | grep -q "$HOME/bin" || export PATH="$HOME/bin:$PATH"
 export XDG_CONFIG_HOME="${HOME}/.config"
-
+export GOPATH="$HOME/src/go"
 export MAIL="$HOME/var/mail/Inbox"
 
 export BAR_FONT="misc ohsnap:size=7"
