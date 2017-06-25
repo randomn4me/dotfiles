@@ -21,6 +21,7 @@ alias weather="weather Darmstadt"
 
 # shorter
 alias open="xdg-open"
+alias o="xdg-open"
 alias cp="cp -r"
 alias mkdir="mkdir -p"
 alias scp="scp -r"
@@ -32,7 +33,6 @@ alias shred='shred -u -n 15 -z'
 alias ping='ping -c 5'
 alias pingt='ping 8.8.8.8'
 alias psef="ps -ef"
-alias matrix="cmatrix"
 alias future="toilet -t -f future"
 alias ascii="toilet -t -f 3d"
 alias rusto="toilet -t -f rusto"
