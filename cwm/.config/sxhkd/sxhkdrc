@@ -26,7 +26,7 @@ XF86{Sleep,ScreenSaver}
 ################################################################################
 
 super + {w, e, r}
-	SLEEP=2 notify {"Network: `network`", "TODOs : `todo -n`", "Battery time : `bat -t`"}
+	SLEEP=2 notify {"Network: `network`", "TODOs : `todo -n`", "Battery time : `bat -t || bat -s`"}
 
 ################################################################################
 # programs                                                                     #
