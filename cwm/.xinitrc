@@ -4,12 +4,11 @@
 setxkbmap -option caps:none
 xsetroot -cursor_name left_ptr
 
+
 # ┬─┐┬─┐┬─┐┌┌┐┌─┐┌┐┐┐─┐
 # │ ││─┤├─ ││││ ││││└─┐
 # ┆─┘┘ ┆┴─┘┘ ┆┘─┘┆└┘──┘
 
-redshift &
-wendy -m 128 -f "$MAIL/new" notimail &
 unclutter --timeout 2 &
 
 
