@@ -22,7 +22,7 @@ visualizer_fifo_path = "/tmp/mpd.fifo"
 visualizer_output_name = "my_fifo"
 visualizer_in_stereo = "no"
 visualizer_sync_interval = "30" 
-visualizer_type = "ellipse" (spectrum/wave/ellipse)
+visualizer_type = "spectrum" (spectrum/wave/ellipse)
 visualizer_look = "●▮"
 
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
