@@ -1,0 +1,10 @@
+[Unit]
+Description=Start mpd notifier
+After=mpd.service
+Requires=mpd.service
+
+[Service]
+ExecStart=/home/phil/bin/mpdnotify
+
+[Install]
+WantedBy=default.target
