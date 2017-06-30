@@ -9,6 +9,9 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 export GOPATH="$HOME/src/go"
 export MAIL="$HOME/var/mail/Inbox"
 
+PAPER_DIR="$HOME/usr/docs/uni/paper"
+test -d "$PAPER_DIR" && export PAPER_DIR
+
 export BAR_FONT="misc ohsnap:size=7"
 export COLOR_FILE="$HOME/.config/colors"
 export GAPS=10
