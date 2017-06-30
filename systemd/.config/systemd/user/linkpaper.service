@@ -1,0 +1,6 @@
+[Unit]
+Description=Link scientific paper to common location
+
+[Service]
+ExecStart=/home/phil/bin/linkpaper
+StandardOutput=syslog
