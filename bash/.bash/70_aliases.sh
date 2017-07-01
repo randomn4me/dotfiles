@@ -10,7 +10,7 @@ alias mv='mv -i'
 
 # cd
 alias ".."="cd ../"
-alias "uni"="cd $(curterm)"
+alias "uni"="$(curterm) && cd $(curterm)"
 alias "paper"="test ! -z $PAPER_DIR && cd $PAPER_DIR"
 
 # useful
