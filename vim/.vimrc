@@ -58,6 +58,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'xero/sourcerer.vim'
 Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-surround'
 call vundle#end()
 
 filetype plugin indent on
@@ -74,8 +75,6 @@ set number
 
 set colorcolumn=80
 set tw=80
-
-set cursorline
 
 syntax enable
 
