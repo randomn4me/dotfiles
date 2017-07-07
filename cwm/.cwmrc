@@ -32,9 +32,28 @@ gap                     30 10 10 10
 moveamount              20
 
 # Keybindings
+# unbind
+bind M-return   unmap
+bind C-slash    unmap
+bind C-Left     unmap
+bind C-Right    unmap
+bind CS-Left    unmap
+bind CS-Right   unmap
+
+bind M-Left     unmap
+bind M-Right    unmap
+bind M-Down     unmap
+bind M-Up       unmap
+bind MS-Left    unmap
+bind MS-Right   unmap
+
+bind MS-l       unmap
+bind MS-k       unmap
+bind MS-j       unmap
+bind MS-h       unmap
+
 # SIZE
 bind 4-d        vmaximize
-bind 4-s        hmaximize
 bind 4-f        maximize
 
 bind M-h        resizeleft
@@ -90,22 +109,3 @@ bind 4S-Escape  restart
 mousebind 4-1   window_move
 mousebind 4-3   window_resize
 
-# unbind
-bind M-return   unmap
-bind C-slash    unmap
-bind C-Left     unmap
-bind C-Right    unmap
-bind CS-Left    unmap
-bind CS-Right   unmap
-
-bind M-Left     unmap
-bind M-Right    unmap
-bind M-Down     unmap
-bind M-Up       unmap
-bind MS-Left    unmap
-bind MS-Right   unmap
-
-bind MS-l       unmap
-bind MS-k       unmap
-bind MS-j       unmap
-bind MS-h       unmap

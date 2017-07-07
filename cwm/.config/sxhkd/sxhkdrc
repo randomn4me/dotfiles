@@ -4,33 +4,36 @@
 
 # volume
 XF86Audio{Mute,LowerVolume,RaiseVolume}
-	pamixer -{t,-decrease 5,-increase 5} && \
-		notivol
+    pamixer -{t,-decrease 5,-increase 5} && \
+        notivol
 
 # brightness
 XF86MonBrightness{Down,Up}
-	xbacklight -{dec 10,inc 10}
+    xbacklight -{dec 10,inc 10}
 
 # music 
 XF86Audio{Play,Next,Prev}
-	mpc -q {toggle,next,prev}
+    mpc -q {toggle,next,prev}
 
 super + Print
-	scrot -d 1 ~/usr/pics/screenshots/%Y-%m-%d-%H%M%S_screenshot.png && notify "Screenshot taken"
+    scrot -d 1 ~/usr/pics/screenshots/%Y-%m-%d-%H%M%S_screenshot.png && notify "Screenshot taken"
 
 XF86{Sleep,ScreenSaver}
-	lock
+    lock
 
 ################################################################################
 # notifications                                                                #
 ################################################################################
 
 super + {w, e, r}
-	SLEEP=2 notify {"Network: `network`", "TODOs : `todo -n`", "Battery time : `bat -t || bat -s`"}
+    SLEEP=2 notify {"Network: `network`", "TODOs : `todo -n`", "Battery time : `bat -t || bat -s`"}
+
+super + m
+    motivation
 
 ################################################################################
 # programs                                                                     #
 ################################################################################
 
 super + {space, u, i, shift + q}
-	{menu_run, uniopen, passmenu, shutdown-menu}
+    {menu_run, uniopen, passmenu, shutdown-menu}
