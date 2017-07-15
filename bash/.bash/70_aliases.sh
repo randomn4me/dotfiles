@@ -23,8 +23,6 @@ alias csv='column -t -s\;'
 alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
 
 # shorter
-alias open="xdg-open"
-alias o="xdg-open"
 alias cp="cp -r"
 alias mkdir="mkdir -p"
 alias scp="scp -r"
