@@ -16,12 +16,31 @@ set exrc
 set modelines=0
 set secure
 
-" no backup files 
-set directory=$HOME/.vim/swap
-set backupdir=$HOME/.vim/backup
+set undofile
 set undodir=$HOME/.vim/undo
+set backupdir=$HOME/.vim/backup
+set noswapfile
 
 set clipboard=unnamedplus
+
+set backspace=indent,eol,start
+
+" borrowed by xero
+" lazy file name tab completion
+set wildmode=longest,list,full
+set wildmenu
+set wildignorecase
+" ignore files vim doesnt use
+set wildignore+=.git,.hg,.svn
+set wildignore+=*.aux,*.out,*.toc
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class
+set wildignore+=*.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp
+set wildignore+=*.avi,*.divx,*.mp4,*.webm,*.mov,*.m2ts,*.mkv,*.vob,*.mpg,*.mpeg
+set wildignore+=*.mp3,*.oga,*.ogg,*.wav,*.flac
+set wildignore+=*.eot,*.otf,*.ttf,*.woff
+set wildignore+=*.doc,*.pdf,*.cbr,*.cbz
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
+set wildignore+=*.swp,.lock,.DS_Store,._*
 
 " ┬─┐┬─┐┬ ┬┬─┐┐ ┬o┌─┐┬─┐
 " │─│├─ │─┤│─┤│┌┘││ ││┬┘
@@ -77,6 +96,13 @@ set colorcolumn=80
 set tw=80
 
 syntax enable
+
+" searching
+set ignorecase
+set smartcase
+set infercase
+set hlsearch
+set incsearch
 
 " show unecessary spaces
 set list
