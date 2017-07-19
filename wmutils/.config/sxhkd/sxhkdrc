@@ -1,0 +1,52 @@
+################################################################################
+# wm independent hotkeys                                                       #
+################################################################################
+
+# terminal emulator
+super + Return
+    urxvt   
+
+# program launcher
+super + space
+    menu_run
+
+# open shutdown menu
+super + shift + q
+    shutdown-menu
+
+# reload sxhkd
+super + Escape
+    pkill -USR1 -x sxhkd && notify "Reload sxhkd config"
+
+# open slides
+super + o
+    dmenu_open
+
+################################################################################
+# wmutils hotkeys                                                              #
+################################################################################
+
+super + {t,y,g,v,b}
+    move {tl,tr,c,bl,br}
+
+super + {_,shift} + Tab
+    focus {next,prev}
+
+super + {h,j,k,l}
+    wmv {-10 0,0 10,0 -10,10 0} `pfw`
+
+super + shift + {h,j,k,l}
+    wmv {-50 0,0 50,0 -50,50 0} `pfw`
+
+super + q
+    killw `pfw`
+
+# mouse handling
+mod4 + !button1
+ wmv -a %i %i $(pfw)
+
+mod4 + !button3
+ wrs -a %i %i $(pfw)
+
+mod4 + button{4,5}
+ chwso -{r,l} $(pfw)
