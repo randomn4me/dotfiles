@@ -21,7 +21,8 @@ autogroup 3 "gl,mpv"
 autogroup 4 "crx_cdfdeajljjandgdkngahnhbbpajjolha,Signal Private Messenger"
 
 autogroup 5 "Navigator,Firefox"
-autogroup 5 "surf,Surf"
+autogroup 5 "qutebrowser,qutebrowser"
+
 
 # behavior, look & feel
 borderwidth             2

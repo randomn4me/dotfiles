@@ -35,5 +35,5 @@ super + m
 # programs                                                                     #
 ################################################################################
 
-super + {space, u, i, shift + q}
-    {menu_run, uniopen, passmenu, shutdown-menu}
+super + {space, o, shift + q}
+    {menu_run, menu_open, shutdown-menu}
