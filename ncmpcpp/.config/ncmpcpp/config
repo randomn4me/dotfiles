@@ -31,11 +31,14 @@ visualizer_look = "●▮"
 
 song_list_format = "{$8%a $4- }{$4%t} $R$3[{%l}]$9"
 song_status_format = "$8%a $4- %t $3- %b$8"
+
+# colors
+colors_enabled = "yes"
 statusbar_color = "white"
 main_window_color = "white"
-header_visibility = "no"
+
+header_visibility = "no" # includes status, e.g., random
 statusbar_visibility = "yes"
-colors_enabled = "yes"
 now_playing_prefix = "$8> "
 now_playing_suffix = "$8<"
 autocenter_mode = "yes"
