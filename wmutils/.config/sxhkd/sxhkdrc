@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-    urxvt   
+    urxvt
 
 # program launcher
 super + space
@@ -16,21 +16,57 @@ super + shift + q
 
 # reload sxhkd
 super + Escape
-    pkill -USR1 -x sxhkd && notify "Reload sxhkd config"
+    pkill -USR1 -x sxhkd && SLEEP=2s notify "Reload sxhkd config"
 
 # open slides
 super + o
     dmenu_open
 
 ################################################################################
+# multimedia keys                                                              #
+################################################################################
+
+# volume
+XF86Audio{Mute,LowerVolume,RaiseVolume}
+    volume {t,-,+} && \
+        notivol
+
+# brightness
+XF86MonBrightness{Down,Up}
+    bl {-,+}
+
+# music 
+XF86Audio{Play,Next,Prev}
+    mpc -q {toggle,next,prev}
+
+super + Print
+    scrot -d 1 ~/tmp/%Y-%m-%d-%H%M%S_screenshot.png && notify "Screenshot taken"
+
+XF86{Sleep,ScreenSaver}
+    lock
+
+################################################################################
+# notifications                                                                #
+################################################################################
+
+super + {w, e, r}
+    SLEEP=2 notify {"Network: `network`", "TODOs : `todo -n`", "Battery time : `bat -t || bat -s`"}
+
+super + m
+    motivation
+
+################################################################################
 # wmutils hotkeys                                                              #
 ################################################################################
 
 super + {t,y,g,v,b}
-    move {tl,tr,c,bl,br}
+    move {tl,tr,c,bl,br} `pfw`
 
 super + {_,shift} + Tab
-    focus {next,prev}
+    chfcs -{n,p}
+
+super + {f,d}
+    rsz {f,y} `pfw`
 
 super + {h,j,k,l}
     wmv {-10 0,0 10,0 -10,10 0} `pfw`
@@ -38,15 +74,18 @@ super + {h,j,k,l}
 super + shift + {h,j,k,l}
     wmv {-50 0,0 50,0 -50,50 0} `pfw`
 
+alt + {h,j,k,l}
+    wrs {-10 0,0 10,0 -10,10 0} `pfw`
+
+alt + shift + {h,j,k,l}
+    wrs {-50 0,0 50,0 -50,50 0} `pfw`
+
 super + q
     killw `pfw`
 
-# mouse handling
-mod4 + !button1
- wmv -a %i %i $(pfw)
+super + {1,2,3,4,5}
+    groaw -t {1,2,3,4,5}
 
-mod4 + !button3
- wrs -a %i %i $(pfw)
-
-mod4 + button{4,5}
- chwso -{r,l} $(pfw)
+super + shift + {1,2,3,4,5}
+    groaw -d all; \
+    groaw -a {1,2,3,4,5}
