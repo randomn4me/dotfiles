@@ -3,9 +3,9 @@
 status_path = "~/.vdirsyncer/status/"
 
 # CARDDAV
-[pair posteo]
-a = "posteo_local"
-b = "posteo_remote"
+[pair posteo_contacts]
+a = "posteo_contacts_local"
+b = "posteo_contacts_remote"
 
 collections = ["from a", "from b"]
 
@@ -13,11 +13,25 @@ metadata = ["posteo"]
 
 conflict_resolution = "b wins"
 
-[storage posteo_local]
+[storage posteo_contacts_local]
 type = "filesystem"
-path = "~/.contacts/"
+path = "~/var/contacts/"
 fileext = ".vcf"
 
-[storage posteo_remote]
+[storage posteo_contacts_remote]
 type = "carddav"
 url = "https://posteo.de:8843/addressbooks/p.jonczyk/default"
+
+[pair posteo_calendar]
+a = "posteo_calendar_local"
+b = "posteo_calendar_remote"
+collections = ["from a", "from b"]
+
+[storage posteo_calendar_local]
+type = "filesystem"
+path = "~/var/calendar/"
+fileext = ".ics"
+
+[storage posteo_calendar_remote]
+type = "caldav"
+url = "https://posteo.de:8443/calendars/p.jonczyk/default"
