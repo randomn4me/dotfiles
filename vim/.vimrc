@@ -48,59 +48,6 @@ autocmd FileType markdown   set tw=70
 
 autocmd BufRead /tmp/mutt-*  set tw=72
 
-" keybindings
-nnoremap <F2> <ESC>:wa<CR>
-
-" ┌─┐┌─┐┌┐┐┬─┐o┌─┐
-" │  │ ││││├─ ││ ┬
-" └─┘┘─┘┆└┘┆  ┆┆─┘
-
-" vim rather than vi
-set nocompatible
-
-" run :! commands in interactive mode (enables aliases)
-set shell=/bin/bash\ -i
-
-" /g by default
-set gdefault
-
-set exrc
-
-set modelines=0
-set secure
-
-set undofile
-set undodir=$HOME/.vim/undo
-set backupdir=$HOME/.vim/backup
-set noswapfile
-
-set clipboard=unnamedplus
-
-set backspace=indent,eol,start
-
-" ┬─┐┬─┐┬ ┬┬─┐┐ ┬o┌─┐┬─┐
-" │─│├─ │─┤│─┤│┌┘││ ││┬┘
-" ┆─┘┴─┘┆ ┴┘ ┆└┘ ┆┘─┘┆└┘
-
-set nowrap
-
-" tab behaviour and indentation
-set autoindent
-set smartindent
-set cindent
-
-set expandtab
-
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-
-" autocommands for different filetypes
-autocmd FileType make       set noexpandtab
-autocmd FileType markdown   set tw=70
-
-autocmd BufRead /tmp/mutt-*  set tw=72
-
 " macros
 nnoremap <F2> :wa<CR>
 
