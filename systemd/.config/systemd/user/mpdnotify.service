@@ -4,7 +4,7 @@ After=mpd.service
 Requires=mpd.service
 
 [Service]
-ExecStart=/home/phil/bin/mpdnotify
+ExecStart=/home/phil/bin/mpdnotify -v -n -d
 
 [Install]
 WantedBy=default.target
