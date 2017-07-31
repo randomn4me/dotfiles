@@ -2,15 +2,12 @@
 # A folder where vdirsyncer can store some metadata about each pair.
 status_path = "~/.vdirsyncer/status/"
 
-# CARDDAV
+# contacts
 [pair posteo_contacts]
 a = "posteo_contacts_local"
 b = "posteo_contacts_remote"
-
 collections = ["from a", "from b"]
-
 metadata = ["posteo"]
-
 conflict_resolution = "b wins"
 
 [storage posteo_contacts_local]
@@ -21,11 +18,17 @@ fileext = ".vcf"
 [storage posteo_contacts_remote]
 type = "carddav"
 url = "https://posteo.de:8843/addressbooks/p.jonczyk/default"
+verify = "/etc/ssl/certs/ca-certificates.crt"
+username = "p.jonczyk@posteo.de"
+password.fetch = [ "command", "pass", "posteo.de/p.jonczyk@posteo.de" ]
 
+# calendar
 [pair posteo_calendar]
 a = "posteo_calendar_local"
 b = "posteo_calendar_remote"
 collections = ["from a", "from b"]
+conflict_resolution = "b wins"
+metadata = ["displayname"]
 
 [storage posteo_calendar_local]
 type = "filesystem"
@@ -35,3 +38,6 @@ fileext = ".ics"
 [storage posteo_calendar_remote]
 type = "caldav"
 url = "https://posteo.de:8443/calendars/p.jonczyk/default"
+verify = "/etc/ssl/certs/ca-certificates.crt"
+username = "p.jonczyk@posteo.de"
+password.fetch = [ "command", "pass", "posteo.de/p.jonczyk@posteo.de" ]
