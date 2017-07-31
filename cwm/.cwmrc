@@ -19,6 +19,7 @@ autogroup 2 "mupdf,MuPDF"
 autogroup 3 "gl,mpv"
 
 autogroup 4 "crx_cdfdeajljjandgdkngahnhbbpajjolha,Signal Private Messenger"
+autogroup 4 "ts3client_linux_amd64,TeamSpeak 3"
 
 autogroup 5 "Navigator,Firefox"
 autogroup 5 "qutebrowser,qutebrowser"
@@ -53,6 +54,9 @@ bind MS-k       unmap
 bind MS-j       unmap
 bind MS-h       unmap
 
+bind M-Tab unmap
+bind MS-Tab unmap
+
 # SIZE
 bind 4-d        vmaximize
 bind 4-f        maximize
@@ -63,11 +67,11 @@ bind M-k        resizeup
 bind M-l        resizeright
 
 # POSITION
-bind 4-t        "move tl"
-bind 4-y        "move tr"
-bind 4-v        "move bl"
-bind 4-b        "move br"
-bind 4-g        "move c"
+bind 4-t        snap tl
+bind 4-y        snap tr
+bind 4-g        snap c
+bind 4-v        snap bl
+bind 4-b        snap br
 
 bind 4-h        moveleft
 bind 4-j        movedown
@@ -85,9 +89,6 @@ bind 4-q        delete
 bind 4-Tab      cycle
 bind 4S-Tab     rcycle
 
-bind M-Tab unmap
-bind MS-Tab unmap
-
 # Group control
 bind 4-grave    cyclegroup
 bind 4-1        group1
@@ -103,10 +104,17 @@ bind 4S-5       movetogroup5
 
 bind 4-Return   urxvt
 
+bind 4-space    menu_run
+bind 4-o        menu_open
+bind 4-u        uniopen
+bind 4-i        passmenu
+bind 4S-q       shutdown-menu
+
+bind 4-m        motivation
+
 # Session management
 bind 4S-Escape  restart
 
 # Mousebindings
 mousebind 4-1   window_move
 mousebind 4-3   window_resize
-
