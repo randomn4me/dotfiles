@@ -10,7 +10,7 @@ alias mv='mv -i'
 
 # cd
 alias ".."="cd ../"
-alias "uni"="$(curterm) && cd $(curterm)"
+alias "uni"="[ -d $(curterm) ] && cd $(curterm)"
 alias "paper"="test ! -z $PAPER_DIR && cd $PAPER_DIR"
 
 # useful
@@ -33,6 +33,7 @@ alias cal='cal -m'
 alias shred='shred -u -n 15 -z'
 alias ping='ping -c 5'
 alias pingt='ping 8.8.8.8'
+alias scrot='scrot ~/tmp/%Y-%m-%d-%H%M%S_screenshot.png'
 alias psef="ps -ef"
 alias future="toilet -t -f future"
 alias ascii="toilet -t -f 3d"
@@ -41,3 +42,4 @@ alias rustofat="toilet -t -f rustofat"
 alias antivirus="sudo freshclam && sudo clamscan"
 alias rice="curl -L git.io/rice; tput sgr0"
 alias music='tmx r'
+alias twitch-curses='twitch-curses --player mpv'

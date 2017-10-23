@@ -42,14 +42,14 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
+let g:tex_flavor='latex'
+
 " autocommands for different filetypes
 autocmd FileType make       set noexpandtab
 autocmd FileType markdown   set tw=70
+autocmd FileType tex        set spell
 
 autocmd BufRead /tmp/mutt-*  set tw=72
-
-" macros
-nnoremap <F2> :wa<CR>
 
 " ┬─┐┬  ┬ ┐┌─┐o┌┐┐┐─┐
 " │─┘│  │ ││ ┬││││└─┐
