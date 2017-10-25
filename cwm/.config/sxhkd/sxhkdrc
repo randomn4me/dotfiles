@@ -4,7 +4,7 @@
 
 # volume
 XF86Audio{Mute,LowerVolume,RaiseVolume}
-    pamixer -{t,-decrease 5,-increase 5} && \
+    vol {t,-,+} && \
         notivol
 
 # brightness
