@@ -19,7 +19,7 @@ super + Print
     scrot -d 1 ~/usr/pics/screenshots/%Y-%m-%d-%H%M%S_screenshot.png && notify "Screenshot taken"
 
 XF86{Sleep,ScreenSaver}
-    lock
+    slock
 
 ################################################################################
 # notifications                                                                #

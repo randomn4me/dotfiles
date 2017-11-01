@@ -1,0 +1,9 @@
+[Unit]
+Description=Start mpd bar
+Requires=mpd.service
+
+[Service]
+ExecStart=/home/phil/bin/mpdbar
+
+[Install]
+WantedBy=default.target
