@@ -23,7 +23,7 @@ unclutter --timeout 2 &
 # ┆─┘┘─┘└─┘┆ ┘┆┆└┘┆─┘
 
 xset s 540 60 
-xss-lock -n "xbacklight -set 10 && notify locking soon" -- lock &
+xss-lock -n "xbacklight -set 10 && notify locking soon" -- slock &
 
 # ┐ ┬┌┌┐
 # ││││││
@@ -31,6 +31,6 @@ xss-lock -n "xbacklight -set 10 && notify locking soon" -- lock &
 
 sxhkd &
 bar &
-reloadwal &
+hsetroot -tile $HOME/usr/pics/patterns/wool.png
 
 exec bspwm

@@ -15,7 +15,7 @@ super + shift + q
     shutdown-menu
 
 # reload sxhkd
-super + Escape
+super + shift + Escape
     pkill -USR1 -x sxhkd && SLEEP=2s notify "Reload sxhkd config"
 
 # open slides
@@ -28,8 +28,7 @@ super + {u,i,o}
 
 # volume
 XF86Audio{Mute,LowerVolume,RaiseVolume}
-    volume {t,-,+} && \
-        notivol
+    vol {t,-,+}
 
 # brightness
 XF86MonBrightness{Down,Up}
@@ -40,7 +39,7 @@ XF86Audio{Play,Next,Prev}
     mpc -q {toggle,next,prev}
 
 super + Print
-    scrot -d 1 ~/tmp/%Y-%m-%d-%H%M%S_screenshot.png && notify "Screenshot taken"
+    scrot -d 1 ~/usr/pics/screenshots/%Y-%m-%d-%H%M%S_screenshot.png && notify "Screenshot taken"
 
 XF86{Sleep,ScreenSaver}
     lock
@@ -51,9 +50,6 @@ XF86{Sleep,ScreenSaver}
 
 super + {w, e, r}
     SLEEP=2 notify {"Network: `network`", "TODOs : `todo -n`", "Battery time : `bat -t || bat -s`"}
-
-super + m
-    motivation
 
 ################################################################################
 # wmutils hotkeys                                                              #
@@ -69,16 +65,10 @@ super + {f,d}
     rsz {f,y} `pfw`
 
 super + {h,j,k,l}
-    wmv {-10 0,0 10,0 -10,10 0} `pfw`
-
-super + shift + {h,j,k,l}
-    wmv {-50 0,0 50,0 -50,50 0} `pfw`
+    wmv {-20 0,0 20,0 -20,20 0} `pfw`
 
 alt + {h,j,k,l}
-    wrs {-10 0,0 10,0 -10,10 0} `pfw`
-
-alt + shift + {h,j,k,l}
-    wrs {-50 0,0 50,0 -50,50 0} `pfw`
+    wrs {-20 0,0 20,0 -20,20 0} `pfw`
 
 super + q
     killw `pfw`
@@ -90,5 +80,6 @@ super + shift + {1,2,3,4,5}
     groaw -d all; \
     groaw -a {1,2,3,4,5}
 
+# move windows with the mouse
 super + !button1
-    notify %i %i
+    wmv -a %i %i $(pfw)

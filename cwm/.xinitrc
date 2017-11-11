@@ -9,6 +9,7 @@ xsetroot -cursor_name left_ptr
 # │ ││─┤├─ ││││ ││││└─┐
 # ┆─┘┘ ┆┴─┘┘ ┆┘─┘┆└┘──┘
 
+redshift &
 unclutter --timeout 2 &
 
 

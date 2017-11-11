@@ -24,6 +24,7 @@ autogroup 4 "telegram-desktop,TelegramDesktop"
 autogroup 4 "ts3client_linux_amd64,TeamSpeak 3"
 
 autogroup 5 "Navigator,Firefox"
+autogroup 5 "Navigator,Tor Browser"
 autogroup 5 "qutebrowser,qutebrowser"
 
 
