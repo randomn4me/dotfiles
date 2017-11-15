@@ -2,13 +2,10 @@
 # configuration                                                                #
 ################################################################################
 
-font pango:                         Misc Ohsnap 8
+font pango:                         Ohsnap 8
 
 hide_edge_borders                   none
-new_window                          pixel 3
-# smart_borders                       on
-
-floating_modifier                   $mod
+new_window                          pixel 2
 
 ################################################################################
 # variables                                                                    #
@@ -21,19 +18,16 @@ set $down                           j
 set $left                           h
 set $right                          l
 
-set $workspace1                     "1:"
+set $workspace1                     "1"
 set $workspace2                     "2"
 set $workspace3                     "3"
-set $workspace4                     "4:"
-set $workspace5                     "5:"
-set $workspace6                     "6:"
-set $workspace7                     "7"
-set $workspace8                     "8:"
-set $workspace9                     "9:"
-set $workspace10                    "10:"
+set $workspace4                     "4"
+set $workspace5                     "5"
 
 set $default_gaps_inner             5
-set $default_gaps_outer             25
+set $default_gaps_outer             5
+
+floating_modifier                   $mod
 
 ################################################################################
 # colors                                                                       #
@@ -68,12 +62,12 @@ set $transparent                    #00000000
 set $fg                             $magenta
 set $bg                             $red
 
-#                                   BORDER          BACKGROUND      TEXT            INDICATOR       CHILD_BORDER
-client.focused                      $magenta        $black          $black          $magenta        $magenta
-client.unfocused                    $black          $black          $black          $black          $black
-client.focused_inactive             $black          $black          $black          $black          $black
-client.urgent                       $darkred        $darkred        $black          $darkred        $darkred
-client.background                   $black
+#                        BORDER      BACKGROUND  TEXT    INDICATOR   CHILD_BORDER
+client.focused           $darkwhite  $black      $black  $darkwhite  $darkwhite
+client.unfocused         $black      $black      $black  $black      $black
+client.focused_inactive  $black      $black      $black  $black      $black
+client.urgent            $darkred    $darkred    $black  $darkred    $darkred
+client.background        $black
 
 ################################################################################
 # gaps settings                                                                #
@@ -96,11 +90,6 @@ bindsym $mod+2                      workspace $workspace2
 bindsym $mod+3                      workspace $workspace3
 bindsym $mod+4                      workspace $workspace4
 bindsym $mod+5                      workspace $workspace5
-bindsym $mod+6                      workspace $workspace6
-bindsym $mod+7                      workspace $workspace7
-bindsym $mod+8                      workspace $workspace8
-bindsym $mod+9                      workspace $workspace9
-bindsym $mod+0                      workspace $workspace10
 
 # cycle between prev and current ws
 bindsym $mod+Tab                    workspace back_and_forth
@@ -110,11 +99,6 @@ bindsym $mod+Shift+2                move container to workspace $workspace2
 bindsym $mod+Shift+3                move container to workspace $workspace3
 bindsym $mod+Shift+4                move container to workspace $workspace4
 bindsym $mod+Shift+5                move container to workspace $workspace5
-bindsym $mod+Shift+6                move container to workspace $workspace6
-bindsym $mod+Shift+7                move container to workspace $workspace7
-bindsym $mod+Shift+8                move container to workspace $workspace8
-bindsym $mod+Shift+9                move container to workspace $workspace9
-bindsym $mod+Shift+10               move container to workspace $workspace10
 
 force_display_urgency_hint          0 ms
 focus_on_window_activation          urgent
@@ -123,7 +107,7 @@ focus_on_window_activation          urgent
 # navigation                                                                   #
 ################################################################################
 
-focus_follows_mouse                 no
+focus_follows_mouse                 yes
 
 bindsym $mod+$left                  focus left
 bindsym $mod+$down                  focus down
@@ -143,18 +127,14 @@ bindsym $mod+c                      focus child
 ################################################################################
 
 bindsym $mod+Return                 exec --no-startup-id urxvt
-bindsym $mod+space                  exec rofi -show run
-bindsym $mod+Control+Delete         exec --no-startup-id shutdown-menu
+bindsym $mod+space                  exec --no-startup-id menu_run
 bindsym $mod+Shift+q                exec --no-startup-id shutdown-menu
 
 # # # # # # # # # # # # # # # # # # # #  # # # # # # # # # # # # # # # # # # # #  
 
-# assign [class="Firefox"]                $workspace5
-assign [class="Chromium"]               $workspace5
-assign [class="Vlc"]                    $workspace10
-assign [class="Thunderbird"]            $workspace4
+assign [class="Firefox"]                $workspace5
 
-for_window [class="meh"]                floating enable
+for_window [class="^.*"]                floating enable
 
 for_window [window_role="bubble"]       floating enable
 for_window [window_role="task_dialog"]  floating enable
@@ -169,9 +149,8 @@ for_window [window_type="menu"]         floating enable
 
 bindsym $mod+q                      kill
 bindsym $mod+f                      fullscreen toggle
-bindsym $mod+n                      layout tabbed
 bindsym $mod+m                      layout toggle split
-bindsym $mod+Shift+space            floating toggle
+bindsym $mod+s                      floating toggle
 
 ################################################################################
 # multimedia buttons                                                           #
@@ -191,8 +170,8 @@ bindsym XF86AudioNext               exec --no-startup-id "mpc next"
 bindsym XF86AudioPrev               exec --no-startup-id "mpc prev"
 
 # lock screen #
-bindsym XF86Sleep                   exec --no-startup-id lock
-bindsym XF86ScreenSaver             exec --no-startup-id lock
+bindsym XF86Sleep                   exec --no-startup-id slock
+bindsym XF86ScreenSaver             exec --no-startup-id slock
 
 # print #
 bindsym $mod+Print                  exec --no-startup-id "scrot ~/usr/pics/screenshots/%Y-%m-%d-%H%M%S_screenshot.png && notify-send -u low 'Screenshot taken'"
@@ -201,51 +180,27 @@ bindsym $mod+Print                  exec --no-startup-id "scrot ~/usr/pics/scree
 # i3 power control                                                             #
 ################################################################################
 
-bindsym $mod+z                      reload
-bindsym $mod+Shift+x                restart
-bindsym $mod+Shift+z                exec --no-startup-id i3-msg exit
+bindsym $mod+Shift+Escape reload
 
 ################################################################################
 # modes                                                                        #
 ################################################################################
 
-mode "resize" {
-    bindsym $left                   resize shrink width 10 px or 10 ppt
-    bindsym $down                   resize grow height 10 px or 10 ppt
-    bindsym $up                     resize shrink height 10 px or 10 ppt
-    bindsym $right                  resize grow width 10 px or 10 ppt
-
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-}
-bindsym $mod+s mode "resize"
-
-################################################################################
-# bar                                                                          #
-################################################################################
-
-# bar {
-#     status_command i3blocks
-#     i3bar_command i3bar -t
-#     position top
-#     strip_workspace_numbers yes
-#     font pango:Misc Ohsnap, FontAwesome 8
-#     separator_symbol "|"
-#     tray_padding 0
-#     height 16
-#     colors {
-#         statusline          $white
-#         # background          #00000000
-#         background          #00000088
-#         separator           $magenta
+# mode "resize" {
+#     bindsym $left                   resize shrink width 10 px or 10 ppt
+#     bindsym $down                   resize grow height 10 px or 10 ppt
+#     bindsym $up                     resize shrink height 10 px or 10 ppt
+#     bindsym $right                  resize grow width 10 px or 10 ppt
 # 
-# #                           BORDER        BACKGROUND    TEXT
-#         focused_workspace   $transparent  $magenta      #101010
-#         inactive_workspace  $transparent  $transparent  $white
-#         active_workspace    $transparent  $transparent  $white
-#         urgent_workspace    $darkred      $darkred      #101010
-#         binding_mode        $darkred      $darkred      #101010
-#     }
+#     bindsym Escape mode "default"
+#     bindsym Return mode "default"
 # }
- 
+# bindsym $mod+s mode "resize"
+
+bar {
+    status_command bar
+    i3bar_command bar
+    position top
+}
+
 

@@ -4,16 +4,26 @@
 setxkbmap -option caps:none
 xsetroot -cursor_name left_ptr
 
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-# startup programs                                                            #
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
-compton -c -r 15 -f -D5 &
-mpd &
-dunst &
+# ┬─┐┬─┐┬─┐┌┌┐┌─┐┌┐┐┐─┐
+# │ ││─┤├─ ││││ ││││└─┐
+# ┆─┘┘ ┆┴─┘┘ ┆┘─┘┆└┘──┘
+
+redshift &
 unclutter --timeout 2 &
-thunderbird &
-/home/phil/bin/ownchrome &
-wal -i ${HOME}/usr/pics/wallpapers -q &
+
+
+# ┬  ┌─┐┌─┐┬┌ o┌┐┐┌─┐
+# │  │ ││  ├┴┐│││││ ┬
+# ┆─┘┘─┘└─┘┆ ┘┆┆└┘┆─┘
+
+xset s 540 60 
+xss-lock -n "bl 10 && notify 'locking soon'" -- slock &
+
+# ┐ ┬┌┌┐
+# ││││││
+# └┴┆┘ ┆
+
+hsetroot -tile $HOME/usr/pics/patterns/wool.png
 
 exec i3
