@@ -39,7 +39,8 @@ XF86Audio{Play,Next,Prev}
     mpc -q {toggle,next,prev}
 
 XF86{Sleep,ScreenSaver}
-    slock
+    ( mpc status | grep playing && mpc pause -q ); \
+        slock
 
 ###################
 # notifications   #
