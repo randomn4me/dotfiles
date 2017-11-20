@@ -24,6 +24,7 @@ xss-lock -n "bl 10 && notify 'locking soon'" -- slock &
 # ││││││
 # └┴┆┘ ┆
 
+i3bar &
 hsetroot -tile $HOME/usr/pics/patterns/wool.png
 
 exec i3
