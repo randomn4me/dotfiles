@@ -14,13 +14,13 @@ unclutter --timeout 2 &
 # ┆─┘┘─┘└─┘┆ ┘┆┆└┘┆─┘
 
 xset s 540 60 &
-xss-lock -n "xbacklight -set 10 && notify locking soon" -- slock &
+xss-lock -- slock &
 
 # ┐ ┬┌┌┐
 # ││││││
 # └┴┆┘ ┆
 
-hsetroot -tile $HOME/usr/pics/patterns/wool.png &
+hsetroot -fill ~/.wall &
 bar &
 wew | wm &
 
