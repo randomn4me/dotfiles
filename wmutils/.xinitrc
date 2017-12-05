@@ -14,13 +14,13 @@ unclutter --timeout 2 &
 # ┆─┘┘─┘└─┘┆ ┘┆┆└┘┆─┘
 
 xset s 540 60 &
-xss-lock -- slock &
+xss-lock -- lock &
 
 # ┐ ┬┌┌┐
 # ││││││
 # └┴┆┘ ┆
 
-hsetroot -fill ~/.wall &
+hsetroot -fill $HOME/.wall &
 bar &
 wew | wm &
 

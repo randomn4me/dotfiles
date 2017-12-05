@@ -36,8 +36,6 @@ set autoindent
 set smartindent
 set cindent
 
-set expandtab
-
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -45,9 +43,9 @@ set shiftwidth=4
 let g:tex_flavor='latex'
 
 " autocommands for different filetypes
-autocmd FileType make       set noexpandtab
-autocmd FileType markdown   set tw=70
-autocmd FileType tex        set spell
+autocmd FileType make set noexpandtab
+autocmd FileType markdown set tw=70
+autocmd FileType tex set spell
 
 autocmd BufRead /tmp/mutt-*  set tw=72
 
@@ -57,13 +55,7 @@ autocmd BufRead /tmp/mutt-*  set tw=72
 "
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'xero/sourcerer.vim'
-Plugin 'fatih/vim-go'
-Plugin 'tpope/vim-surround'
-call vundle#end()
+execute pathogen#infect()
 
 filetype plugin indent on
 
@@ -107,12 +99,6 @@ colorscheme sourcerer
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'xero/sourcerer.vim'
-Plugin 'fatih/vim-go'
-Plugin 'tpope/vim-surround'
-call vundle#end()
 
 filetype plugin indent on
 
