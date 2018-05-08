@@ -1,26 +1,26 @@
-################################################################################
-# wm independent hotkeys                                                       #
-################################################################################
+j#########################
+# wm independent hotkeys #
+##########################
 
 # terminal emulator
 super + Return
-    urxvt
+	urxvt
 
 # program launcher
 super + space
-    menu_run
+	menu_run
 
 # open shutdown menu
 super + shift + q
-    shutdown-menu
+	shutdown-menu
 
 # reload sxhkd
 super + shift + Escape
-    pkill -USR1 -x sxhkd && SLEEP=2s notify "Reload sxhkd config"
+	pkill -USR1 -x sxhkd && SLEEP=2s notify "Reload sxhkd config"
 
 # open slides
-super + {u,i,o}
-    {uniopen,passmenu,menu_open}
+super + {u,i}
+	{uniopen,passmenu}
 
 ###################
 # multimedia keys #
@@ -28,62 +28,62 @@ super + {u,i,o}
 
 # volume
 XF86Audio{Mute,LowerVolume,RaiseVolume}
-    vol {t,-,+}
+	vol {t,-,+}
 
 # brightness
 XF86MonBrightness{Down,Up}
-    bl {-,+}
+	bl {-,+}
 
 # music
 XF86Audio{Play,Next,Prev}
-    mpc -q {toggle,next,prev}
+	mpc -q {toggle,next,prev}
 
 XF86{Sleep,ScreenSaver}
-    ( mpc status | grep playing && mpc pause -q ); \
-        slock
+	( mpc status | grep playing && mpc pause -q ); slock
 
-###################
-# notifications   #
-###################
+#################
+# notifications #
+#################
 
-super + {w, e, r}
-    SLEEP=2 notify {"Network: `network`", "TODOs : `todo -n`", "Battery time : `bat -t || bat -s`"}
+super + {w, e}
+	SLEEP=2 notify {"Network: `network`", "Battery time : `bat -t || bat -s`"}
 
 ###################
 # wmutils hotkeys #
 ###################
 
-super + {t,y,g,v,b}
-    snap {tl,tr,c,bl,br} `pfw`
+super + {t,y,v,b}
+	snap {tl,tr,bl,br} `pfw`
 
-super + {_,shift} + Tab
-    chfcs -{n,p}
+super + Tab
+	chfcs -n
 
 super + {f,d}
-    rsz {f,y} `pfw`
+	rsz {f,y} `pfw`
 
 super + {h,j,k,l}
-    wmv {-20 0,0 20,0 -20,20 0} `pfw`
+	wmv {-20 0,0 20,0 -20,20 0} `pfw`
 
 alt + {h,j,k,l}
-    wrs {-20 0,0 20,0 -20,20 0} `pfw`
+	wrs {-20 0,0 20,0 -20,20 0} `pfw`
 
 super + q
-    killw `pfw`
+	killw `pfw`
 
+# group handling
 super + {1,2,3,4,5}
-    groaw -t {1,2,3,4,5}
+	groaw -t {1,2,3,4,5}
 
 super + shift + {1,2,3,4,5}
-    groaw -d all; \
-    groaw -a {1,2,3,4,5}
+	groaw -d all; \
+	groaw -a {1,2,3,4,5}
 
 alt + Return
-    if [ -z $(find /tmp/.groups -type f -name `pfw`) ]; then :; else chfcs -h `pfw`; fi
+	if [ -z $(find /tmp/.groups -type f -name `pfw`) ]; then :; else chfcs -h `pfw`; fi
 
-###################
-# mouse hotkeys   #
-###################
+#################
+# mouse hotkeys #
+#################
 
 super + !button{1,3}
-    {wmv,wrs} -a %i %i $(pfw)
+	{wmv,wrs} -a %i %i $(pfw)

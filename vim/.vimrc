@@ -37,13 +37,11 @@ set smartindent
 set cindent
 
 set tabstop=4
-set softtabstop=4
 set shiftwidth=4
 
 let g:tex_flavor='latex'
 
 " autocommands for different filetypes
-autocmd FileType make set noexpandtab
 autocmd FileType markdown set tw=70
 autocmd FileType tex set spell
 
@@ -52,53 +50,8 @@ autocmd BufRead /tmp/mutt-*  set tw=72
 " ┬─┐┬  ┬ ┐┌─┐o┌┐┐┐─┐
 " │─┘│  │ ││ ┬││││└─┐
 " ┆  ┆─┘┆─┘┆─┘┆┆└┘──┘
-"
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 execute pathogen#infect()
-
-filetype plugin indent on
-
-" ┬ ┐o
-" │ ││
-" ┆─┘┆
-
-" statusbar settings
-set laststatus=2
-set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
-
-set number
-
-set colorcolumn=80
-set tw=80
-
-syntax enable
-
-" searching
-set ignorecase
-set smartcase
-set infercase
-set hlsearch
-set incsearch
-
-" show unecessary spaces
-set list
-set listchars=
-set listchars+=trail:·
-set listchars+=tab:>\ 
-
-set filetype=off
-set synmaxcol=512
-
-colorscheme sourcerer
-
-" ┬─┐┬  ┬ ┐┌─┐o┌┐┐┐─┐
-" │─┘│  │ ││ ┬││││└─┐
-" ┆  ┆─┘┆─┘┆─┘┆┆└┘──┘
-"
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-set rtp+=~/.vim/bundle/Vundle.vim
 
 filetype plugin indent on
 

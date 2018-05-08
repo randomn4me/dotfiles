@@ -37,7 +37,7 @@ fileext = ".ics"
 
 [storage posteo_calendar_remote]
 type = "caldav"
-url = "https://posteo.de:8443/calendars/p.jonczyk/default"
+url = "https://posteo.de:8443/calendars/p.jonczyk/"
 verify = "/etc/ssl/certs/ca-certificates.crt"
 username = "p.jonczyk@posteo.de"
 password.fetch = [ "command", "pass", "posteo.de/p.jonczyk@posteo.de" ]

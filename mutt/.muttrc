@@ -44,7 +44,7 @@ set sort              = reverse-date
 
 set sidebar_visible   = yes
 set sidebar_format    = "%n %B%*  %S"
-mailboxes             =Inbox =Sent =Archive
+mailboxes             =Inbox =Sent =Archive =Local-Archive
 
 set send_charset      = "utf-8"
 
@@ -73,7 +73,6 @@ set crypt_replysignencrypted    = yes
 set pgp_timeout                 = 3600
 
 set pgp_auto_decode
-
 
 # ┬─┐o┌┐┐┬─┐o┌┐┐┌─┐┐─┐
 # │─││││││ ││││││ ┬└─┐
@@ -117,4 +116,5 @@ macro pager       O       "<enter-command>unset wait_key<enter><pipe-entry>'urlv
 
 # keep inbox clean
 macro index,pager A       "<tag-prefix><save-message>+Archive<enter>"
+macro index,pager D       "<tag-prefix><save-message>+Local-Archive<enter>"
 macro attach      S       "<save-entry><kill-line>~/tmp/"

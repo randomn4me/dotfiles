@@ -10,12 +10,14 @@ alias mv='mv -i'
 
 # cd
 alias ".."="cd ../"
+alias "sit"="cd ~/usr/docs/work/sit"
 alias "uni"="cd `curterm`"
+alias "pics"="cd ~/usr/pics"
 alias "paper"="test ! -z $PAPER_DIR && cd $PAPER_DIR"
 
 # useful
 alias mp3dl='youtube-dl -x --audio-format mp3'
-alias rm-orphans='test -z "`pacaur -Qdtq`" && echo "no orphan" || pacaur -R $(pacaur -Qdtq)'
+	alias rm-orphans='test -z "`aurman -Qdtq`" && echo "no orphan" || aurman -R $(aurman -Qdtq)'
 alias wanip="curl -s https://4.ifcfg.me/ | grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b'"
 alias kernelcodestyle="curl -s https://www.kernel.org/doc/Documentation/process/coding-style.rst | less"
 alias weather="weather Darmstadt"

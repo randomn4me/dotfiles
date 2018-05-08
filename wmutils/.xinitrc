@@ -13,14 +13,15 @@ unclutter --timeout 2 &
 # │  │ ││  ├┴┐│││││ ┬
 # ┆─┘┘─┘└─┘┆ ┘┆┆└┘┆─┘
 
-xset s 540 60 &
+# xset s 180 60 &
 xss-lock -- lock &
+xautolock -corners '000-' -locker lock -time 3 -notify 30 -notifier 'notify "sleeping soon"' &
 
 # ┐ ┬┌┌┐
 # ││││││
 # └┴┆┘ ┆
 
-hsetroot -fill $HOME/.wall &
+wallpaper &
 bar &
 wew | wm &
 
