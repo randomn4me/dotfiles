@@ -2,7 +2,7 @@
 # configuration                                                                #
 ################################################################################
 
-font pango:                         Ohsnap 8
+font pango:                         Inconsolata 8
 
 hide_edge_borders                   none
 new_window                          pixel 2
@@ -155,13 +155,13 @@ bindsym $mod+s                      floating toggle
 ################################################################################
 
 # backlight bindings #
-bindsym XF86MonBrightnessDown       exec --no-startup-id xbacklight -dec 10
-bindsym XF86MonBrightnessUp         exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessUp         exec --no-startup-id bl +
+bindsym XF86MonBrightnessDown       exec --no-startup-id bl -
 
 # audio bindings # 
-bindsym XF86AudioMute               exec --no-startup-id pamixer -t
-bindsym XF86AudioLowerVolume        exec --no-startup-id pamixer --decrease 5
-bindsym XF86AudioRaiseVolume        exec --no-startup-id pamixer --increase 5
+bindsym XF86AudioMute               exec --no-startup-id vol -t
+bindsym XF86AudioRaiseVolume        exec --no-startup-id vol +
+bindsym XF86AudioLowerVolume        exec --no-startup-id vol -
 
 bindsym XF86AudioPlay               exec --no-startup-id "mpc toggle"
 bindsym XF86AudioNext               exec --no-startup-id "mpc next"
@@ -170,9 +170,6 @@ bindsym XF86AudioPrev               exec --no-startup-id "mpc prev"
 # lock screen #
 bindsym XF86Sleep                   exec --no-startup-id slock
 bindsym XF86ScreenSaver             exec --no-startup-id slock
-
-# print #
-bindsym $mod+Print                  exec --no-startup-id "scrot ~/usr/pics/screenshots/%Y-%m-%d-%H%M%S_screenshot.png && notify-send -u low 'Screenshot taken'"
 
 ################################################################################
 # i3 power control                                                             #
@@ -195,10 +192,9 @@ bindsym $mod+Shift+Escape reload
 # }
 # bindsym $mod+s mode "resize"
 
-# bar {
-#     status_command bar
-#     i3bar_command bar
-#     position top
-# }
+bar {
+    status_command bar
+    position top
+}
 
 

@@ -16,6 +16,8 @@ set exrc
 set modelines=0
 set secure
 
+set noerrorbells
+
 set undofile
 set undodir=$HOME/.vim/undo
 set backupdir=$HOME/.vim/backup
@@ -43,7 +45,7 @@ let g:tex_flavor='latex'
 
 " autocommands for different filetypes
 autocmd FileType markdown set tw=70
-autocmd FileType tex set spell
+autocmd FileType tex set spell tw=70
 
 autocmd BufRead /tmp/mutt-*  set tw=72
 

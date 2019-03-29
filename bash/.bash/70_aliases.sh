@@ -17,10 +17,9 @@ alias "paper"="test ! -z $PAPER_DIR && cd $PAPER_DIR"
 
 # useful
 alias mp3dl='youtube-dl -x --audio-format mp3'
-	alias rm-orphans='test -z "`aurman -Qdtq`" && echo "no orphan" || aurman -R $(aurman -Qdtq)'
+alias rm-orphans='test -z "`aurman -Qdtq`" && echo "no orphan" || aurman -Rns $(aurman -Qdtq)'
 alias wanip="curl -s https://4.ifcfg.me/ | grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b'"
 alias kernelcodestyle="curl -s https://www.kernel.org/doc/Documentation/process/coding-style.rst | less"
-alias weather="weather Darmstadt"
 alias csv='column -t -s\;'
 alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
 
@@ -29,11 +28,9 @@ alias cp="cp -r"
 alias mkdir="mkdir -p"
 alias scp="scp -r"
 alias xsel="xsel -b"
-alias xclip="xclip -selection clipboard"
 alias pwgen='pwgen -s -n 30 1'
 alias cal='cal -m'
 alias shred='shred -u -n 15 -z'
-alias scrot='scrot ~/tmp/%Y-%m-%d-%H%M%S_screenshot.png'
 alias psef="ps -ef"
 alias future="toilet -t -f future"
 alias ascii="toilet -t -f 3d"
@@ -43,3 +40,9 @@ alias antivirus="sudo freshclam && sudo clamscan"
 alias rice="curl -L git.io/rice; tput sgr0"
 alias music='tmx r'
 alias twitch-curses='twitch-curses --player mpv'
+alias s='signal'
+alias wiki='wikicurses'
+
+# for dir in `curterm`/*; do
+# 	test -d "$dir" && alias "`basename $dir`"="cd $dir"
+# done

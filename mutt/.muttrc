@@ -11,8 +11,8 @@
 
 source ~/.mutt/r4ndom.colors
 
-set from              = "p.jonczyk@posteo.de"
-set realname          = "Philipp Jonczyk"
+set from              = "p.kuehn@posteo.de"
+set realname          = "Philipp Kühn"
 set envelope_from     = yes
 
 set editor            = "vim"
@@ -35,12 +35,15 @@ set fast_reply        = yes
 set edit_headers      = yes
 set header_cache      = "~/.cache/mutt"
 
+set postpone          = ask-yes
+set postponed         = ".postponed"
+
 set timeout           = 10
 set mail_check_stats  = yes
 
 set compose_format    = "Compose [Approx. msg size: %l   Atts: %a]%> "
 set index_format      = "[%Z]  [%{%k:%M %g/%m/%d}]  %-20.20F  %s"
-set sort              = reverse-date  
+set sort              = reverse-date
 
 set sidebar_visible   = yes
 set sidebar_format    = "%n %B%*  %S"

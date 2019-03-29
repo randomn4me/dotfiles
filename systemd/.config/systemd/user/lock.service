@@ -1,5 +1,5 @@
 [Unit]
-Description=i3lock
+Description=slock
 Before=sleep.target
 
 [Service]

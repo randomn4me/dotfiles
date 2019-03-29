@@ -13,15 +13,14 @@ unclutter --timeout 2 &
 # │  │ ││  ├┴┐│││││ ┬
 # ┆─┘┘─┘└─┘┆ ┘┆┆└┘┆─┘
 
-# xset s 180 60 &
 xss-lock -- lock &
-xautolock -corners '000-' -locker lock -time 3 -notify 30 -notifier 'notify "sleeping soon"' &
+xautolock -corners '000-' -locker lock -time 3 -notify 30 -notifier 'notify locking soon' &
 
 # ┐ ┬┌┌┐
 # ││││││
 # └┴┆┘ ┆
 
-wallpaper &
+hsetroot -tile ~/usr/pics/misc/patterns/flowers.jpg -tint \#101019
 bar &
 wew | wm &
 

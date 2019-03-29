@@ -1,7 +1,6 @@
 [Unit]
 Description=Sync mails with mbsync
 Documentation=man:mbsync(1)
-TimeoutStartSec=30 s
 
 [Service]
 Type=oneshot

@@ -14,4 +14,4 @@ for config in $(ls $HOME/.bash/*.sh); do
 done
 
 # Auto start X.
-[[ -z "$DISPLAY" && "$XDG_VTNR" -eq 1 ]] && exec startx -- vt1 &> /dev/null
+[[ -z "$DISPLAY" && "$XDG_VTNR" -eq 1 ]] && exec startx &> /dev/null

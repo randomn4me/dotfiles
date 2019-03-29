@@ -1,0 +1,6 @@
+[Unit]
+Description=Check Lions calendar
+
+[Service]
+ExecStart=/home/phil/bin/lions -m
+StandardOutput=syslog
