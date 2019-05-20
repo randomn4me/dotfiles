@@ -40,8 +40,9 @@ alias antivirus="sudo freshclam && sudo clamscan"
 alias rice="curl -L git.io/rice; tput sgr0"
 alias music='tmx r'
 alias twitch-curses='twitch-curses --player mpv'
-alias s='signal'
 alias wiki='wikicurses'
+alias lpr='lpr -o fit-to-page'
+alias lp='lp -o fit-to-page'
 
 # for dir in `curterm`/*; do
 # 	test -d "$dir" && alias "`basename $dir`"="cd $dir"

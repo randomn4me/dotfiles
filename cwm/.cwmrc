@@ -8,16 +8,12 @@ ignore dmenu
 autogroup 1 "urxvt,URxvt"
 
 autogroup 2 "mupdf,MuPDF"
-autogroup 2 "VirtualBox Manager,VirtualBox Manager"
-autogroup 2 "VirtualBox Machine,VirtualBox Machine"
 
 autogroup 3 "xv,mpv"
 autogroup 3 "darktable,Darktable"
 autogroup 3 "gimp,Gimp"
-autogroup 3 "deezer,Deezer"
 
 autogroup 4 "signal,Signal"
-autogroup 4 "riot,Riot"
 autogroup 4 "telegram-desktop,TelegramDesktop"
 
 autogroup 5 "Navigator,Firefox"
