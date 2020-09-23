@@ -1,0 +1,1 @@
+PEASEC=$HOME/var/nextcloud

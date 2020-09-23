@@ -1,0 +1,10 @@
+[Unit]
+Description=Sync nextcloud every minute
+
+[Timer]
+OnCalendar=minutely
+Persistent=true
+Unit=nextcloud.service
+
+[Install]
+WantedBy=timers.target

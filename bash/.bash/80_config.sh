@@ -10,3 +10,6 @@ export HISTFILESIZE=200000
 export HISTSIZE=10000
 export HISTCONTROL="ignoreboth:erasedups"
 shopt -s histappend
+
+test -f /usr/share/fzf/key-bindings.bash && source /usr/share/fzf/key-bindings.bash
+test -f /usr/share/fzf/completion.bash && source /usr/share/fzf/completion.bash

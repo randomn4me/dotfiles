@@ -1,8 +1,1 @@
-[Unit]
-Description=Signal messenger daemon service
-
-[Service]
-ExecStart=/usr/bin/python3 /home/phil/src/py/signal-daemon/signal-daemon.py
-
-[Install]
-WantedBy=default.target
+../../../etc/systemd/.config/systemd/user/signal-daemon.service

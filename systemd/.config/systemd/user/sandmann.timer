@@ -1,0 +1,10 @@
+[Unit]
+Description=Run sandmann daily
+
+[Timer]
+OnCalendar=*-*-* 18:30:00
+Persistent=true
+Unit=sandmann.service
+
+[Install]
+WantedBy=timers.target

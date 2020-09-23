@@ -1,11 +1,1 @@
-[Unit]
-Description=slock
-Before=sleep.target
-
-[Service]
-Environment=DISPLAY=:0
-ExecStart=/usr/bin/slock
-ExecPost=/usr/bin/sleep 1
-
-[Install]
-WantedBy=sleep.target
+../../../etc/systemd/.config/systemd/user/lock.service

@@ -1,8 +1,1 @@
-[Unit]
-Description=Run vdirsyncer
-
-[Service]
-ExecStart=/usr/bin/vdirsyncer sync
-
-[Install]
-WantedBy=default.target
+../../../etc/systemd/.config/systemd/user/vdirsyncer.service

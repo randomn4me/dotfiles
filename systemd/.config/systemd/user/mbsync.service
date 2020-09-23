@@ -1,9 +1,1 @@
-[Unit]
-Description=Sync mails with mbsync
-Documentation=man:mbsync(1)
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/mbsync -Va
-StandardOutput=syslog
-StandardError=syslog
+../../../etc/systemd/.config/systemd/user/mbsync.service

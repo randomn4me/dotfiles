@@ -1,25 +1,44 @@
-command term urxvt
+fontname 'sans-serif:pixelsize=11:bold'
 
+command alacritty alacritty
+command firefox firefox
+command rocketchat rocketchat-desktop
+command shutdown 'systemctl poweroff'
+
+
+########################################
 # do not manage these
+########################################
 ignore lemonbar
 ignore dmenu
 
+
+########################################
 # autogroups
+########################################
 autogroup 1 "urxvt,URxvt"
+autogroup 1 "Alacritty,Alacritty"
 
 autogroup 2 "mupdf,MuPDF"
+autogroup 2 "evince,Evince"
 
-autogroup 3 "xv,mpv"
-autogroup 3 "darktable,Darktable"
-autogroup 3 "gimp,Gimp"
+autogroup 3 "gl,mpv"
+autogroup 3 "mendeley reference manager,Mendeley Reference Manager"
+autogroup 3 "mendeleydesktop.x86_64,Mendeley Desktop"
+autogroup 3 "jetbrains-pycharm,jetbrains-pycharm"
 
+autogroup 4 "rocket.chat,Rocket.Chat"
 autogroup 4 "signal,Signal"
-autogroup 4 "telegram-desktop,TelegramDesktop"
 
-autogroup 5 "Navigator,Firefox"
+autogroup 5 "firefox"
+
+autogroup 6 "zoom,zoom"
+autogroup 6 "skype,Skype"
 
 
+########################################
 # behavior, look & feel
+########################################
 borderwidth             1
 color inactiveborder    "#000000"
 color activeborder      "#c2c2b0"
@@ -27,7 +46,10 @@ color activeborder      "#c2c2b0"
 gap                     30 10 10 10 
 moveamount              20
 
+
+########################################
 # SIZE
+########################################
 bind-key 4-d        window-vmaximize
 bind-key 4-f        window-maximize
 
@@ -36,9 +58,12 @@ bind-key M-j        window-resize-down
 bind-key M-k        window-resize-up
 bind-key M-l        window-resize-right
 
+
+########################################
 # POSITION
+########################################
 bind-key 4-t        snap tl
-bind-key 4-y        snap tr
+bind-key 4-z        snap tr
 bind-key 4-v        snap bl
 bind-key 4-b        snap br
 
@@ -47,12 +72,18 @@ bind-key 4-j        window-move-down
 bind-key 4-k        window-move-up
 bind-key 4-l        window-move-right
 
+
+########################################
 # CONTROL
+########################################
 bind-key 4-q        window-delete
 
 bind-key 4-Tab      window-cycle
 
+
+########################################
 # Group control
+########################################
 #bind-key 4-grave    group-cycle
 bind-key 4-1        group-toggle-1
 bind-key 4-2        group-toggle-2
@@ -67,17 +98,27 @@ bind-key 4S-4       window-movetogroup-4
 bind-key 4S-5       window-movetogroup-5
 bind-key 4S-6       window-movetogroup-6
 
-bind-key 4-Return   urxvt
+
+########################################
+# Custom shortcuts
+########################################
+bind-key 4-Return   alacritty
+bind-key 4-p        playerctl play-pause
+bind-key 4-u        paperopen
 
 bind-key 4-space    menu_run
-bind-key 4-u        uniopen
-bind-key 4-i        passmenu
 bind-key 4S-q       shutdown-menu
 
+
+########################################
 # Session management
+########################################
 bind-key 4S-Escape  restart
 
+
+########################################
 # Mousebindings
+########################################
 bind-mouse 4-1   window-move
 bind-mouse 4-3   window-resize
 

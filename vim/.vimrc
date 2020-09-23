@@ -31,7 +31,9 @@ set backspace=indent,eol,start
 " │─│├─ │─┤│─┤│┌┘││ ││┬┘
 " ┆─┘┴─┘┆ ┴┘ ┆└┘ ┆┘─┘┆└┘
 
-set nowrap
+set wrap
+set linebreak
+set showbreak=>\ 
 
 " tab behaviour and indentation
 set autoindent

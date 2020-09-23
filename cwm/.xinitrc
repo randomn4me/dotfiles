@@ -1,7 +1,7 @@
 #!/bin/sh
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
-setxkbmap -option caps:none
+setxkbmap -option caps:none -layout de
 xset -b
 
 # ┬─┐┬─┐┬─┐┌┌┐┌─┐┌┐┐┐─┐
@@ -21,7 +21,8 @@ xautolock -corners '000-' -locker lock -time 5 -notify 30 -notifier 'notify "sle
 # ││││││
 # └┴┆┘ ┆
 
-hsetroot -tile ~/usr/pics/misc/patterns/flowers.jpg -tint \#101019
+autorandr --change
+hsetroot -tile ~/usr/pics/misc/patterns/flowers.jpg -tint \#202029
 bar &
 
 exec cwm

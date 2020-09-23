@@ -1,8 +1,1 @@
-[Unit]
-Description=Wendy for notimail
-
-[Service]
-ExecStart=/usr/bin/wendy -m 128 -f "${MAIL}/new" notimail
-
-[Install]
-WantedBy=default.target
+../../../etc/systemd/.config/systemd/user/mailnotify.service

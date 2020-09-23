@@ -1,10 +1,1 @@
-[Unit]
-Description=Run mbsync every minute
-
-[Timer]
-OnCalendar=minutely
-Persistent=true
-Unit=mbsync.service
-
-[Install]
-WantedBy=timers.target
+../../../etc/systemd/.config/systemd/user/mbsync.timer

@@ -1,0 +1,10 @@
+[Unit]
+Description=Crawl ARD Sandmann webpage
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/home/phil/bin/sandmann c
+
+[Install]
+WantedBy=default.target
