@@ -1,9 +1,0 @@
-[Unit]
-Description=Run lions service daily
-
-[Timer]
-OnCalendar=*-12-01..24 12:00:00
-Persistent=true
-
-[Install]
-WantedBy=timers.target
