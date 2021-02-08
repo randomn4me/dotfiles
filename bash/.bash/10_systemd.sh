@@ -1,1 +1,1 @@
-systemctl --user import-environment PATH DISPLAY XAUTHORITY BAR_FONT COLOR_FILE GAPS TOP_PADDING BORDER_WIDTH MAIL XDG_CONFIG_HOME
+systemctl --user import-environment PATH DISPLAY MAIL
