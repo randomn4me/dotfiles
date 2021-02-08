@@ -14,8 +14,7 @@ unclutter --timeout 2 &
 # │  │ ││  ├┴┐│││││ ┬
 # ┆─┘┘─┘└─┘┆ ┘┆┆└┘┆─┘
 
-xss-lock -- lock &
-xautolock -corners '000-' -locker lock -time 5 -notify 30 -notifier 'notify "sleeping soon"' &
+sv 1
 
 # ┐ ┬┌┌┐
 # ││││││

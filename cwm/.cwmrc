@@ -1,7 +1,7 @@
 fontname 'sans-serif:pixelsize=11:bold'
 
 command alacritty alacritty
-command firefox firefox
+command chrome chrome
 command rocketchat rocketchat-desktop
 command shutdown 'systemctl poweroff'
 
@@ -19,7 +19,6 @@ ignore dmenu
 autogroup 1 "urxvt,URxvt"
 autogroup 1 "Alacritty,Alacritty"
 
-autogroup 2 "mupdf,MuPDF"
 autogroup 2 "evince,Evince"
 
 autogroup 3 "gl,mpv"
@@ -29,8 +28,11 @@ autogroup 3 "jetbrains-pycharm,jetbrains-pycharm"
 
 autogroup 4 "rocket.chat,Rocket.Chat"
 autogroup 4 "signal,Signal"
+autogroup 4 "telegram-desktop,TelegramDesktop"
+autogroup 4 "Mail,Thunderbird"
 
 autogroup 5 "firefox"
+autogroup 5 "google-chrome,Google-chrome"
 
 autogroup 6 "zoom,zoom"
 autogroup 6 "skype,Skype"
@@ -43,7 +45,7 @@ borderwidth             1
 color inactiveborder    "#000000"
 color activeborder      "#c2c2b0"
 
-gap                     30 10 10 10 
+gap                     25 10 10 10 
 moveamount              20
 
 
@@ -105,6 +107,10 @@ bind-key 4S-6       window-movetogroup-6
 bind-key 4-Return   alacritty
 bind-key 4-p        playerctl play-pause
 bind-key 4-u        paperopen
+
+bind-key 4-w        notify_wrapper tt
+bind-key 4-e        notify_wrapper task
+
 
 bind-key 4-space    menu_run
 bind-key 4S-q       shutdown-menu
