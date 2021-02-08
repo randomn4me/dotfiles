@@ -47,7 +47,7 @@ URxvt.colorUL:	#528b8b
 ! urxvt !
 !!!!!!!!!
 
-urxvt*font:			xft:Inconsolata:size=11
+urxvt*font:			xft:Inconsolata:pixelsize=11
 urxvt*letterSpace:		1
 
 urxvt*scrollBar:		false
