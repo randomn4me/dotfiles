@@ -1,33 +1,22 @@
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-# setup                                                                       #
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+####################
+#      setup       #
+####################
 
 external_editor = "/usr/bin/vim"
 ncmpcpp_directory = "~/.config/ncmpcpp"
 
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-# mpd setup                                                                   #
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-
 mpd_host = "127.0.0.1"
 mpd_port = "6600"
 mpd_music_dir = "~/usr/music"
-#mpd_crossfade_time = 5
 
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-# visualizer                                                                  #
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# visualizer_output_name = "my_fifo"
+# visualizer_in_stereo = "no"
+# visualizer_type = "spectrum" (spectrum/wave/ellipse)
+# visualizer_look = "●▮"
 
-visualizer_fifo_path = "/tmp/mpd.fifo"
-visualizer_output_name = "my_fifo"
-visualizer_in_stereo = "no"
-visualizer_sync_interval = "30" 
-visualizer_type = "spectrum" (spectrum/wave/ellipse)
-visualizer_look = "●▮"
-
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-# display settings                                                            #
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+####################
+# display settings #
+####################
 
 song_list_format = "{$8%a $4- }{$4%t} $R$3[{%l}]$9"
 song_status_format = "$8%a $4- %t $3- %b$8"
@@ -37,7 +26,7 @@ colors_enabled = "yes"
 statusbar_color = "white"
 main_window_color = "white"
 
-header_visibility = "no" # includes status, e.g., random
+header_visibility = "yes" # includes status, e.g., random
 statusbar_visibility = "yes"
 now_playing_prefix = "$8> "
 now_playing_suffix = "$8<"
@@ -56,11 +45,12 @@ discard_colors_if_item_is_selected = "yes"
 user_interface = "classic"
 playlist_display_mode = "classic"
 follow_now_playing_lyrics = "yes"
+fetch_lyrics_for_current_song_in_background = "yes"
 ignore_leading_the = "yes"
 
-# # # # # # # #
-# cheat sheet #
-# # # # # # # #
+####################
+#   cheat sheet    #
+####################
 
 # %l - length
 # %f - filename
