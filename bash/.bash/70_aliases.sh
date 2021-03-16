@@ -13,7 +13,7 @@ alias ".."="cd ../"
 
 # useful
 alias mp3dl='youtube-dl -x --audio-format mp3'
-alias rm-orphans='test -z "`aurman -Qdtq`" && echo "no orphan" || aurman -Rns $(aurman -Qdtq)'
+alias rm-orphans='test -z "`paru -Qdtq`" && echo "no orphan" || paru -Rns $(paru -Qdtq)'
 alias kernelcodestyle="curl -s https://www.kernel.org/doc/Documentation/process/coding-style.rst | less"
 alias csv='column -t -s\;'
 alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'

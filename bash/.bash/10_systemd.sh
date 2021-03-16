@@ -1,1 +1,1 @@
-systemctl --user import-environment PATH DISPLAY MAIL
+systemctl --user import-environment PATH MAIL
