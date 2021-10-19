@@ -12,5 +12,4 @@ typeset -U PATH
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
 export DMENU_PATH=$HOME/bin/menu
-export PAPER_PATH=$HOME/var/nextcloud/paper
 export PEASEC=$HOME/var/nextcloud

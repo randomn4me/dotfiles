@@ -1,0 +1,18 @@
+"vol t"
+   XF86AudioMute
+
+"vol +"
+   XF86AudioRaiseVolume
+
+"vol -"
+   XF86AudioLowerVolume
+
+# Mute microphone
+"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+   XF86AudioMicMute
+
+"bl +"
+   XF86MonBrightnessUp
+
+"bl -"
+   XF86MonBrightnessDown

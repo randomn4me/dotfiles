@@ -2,7 +2,7 @@
 Description=Sync nextcloud every minute
 
 [Timer]
-OnCalendar=minutely
+OnCalendar=*:0/15
 Persistent=true
 Unit=nextcloud.service
 

@@ -6,7 +6,7 @@
 set nocompatible
 
 " run :! commands in interactive mode (enables aliases)
-set shell=/bin/bash\ -i
+set shell=/bin/zsh\ -i
 
 " /g by default
 set gdefault
@@ -35,6 +35,8 @@ set wrap
 set linebreak
 set showbreak=\ \ 
 
+set tw=80
+
 " tab behaviour and indentation
 set autoindent
 set smartindent
@@ -43,34 +45,20 @@ set cindent
 set tabstop=4
 set shiftwidth=4
 
-let g:tex_flavor='latex'
-
 " autocommands for different filetypes
 autocmd FileType markdown set tw=70
 autocmd FileType tex set spell tw=70
-
-autocmd BufRead /tmp/mutt-*  set tw=72
-
-" ┬─┐┬  ┬ ┐┌─┐o┌┐┐┐─┐
-" │─┘│  │ ││ ┬││││└─┐
-" ┆  ┆─┘┆─┘┆─┘┆┆└┘──┘
-
-execute pathogen#infect()
-
-filetype plugin indent on
+autocmd FileType python set tw=100
 
 " ┬ ┐o
 " │ ││
 " ┆─┘┆
 
-" statusbar settings
-set laststatus=2
-set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+colorscheme sourcerer
+
+set colorcolumn=+1
 
 set number
-
-set colorcolumn=80
-set tw=80
 
 syntax enable
 
@@ -87,7 +75,11 @@ set listchars=
 set listchars+=trail:·
 set listchars+=tab:>\ 
 
-set filetype=off
-set synmaxcol=512
 
-colorscheme sourcerer
+" ┬─┐┬  ┬ ┐┌─┐o┌┐┐┐─┐
+" │─┘│  │ ││ ┬││││└─┐
+" ┆  ┆─┘┆─┘┆─┘┆┆└┘──┘
+
+execute pathogen#infect()
+
+filetype plugin indent on

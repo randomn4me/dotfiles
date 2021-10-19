@@ -4,6 +4,8 @@ alias ll="ls -lhF --color=auto"
 alias l="ls -1hF --color=auto"
 alias lla="ls -lahF --color=auto"
 
+alias ssh="TERM=linux ssh"
+
 # small protection before doing something really stupid
 alias rm='rm -i'
 alias mv='mv -i'
@@ -29,15 +31,9 @@ alias shred='shred -u -n 15 -z'
 alias antivirus="sudo freshclam && sudo clamscan"
 alias rice="curl -L git.io/rice; tput sgr0"
 alias wiki='wikicurses'
-alias python='python -q'
 alias o='open'
-
-mvp() {
-	for f in $@; do
-		test -f "$f" || (echo "$f is no file" && exit 1)
-		mv "$f" $PAPER_PATH
-	done
-}
+alias tt="notify !!! Just Don\'t !!!"
+alias t='task'
 
 mvtodo() {
 	for f in $@; do
