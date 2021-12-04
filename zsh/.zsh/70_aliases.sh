@@ -33,7 +33,7 @@ alias rice="curl -L git.io/rice; tput sgr0"
 alias wiki='wikicurses'
 alias o='open'
 alias tt="notify !!! Just Don\'t !!!"
-alias t='task'
+alias mkdate="mkdir $(date +%F); cd $(date +%F)"
 
 mvtodo() {
 	for f in $@; do

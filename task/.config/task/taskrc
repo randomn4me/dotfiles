@@ -2,12 +2,6 @@
 # Taskwarrior program configuration file.
 # For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
 # 'man task-sync' or 'man taskrc'
-
-# Here is an example of entries that use the default, override and blank values
-#   variable=foo   -- By specifying a value, this overrides the default
-#   variable=      -- By specifying no value, this means no default
-#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
-
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
@@ -35,11 +29,13 @@ include /usr/share/doc/task/rc/holidays.de-DE.rc
 default.project=general
 
 color.scheduled=
+color.tagged=
 
 urgency.project.coefficient=0.0
 urgency.scheduled.coefficient=0.0
 urgency.uda.priority.H.coefficient=6.0 # high Priority
 urgency.uda.priority.M.coefficient=3.0 # medium Priority
-urgency.uda.priority.L.coefficient=-1.0 # low Priority
+urgency.uda.priority.L.coefficient=0.0 # low Priority
 
 news.version=2.6.0
+
