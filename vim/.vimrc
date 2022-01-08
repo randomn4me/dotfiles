@@ -1,3 +1,34 @@
+" ┬─┐┬  ┬ ┐┌─┐o┌┐┐┐─┐
+" │─┘│  │ ││ ┬││││└─┐
+" ┆  ┆─┘┆─┘┆─┘┆┆└┘──┘
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+  \| endif
+
+call plug#begin()
+
+Plug 'vim-scripts/indentpython.vim'
+Plug 'nvie/vim-flake8'
+Plug 'preservim/nerdtree'
+
+call plug#end()
+
+
+" Plugin Setup
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
+    \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+
+
+
+
+
 " ┌─┐┌─┐┌┐┐┬─┐o┌─┐
 " │  │ ││││├─ ││ ┬
 " └─┘┘─┘┆└┘┆  ┆┆─┘
@@ -5,16 +36,11 @@
 " vim rather than vi
 set nocompatible
 
-" run :! commands in interactive mode (enables aliases)
-set shell=/bin/zsh\ -i
-
 " /g by default
 set gdefault
+set encoding=utf-8
 
-set exrc
-
-set modelines=0
-set secure
+set nomodeline
 
 set noerrorbells
 
@@ -35,8 +61,6 @@ set wrap
 set linebreak
 set showbreak=\ \ 
 
-set tw=80
-
 " tab behaviour and indentation
 set autoindent
 set smartindent
@@ -45,10 +69,19 @@ set cindent
 set tabstop=4
 set shiftwidth=4
 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+nnoremap <space> za
+
+nnoremap <C-n> :NERDTree<CR>
+
+
 " autocommands for different filetypes
-autocmd FileType markdown set tw=70
-autocmd FileType tex set spell tw=70
-autocmd FileType python set tw=100
+autocmd BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
+
 
 " ┬ ┐o
 " │ ││
@@ -57,7 +90,6 @@ autocmd FileType python set tw=100
 colorscheme sourcerer
 
 set colorcolumn=+1
-
 set number
 
 syntax enable
@@ -76,10 +108,3 @@ set listchars+=trail:·
 set listchars+=tab:>\ 
 
 
-" ┬─┐┬  ┬ ┐┌─┐o┌┐┐┐─┐
-" │─┘│  │ ││ ┬││││└─┐
-" ┆  ┆─┘┆─┘┆─┘┆┆└┘──┘
-
-execute pathogen#infect()
-
-filetype plugin indent on
