@@ -19,14 +19,10 @@ Plug 'preservim/nerdtree'
 
 call plug#end()
 
-
 " Plugin Setup
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
     \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
-
-
-
 
 
 " ┌─┐┌─┐┌┐┐┬─┐o┌─┐
@@ -81,6 +77,8 @@ nnoremap <C-n> :NERDTree<CR>
 
 " autocommands for different filetypes
 autocmd BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
+autocmd BufNewFile,BufRead *.tex set syntax=tex
+autocmd BufNewFile,BufRead *.cls set syntax=tex
 
 
 " ┬ ┐o
