@@ -12,6 +12,7 @@ alias mv='mv -i'
 
 # cd
 alias ".."="cd ../"
+alias "mutt"="neomutt"
 
 # useful
 alias mp3dl='youtube-dl -x --audio-format mp3'
@@ -31,8 +32,10 @@ alias shred='shred -u -n 15 -z'
 alias antivirus="sudo freshclam && sudo clamscan"
 alias rice="curl -L git.io/rice; tput sgr0"
 alias wiki='wikicurses'
+alias ccm='sudo ccm'
 alias o='open'
 alias tt="notify !!! Just Don\'t !!!"
+alias chrome="firefox"
 alias mkdate="mkdir $(date +%F); cd $(date +%F)"
 
 mvtodo() {
