@@ -450,8 +450,6 @@
 #def_key "m"
 #  move_sort_order_up
 #
-#def_key "m"
-#  move_selected_items_up
 #
 #def_key "m"
 #  set_visualizer_sample_multiplier
@@ -459,8 +457,6 @@
 #def_key "n"
 #  move_sort_order_down
 #
-#def_key "n"
-#  move_selected_items_down
 #
 #def_key "M"
 #  move_selected_items_to
@@ -540,14 +536,6 @@ def_key "k"
 
 def_key "."
     show_lyrics
-
-def_key "n"
-    next_found_item
-def_key "N"
-    previous_found_item
-
-def_key "n"
-  find
 
 def_key "t"
   select_item
