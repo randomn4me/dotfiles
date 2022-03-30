@@ -5,5 +5,5 @@ else
 fi
 
 # prompt
-PS1="%(4~|../%3~|%~) ${LEVEL}($HOST) >>%f "
+PS1="%(4~|../%3~|%~) ${LEVEL}>>%f "
 
