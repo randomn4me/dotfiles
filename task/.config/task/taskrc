@@ -26,8 +26,6 @@ data.location=~/var/nextcloud/misc/task
 weekstart = Monday
 include /usr/share/doc/task/rc/holidays.de-DE.rc
 
-default.project=general
-
 color.scheduled=
 color.tagged=
 
@@ -36,8 +34,6 @@ urgency.scheduled.coefficient=0.0
 urgency.uda.priority.H.coefficient=6.0 # high Priority
 urgency.uda.priority.M.coefficient=3.0 # medium Priority
 urgency.uda.priority.L.coefficient=0.0 # low Priority
-urgency.age.coefficient=15.0
-urgency.age.max=180
 
 news.version=2.6.0
 
