@@ -1,5 +1,0 @@
-#!/bin/sh
-case $1 in
-	period-changed) notify "Redshift: Period changed"
-	*)              notify $1
-esac
