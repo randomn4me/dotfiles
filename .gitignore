@@ -1,5 +1,7 @@
 *~
-email-signature
 gitolite-admin
 mopidy
+mutt
+task/.config
+!task/.config/task/taskrc
 ncmpcpp/.config/ncmpcpp/error.log

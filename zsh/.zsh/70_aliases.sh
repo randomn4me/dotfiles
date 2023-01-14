@@ -15,7 +15,7 @@ alias ".."="cd ../"
 alias "mutt"="neomutt"
 
 # useful
-alias mp3dl='youtube-dl -x --audio-format mp3'
+alias mp3dl='yt-dlp -x --audio-format mp3'
 alias rm-orphans='test -z "`paru -Qdtq`" && echo "no orphan" || paru -Rns $(paru -Qdtq)'
 alias kernelcodestyle="curl -s https://www.kernel.org/doc/Documentation/process/coding-style.rst | less"
 alias csv='column -t -s\;'
@@ -36,7 +36,21 @@ alias ccm='sudo ccm'
 alias o='open'
 alias tt="notify !!! Just Don\'t !!!"
 alias chrome="firefox"
-alias mkdate="mkdir $(date +%F); cd $(date +%F)"
+#alias mkdate="mkdir $(date +%F); cd $(date +%F)"
+alias starwars="telnet towel.blinkenlights.nl"
+
+sanitize() {
+    $(echo "$@" | tr [A-Z\ ] [a-z\-])
+}
+
+mkdate() {
+    if [[ $# -ge 1 ]]; then
+        dirname=$(date +%F)_"$(echo $@ | tr '[A-Z\ ]' '[a-z\-]')"
+    else
+        dirname="$(date +%F)"
+    fi
+    mkdir $dirname && cd $dirname
+}
 
 mvtodo() {
 	for f in $@; do

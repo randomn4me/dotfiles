@@ -14,6 +14,7 @@ Plug 'andymass/vim-matchup'
 
 Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
+Plug 'preservim/nerdtree'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp_extensions.nvim'
@@ -23,18 +24,21 @@ Plug 'hrsh7th/cmp-path', {'branch': 'main'}
 Plug 'hrsh7th/nvim-cmp', {'branch': 'main'}
 Plug 'ray-x/lsp_signature.nvim'
 
+Plug 'vim-syntastic/syntastic'
+
 Plug 'hrsh7th/cmp-vsnip', {'branch': 'main'}
 Plug 'hrsh7th/vim-vsnip'
+Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'rust-lang/rust.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'lervag/vimtex'
+
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
-
-set background=dark
-colorscheme sourcerer
 
 
 lua << END
@@ -127,6 +131,8 @@ lspconfig.rust_analyzer.setup {
   capabilities = capabilities,
 }
 
+-- lspconfig.ltex.setup{}
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     virtual_text = true,
@@ -158,8 +164,16 @@ let g:latex_indent_enabled = 1
 let g:latex_fold_envs = 0
 let g:latex_fold_sections = []
 
+let g:vimtex_view_general_viewer = 'evince'
+
 
 nnoremap <Leader>w :w<CR>
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
 
 
 " rust
@@ -182,13 +196,14 @@ set timeoutlen=300 " http://stackoverflow.com/questions/2158516/delay-before-o-o
 set scrolloff=2
 set noshowmode
 set encoding=utf-8
-set nowrap
-set nojoinspaces
+set wrap
+set linebreak
 set nobackup
 set nowritebackup
 let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_folding_disabled = 1
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
@@ -224,6 +239,9 @@ set incsearch
 
 syntax on
 
+
+colorscheme sourcerer
+
 set list
 set listchars+=trail:·
 
@@ -251,6 +269,8 @@ nnoremap <right> :bn<CR>
 " Toggle between buffers
 nnoremap <leader><leader> <c-^>
 
+nnoremap <C-n> :NERDTree<CR>
+
 " Move by line
 nnoremap j gj
 nnoremap k gk
@@ -262,3 +282,7 @@ au Filetype rust set colorcolumn=100
 
 autocmd BufRead *.md set filetype=markdown
 autocmd BufRead *.tex set filetype=tex
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"

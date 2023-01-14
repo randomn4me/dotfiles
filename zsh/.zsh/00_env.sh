@@ -15,3 +15,5 @@ export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$GOPATH/bin:$PATH
 export DMENU_PATH=$HOME/bin/menu
 export PEASEC=$HOME/var/nextcloud
 CHROOT=/home/phil/src/aur/chroot
+
+export WORKON_HOME=$HOME/var/virtualenvs/

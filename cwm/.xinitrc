@@ -21,7 +21,7 @@ sv 1
 # └┴┆┘ ┆
 
 autorandr --change
-hsetroot -tile ~/usr/pics/misc/patterns/flowers.jpg -tint \#202029
+hsetroot -tile ~/usr/pics/misc/patterns/flowers.jpg -tint \#19191C
 # hsetroot -center ~/usr/pics/misc/meerjungfraumann.jpg
 bar &
 xbindkeys
