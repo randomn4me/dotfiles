@@ -34,10 +34,10 @@ alias rice="curl -L git.io/rice"
 alias wiki='wikicurses'
 alias ccm='sudo ccm'
 alias o='open'
-alias tt="notify !!! Just Don\'t !!!"
 alias chrome="firefox"
 #alias mkdate="mkdir $(date +%F); cd $(date +%F)"
 alias starwars="telnet towel.blinkenlights.nl"
+alias t="task"
 
 sanitize() {
     $(echo "$@" | tr [A-Z\ ] [a-z\-])
