@@ -20,9 +20,10 @@ sv 1
 # ││││││
 # └┴┆┘ ┆
 
+source ~/.config/themes/current
+
 autorandr --change
-hsetroot -tile ~/usr/pics/misc/patterns/flowers.jpg -tint \#19191C
-# hsetroot -center ~/usr/pics/misc/meerjungfraumann.jpg
+hsetroot -fill $HOME/usr/pics/misc/wallpapers/current
 bar &
 xbindkeys
 
