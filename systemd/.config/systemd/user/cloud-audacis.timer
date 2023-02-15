@@ -4,7 +4,7 @@ Description=Sync nextcloud every minute
 [Timer]
 OnCalendar=*:0/15
 Persistent=true
-Unit=nextcloud.service
+Unit=cloud-audacis.service
 
 [Install]
 WantedBy=timers.target
