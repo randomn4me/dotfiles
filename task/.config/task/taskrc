@@ -1,13 +1,5 @@
-# [Created by task 2.5.1 9/10/2020 16:24:16]
-# Taskwarrior program configuration file.
-# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
-# 'man task-sync' or 'man taskrc'
-# Use the command 'task show' to see all defaults and overrides
+data.location=~/var/cloud.audacis.net/var/task
 
-# Files
-data.location=~/var/nextcloud/misc/task
-
-# Color theme (uncomment one to use)
 #include /usr/share/doc/task/rc/light-16.theme
 #include /usr/share/doc/task/rc/light-256.theme
 #include /usr/share/doc/task/rc/dark-16.theme
@@ -19,12 +11,20 @@ data.location=~/var/nextcloud/misc/task
 #include /usr/share/doc/task/rc/dark-yellow-green.theme
 #include /usr/share/doc/task/rc/dark-gray-256.theme
 #include /usr/share/doc/task/rc/dark-gray-blue-256.theme
-#include /usr/share/doc/task/rc/solarized-dark-256.theme
+include /usr/share/doc/task/rc/solarized-dark-256.theme
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
 
 weekstart = Monday
 include /usr/share/doc/task/rc/holidays.de-DE.rc
+
+default.due=2h
+
+report.next.filter=status:pending and -maybe
+
+report.maybe.columns=id,project,tags,description
+report.maybe.filter=status:pending and +maybe
+
 
 color.scheduled=
 color.tagged=
@@ -41,17 +41,14 @@ urgency.uda.priority.L.coefficient=0.0 # low Priority
 #urgency.due.coefficient=0.0
 
 # work
-urgency.user.tag.paper.coefficient=0.0
+urgency.user.tag.paper.coefficient=.5
 urgency.user.tag.cr.coefficient=2
 
 # privat
-#urgency.user.tag.unikita.coefficient=-.5
+urgency.user.tag.unikita.coefficient=-.5
 urgency.user.tag.call.coefficient=.5
+urgency.user.tag.mail.coefficient=1
 
 news.version=2.6.0
 
-taskd.server=freecinc.com:53589
-taskd.key=\/home\/phil\/.config\/task\/freecinc_95eb1723.key.pem
-taskd.certificate=\/home\/phil\/.config\/task\/freecinc_95eb1723.cert.pem
-taskd.ca=\/home\/phil\/.config\/task\/freecinc_95eb1723.ca.pem
-taskd.credentials=FreeCinc\/freecinc_95eb1723\/cdc1d5cb-405c-4454-9e29-21365b55ca0b
+include tasksync
