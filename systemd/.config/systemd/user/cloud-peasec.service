@@ -1,8 +1,0 @@
-[Unit]
-Description=Sync peasec nextcloud
-Documentation=man:nextcloudcmd(1)
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/nextcloudcmd -n /home/phil/var/nextcloud https://cloud.peasec.de
-StandardError=syslog
