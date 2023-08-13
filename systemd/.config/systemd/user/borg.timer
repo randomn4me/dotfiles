@@ -1,0 +1,12 @@
+[Unit]
+Description=Run borgmatic sync every 60 minutes
+Documentation=man:borgmatic(1)
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=60min
+RandomizedDelaySec=1min
+
+[Install]
+WantedBy=timers.target
+

@@ -2,9 +2,8 @@
 Description=Sync vdirsyncer hourly
 
 [Timer]
-OnCalendar=hourly
-Persistent=true
-Unit=vdirsyncer.service
+OnBootSec=2min
+OnUnitActiveSec=5min
 
 [Install]
 WantedBy=timers.target

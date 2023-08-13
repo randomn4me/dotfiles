@@ -1,0 +1,13 @@
+[Unit]
+Description=Run task sync
+Wants=network-online.target
+Before=halt.target shutdown.target reboot.target
+After=network-online.target
+Documentation=man:task(1)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/task sync
+
+[Install]
+WantedBy=halt.target shutdown.target reboot.target

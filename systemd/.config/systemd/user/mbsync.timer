@@ -3,8 +3,7 @@ Description=Mailbox synchronization timer
 
 [Timer]
 OnBootSec=1m
-OnUnitActiveSec=1m
-Unit=mbsync.service
+OnUnitActiveSec=30s
 
 [Install]
 WantedBy=timers.target

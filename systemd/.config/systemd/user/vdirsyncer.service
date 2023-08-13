@@ -1,5 +1,7 @@
 [Unit]
 Description=Sync vdirsyncer
+Wants=network-online.target
+After=network-online.target
 Documentation=man:vdirsyncer(1)
 
 [Service]

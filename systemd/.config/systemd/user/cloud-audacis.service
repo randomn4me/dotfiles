@@ -1,4 +1,6 @@
 [Unit]
+Wants=network-online.target
+After=network-online.target
 Description=Sync Audacis Nextcloud
 Documentation=man:nextcloudcmd(1)
 

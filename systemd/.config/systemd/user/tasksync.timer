@@ -1,0 +1,10 @@
+[Unit]
+Description=Run task sync every 5 minutes
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=5min
+RandomizedDelaySec=1min
+
+[Install]
+WantedBy=timers.target

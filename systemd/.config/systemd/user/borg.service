@@ -1,11 +1,13 @@
 [Unit]
+Description=Backup via borgmatic
 Wants=network-online.target
 After=network-online.target
-Description=Mailbox synchronization service
+Documentation=man:borgmatic(1)
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/mbsync -Va
+ExecStart=/usr/bin/borgmatic --verbosity 1
 
 [Install]
 WantedBy=default.target
+
