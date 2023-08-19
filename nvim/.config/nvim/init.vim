@@ -1,6 +1,7 @@
 " inspiration https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
 
 let mapleader = "\<Space>"
+set clipboard+=unnamedplus
 
 " ========================================
 " # Plugins
@@ -168,6 +169,7 @@ let g:vimtex_view_general_viewer = 'evince'
 
 
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
 vmap <Leader>y "+y
 vmap <Leader>d "+d
 nmap <Leader>p "+p
@@ -240,7 +242,8 @@ set incsearch
 syntax on
 
 
-colorscheme sourcerer
+"colorscheme sourcerer
+colorscheme rose-pine-dark
 
 set list
 set listchars+=trail:·
