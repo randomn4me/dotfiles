@@ -1,4 +1,5 @@
-alias ls="ls --color=auto"
+alias cat="/usr/bin/bat"
+alias ls="exa"
 alias la="ls -ahF --color=auto"
 alias ll="ls -lhF --color=auto"
 alias l="ls -1hF --color=auto"
@@ -12,7 +13,7 @@ alias mv='mv -i'
 
 # cd
 alias ".."="cd ../"
-alias "mutt"="neomutt"
+alias diss="cd $HOME/src/latex/diss"
 
 # useful
 alias mp3dl='yt-dlp -x --audio-format mp3'
@@ -31,13 +32,13 @@ alias cal='cal -m'
 alias shred='shred -u -n 15 -z'
 alias antivirus="sudo freshclam && sudo clamscan"
 alias rice="curl -L git.io/rice"
-alias wiki='wikicurses'
 alias ccm='sudo ccm'
 alias o='open'
 alias chrome="firefox"
 #alias mkdate="mkdir $(date +%F); cd $(date +%F)"
 alias starwars="telnet towel.blinkenlights.nl"
 alias t="task"
+alias mutt="neomutt"
 
 sanitize() {
     $(echo "$@" | tr [A-Z\ ] [a-z\-])
@@ -67,3 +68,7 @@ pdfreduce() {
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen \
 		-dNOPAUSE -dQUIET -dBATCH -sOutputFile="${filename}_reduced.pdf" "$1"
 }
+
+for dir in `ls ~/src/latex/paper`; do
+    alias $(basename $dir)="cd ~/src/latex/paper/$dir"
+done

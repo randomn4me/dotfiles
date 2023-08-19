@@ -18,6 +18,10 @@ CHROOT=/home/phil/src/aur/chroot
 
 export WORKON_HOME=$HOME/var/virtualenvs/
 
+# msmtpq setup
+export Q=$HOME/var/msmtpqueue
+export LOG=$HOME/var/log
+
 source ~/.config/themes/current
 
 # rose pine dawn
