@@ -1,0 +1,13 @@
+#!/bin/bash
+
+CONFIG_FILES="$HOME/.config/mako/config"
+
+trap "killall mako" EXIT
+
+killall mako
+mako &
+
+while true; do
+    inotifywait -e create,modify $CONFIG_FILES
+    makoctl reload
+done

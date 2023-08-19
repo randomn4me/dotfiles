@@ -1,0 +1,26 @@
+#!/bin/sh
+
+swaylock \
+    -k \
+    --color 191724 \
+    --inside-color 191724 \
+    \
+    --layout-bg-color 191724 \
+    --layout-text-color e0dff4 \
+    --layout-border-color 191724 \
+    \
+    --indicator-thickness 10 \
+    \
+    --ring-color f6c177 \
+    --key-hl-color 9ccfd8 \
+    \
+    --ring-ver-color 31748f \
+    --text-ver-color 31748f \
+    \
+    --ring-ver-color 9ccfd8 \
+    --inside-ver-color 9ccfd8 \
+    --text-ver-color 191724 \
+    \
+    --inside-wrong-color eb6f92 \
+    --ring-wrong-color eb6f92 \
+    --text-wrong-color 191724

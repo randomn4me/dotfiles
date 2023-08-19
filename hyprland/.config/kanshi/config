@@ -1,0 +1,4 @@
+profile secondary {
+    exec hyprctl keyword monitor eDP-1,disable
+    exec hyprctl keyword monitor DP-2,2540x1440@60,auto,1
+}

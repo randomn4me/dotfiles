@@ -1,0 +1,54 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    //"height": 15, // Waybar height (to be removed for auto height)
+    "margin": "5 5 0 5",
+    //"width": 1440, // Waybar width
+
+    // Choose the order of the modules
+    "modules-left": ["custom/vol", "battery", "custom/mail"],
+    "modules-center": ["mpd"],
+    "modules-right": ["custom/date", "custom/clock"],
+
+    "mpd": {
+        "interval": 3,
+        "format": "{artist} - {title}",
+    },
+
+    "custom/vol": {
+        "format": "{}",
+        "exec": "$HOME/bin/vol",
+        "interval": 1,
+    },
+
+    "custom/mail": {
+        "format": "{}",
+        "exec": "$HOME/bin/num-new-mails",
+        "interval": 5,
+    },
+
+    "custom/date": {
+        "format": "{}",
+        "exec": "date +%d-%m",
+        "interval": 60,
+    },
+
+    "custom/clock": {
+        "format": "{}",
+        "exec": "date +%H:%M",
+        "interval": 1,
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}",
+        "format-charging": "{capacity}",
+        "format-plugged": "{capacity}",
+        "format-alt": "{time}",
+        "interval": 1,
+    },
+
+}

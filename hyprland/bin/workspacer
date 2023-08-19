@@ -1,0 +1,38 @@
+#!/bin/sh
+
+usage() {
+    echo "Usage: $(basename $0) <num>"
+}
+
+check_present() {
+    local lowercase_class=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+    local lowercase_result=$(hyprctl clients -j | jq "[ .[] | select(.class | ascii_downcase == \"$lowercase_class\" and .workspace.id == $2) ]")
+    if [ $? -eq 0 ] && [ "$lowercase_result" != "[]" ]; then
+        return 0  # Found a match
+    else
+        return 1  # No match found
+    fi
+}
+
+
+switch() {
+    if check_present "$1" "$2"; then
+        echo "Found $1 with workspace id $2, switching workspace..."
+        hyprctl dispatch workspace "$2"
+    else
+        echo "Starting $1..."
+        eval "$1" > /dev/null 2>&1
+    fi
+}
+
+which hyprctl > /dev/null 2>&1 || (usage && exit)
+test $# -ne 1 && usage && exit
+
+case $1 in
+    1) switch alacritty 1 ;;
+    2) switch obsidian 2 ;;
+    4) switch mymutt 4 ;;
+    5) switch firefox 5 ;;
+    9) switch myspot 9 ;;
+    *) hyprctl dispatch workspace $1 ;;
+esac &

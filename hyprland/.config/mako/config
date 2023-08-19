@@ -1,0 +1,15 @@
+background-color=#26233a
+text-color=#e0def4
+border-color=#31748f
+border-color=#c4a7e7
+border-size=2
+border-radius=5
+
+default-timeout=8000
+max-visible=5
+anchor=top-center
+
+[urgency=high]
+default-timeout=0
+
+

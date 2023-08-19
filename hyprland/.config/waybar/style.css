@@ -1,0 +1,79 @@
+@define-color base          #191724;
+@define-color surface       #1f1d2e;
+@define-color overlay       #26233a;
+@define-color muted         #6e6a86;
+@define-color subtle        #908caa;
+@define-color text          #e0def4;
+@define-color love          #eb6f92;
+@define-color gold          #f6c177;
+@define-color rose          #ebbcba;
+@define-color pine          #31748f;
+@define-color foam          #9ccfd8;
+@define-color iris          #c4a7e7;
+@define-color highlightLow  #21202e;
+@define-color highlightMed  #403d52;
+@define-color highlightHigh #524f67;
+
+* {
+    border: none;
+    border-radius: 5px;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Liberation Mono;
+    min-height: 18px;
+    padding-left:  10px;
+    padding-right: 10px;
+    margin-right:   5px;
+    margin-left:    5px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#custom-vol {
+    background: @love;
+    color:      @base;
+}
+
+#battery {
+    background: @rose;
+    color:      @base;
+}
+#battery.discharging.critical {
+    background: @love;
+    color:      @base;
+}
+#battery.charging {
+    background: @iris;
+    color:      @base;
+}
+
+#custom-mail {
+    background: @foam;
+    color:      @base;
+}
+
+#mpd {
+    background: @iris;
+    color:      @base;
+}
+
+#mpd.disconnected,
+#mpd.stopped {
+    background: transparent;
+    color:      transparent;
+}
+
+#custom-date {
+    background: @foam;
+    color:      @base;
+}
+
+#custom-clock {
+    background: @rose;
+    color:      @base;
+}

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source ~/.config/themes/current
+
+height="15"
+font="pango:misc ohsnap 9"
+gaps="10"
+
+options="$@"
+
+bemenu $options -i --scrollbar none -H $height --fn "$font" --tf "$COLOR_BASE" --tb "$COLOR_GOLD" --hb "$COLOR_GOLD" --hf "$COLOR_BASE" 2>&1
