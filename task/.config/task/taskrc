@@ -1,4 +1,4 @@
-data.location=~/var/cloud.audacis.net/var/task
+data.location=~/var/task
 
 #include /usr/share/doc/task/rc/light-16.theme
 #include /usr/share/doc/task/rc/light-256.theme
@@ -25,6 +25,7 @@ report.next.filter=status:pending and -maybe
 report.maybe.columns=id,project,tags,description
 report.maybe.filter=status:pending and +maybe
 
+search.case.sensitive=no
 
 color.scheduled=
 color.tagged=
@@ -36,18 +37,18 @@ urgency.age.coefficient=0.0
 
 urgency.uda.priority.H.coefficient=6.0 # high Priority
 urgency.uda.priority.M.coefficient=3.0 # medium Priority
-urgency.uda.priority.L.coefficient=0.0 # low Priority
+urgency.uda.priority.L.coefficient=-1.0 # low Priority
 
 #urgency.due.coefficient=0.0
+urgency.user.tag.mail.coefficient=1
 
 # work
-urgency.user.tag.paper.coefficient=.5
+urgency.user.tag.paper.coefficient=0
 urgency.user.tag.cr.coefficient=2
 
 # privat
 urgency.user.tag.unikita.coefficient=-.5
 urgency.user.tag.call.coefficient=.5
-urgency.user.tag.mail.coefficient=1
 
 news.version=2.6.0
 
