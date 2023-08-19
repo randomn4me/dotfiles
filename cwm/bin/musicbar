@@ -1,0 +1,11 @@
+#!/bin/bash
+
+MONWIDTH=`xrandr | grep primary | sed -n 's/.* \([0-9]\+\)x\([0-9]\+\).*/\1/p'`
+
+export WIDTH=650
+OFFSET=$(((MONWIDTH-WIDTH)/2))
+
+while :; do
+	echo "%{c}$(playerctl --player=ncspot,mpd metadata -f '{{artist}} - {{title}}' 2> /dev/null || mpc current 2> /dev/null)"
+	sleep 1
+done | mybar $OFFSET "musicbar" &

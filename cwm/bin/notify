@@ -1,0 +1,13 @@
+#!/bin/sh
+# sends first arg as notification
+
+STRING="${@:-$(</dev/stdin)}"
+SLEEP=${SLEEP:-3}
+
+MONWIDTH=`xrandr | grep primary | sed -n 's/.* \([0-9]\+\)x\([0-9]\+\).*/\1/p'`
+export WIDTH="$(( MONWIDTH / 5 ))"
+
+(
+	echo "%{c}${STRING:0:50}"
+	sleep "$SLEEP" 
+) | mybar "$(( MONWIDTH / 2 - WIDTH / 2))" "notify" &

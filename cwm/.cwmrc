@@ -11,6 +11,7 @@ command suspend systemctl suspend
 ########################################
 ignore lemonbar
 ignore dmenu
+ignore eww-bar
 
 unbind-key all
 
@@ -31,6 +32,7 @@ autogroup 3 "jetbrains-idea"
 autogroup 4 "Rocket.Chat"
 autogroup 4 "Signal"
 autogroup 4 "mutt"
+autogroup 4 "thunderbird"
 
 autogroup 5 "firefox"
 
@@ -38,7 +40,7 @@ autogroup 6 "zoom"
 
 autogroup 7 "obsidian"
 
-autogroup 9 "ncspot"
+autogroup 9 "spotify"
 
 
 ########################################
@@ -59,96 +61,95 @@ moveamount              20
 
 
 ########################################
-# SIZE
+# POSITION & SIZE
 ########################################
-bind-key 4-d        window-vmaximize
-bind-key 4-f        window-maximize
+bind-key MS-d       window-vmaximize
+bind-key MS-f       window-maximize
 
-bind-key M-h        window-resize-left
-bind-key M-j        window-resize-down
-bind-key M-k        window-resize-up
-bind-key M-l        window-resize-right
+bind-key M-h        window-move-left
+bind-key M-j        window-move-down
+bind-key M-k        window-move-up
+bind-key M-l        window-move-right
+bind-key MS-h       window-move-left-big
+bind-key MS-j       window-move-down-big
+bind-key MS-k       window-move-up-big
+bind-key MS-l       window-move-right-big
 
+bind-key 4-h        window-resize-left
+bind-key 4-j        window-resize-down
+bind-key 4-k        window-resize-up
+bind-key 4-l        window-resize-right
+bind-key 4S-h       window-resize-left-big
+bind-key 4S-j       window-resize-down-big
+bind-key 4S-k       window-resize-up-big
+bind-key 4S-l       window-resize-right-big
 
-########################################
-# POSITION
-########################################
-bind-key 4-h        window-move-left
-bind-key 4-j        window-move-down
-bind-key 4-k        window-move-up
-bind-key 4-l        window-move-right
-
-bind-key 4S-j        window-move-down-big
-bind-key 4S-k        window-move-up-big
-
-bind-key 4-t        window-snap-up-left
-bind-key 4-z        window-snap-up-right
-bind-key 4-v        window-snap-down-left
-bind-key 4-b        window-snap-down-right
+bind-key MS-t       window-snap-up-left
+bind-key MS-z       window-snap-up-right
+bind-key MS-v       window-snap-down-left
+bind-key MS-b       window-snap-down-right
 
 
 ########################################
 # CONTROL
 ########################################
-bind-key M-Return   window-hide
-bind-key 4-q        window-delete
-bind-key 4-Tab      window-cycle
+bind-key MS-Return  window-hide
+bind-key M-q        window-delete
+bind-key M-Tab      window-cycle
 
 
 ########################################
 # Group control
 ########################################
-bind-key 4-1        group-toggle-1
-bind-key 4-2        group-toggle-2
-bind-key 4-3        group-toggle-3
-bind-key 4-4        group-toggle-4
-bind-key 4-5        group-toggle-5
-bind-key 4-6        group-toggle-6
-bind-key 4-7        group-toggle-7
-bind-key 4-8        group-toggle-8
-bind-key 4-9        group-toggle-9
+bind-key M-1        group-toggle-1
+bind-key M-2        group-toggle-2
+bind-key M-3        group-toggle-3
+bind-key M-4        group-toggle-4
+bind-key M-5        group-toggle-5
+bind-key M-6        group-toggle-6
+bind-key M-7        group-toggle-7
+bind-key M-8        group-toggle-8
+bind-key M-9        group-toggle-9
 
-bind-key 4S-1       window-movetogroup-1
-bind-key 4S-2       window-movetogroup-2
-bind-key 4S-3       window-movetogroup-3
-bind-key 4S-4       window-movetogroup-4
-bind-key 4S-5       window-movetogroup-5
-bind-key 4S-6       window-movetogroup-6
-bind-key 4S-7       window-movetogroup-7
-bind-key 4S-8       window-movetogroup-8
-bind-key 4S-9       window-movetogroup-9
+bind-key MS-1       window-movetogroup-1
+bind-key MS-2       window-movetogroup-2
+bind-key MS-3       window-movetogroup-3
+bind-key MS-4       window-movetogroup-4
+bind-key MS-5       window-movetogroup-5
+bind-key MS-6       window-movetogroup-6
+bind-key MS-7       window-movetogroup-7
+bind-key MS-8       window-movetogroup-8
+bind-key MS-9       window-movetogroup-9
 
 
 ########################################
 # Custom shortcuts
 ########################################
-bind-key 4S-l       slock
+bind-key M-Return   alacritty
+bind-key M-m        "alacritty --class 'mutt,mutt' -e neomutt"
+bind-key M-s        "alacritty --class 'spotify,spotify' -e ncmpcpp"
 
-bind-key 4-Return   alacritty
-bind-key 4-m        "alacritty --class 'mutt,mutt' -e neomutt"
-bind-key 4-s        "alacritty --class 'ncspot,ncspot' -e ncspot"
+bind-key M-r        "mpc toggle"
 
-bind-key 4-w        notify_wrapper wifi
-bind-key 4-e        notify_wrapper task
+bind-key CM-l       slock
+bind-key CM-s       screencapture
 
-bind-key 4-space    menu_run
-bind-key 4S-q       shutdown-menu
-bind-key 4-u        paperopen
-bind-key 4-p        passmenu
+bind-key M-space    menu_run
+bind-key MS-q       shutdown-menu
+bind-key M-u        paperopen
+bind-key M-p        passmenu
+bind-key CS-space    "bone toggle"
 
 
 ########################################
 # Session management
 ########################################
-bind-key 4S-Escape  restart
+bind-key CM-r  restart
 
 
 ########################################
 # Mousebindings
 ########################################
-bind-mouse 4-1   window-move
-bind-mouse 4-3   window-resize
+bind-mouse M-1   window-move
+bind-mouse M-3   window-resize
 
-# unbind alt-{left,right}
-unbind-key M-Left
-unbind-key M-Right
