@@ -1,0 +1,24 @@
+icons_format = "{icon}"
+
+[theme]
+theme = "space-villain"
+
+[icons]
+icons = "awesome4"
+
+[[block]]
+block = "battery"
+device = "BAT0"
+interval = 30
+full_format = " $icon $percentage "
+
+[[block]]
+block = "sound"
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
+
+[[block]]
+block = "time"
+interval = 10
+format = " $timestamp.datetime(f:'%d.%m %R') "
