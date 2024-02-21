@@ -1,1 +1,1 @@
-PEASEC=$HOME/var/nextcloud
+WORKON_HOME=$HOME/var/pipenvs
