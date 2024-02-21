@@ -1,0 +1,10 @@
+[alias]
+	st = "status"
+	tree = "log--oneline --graph --decorate --all"
+
+[init]
+	defaultBranch = "main"
+
+[user]
+	name = "Philipp Kühn"
+	email = "git@audacis.net"
