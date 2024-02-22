@@ -4,7 +4,23 @@ icons_format = "{icon}"
 theme = "space-villain"
 
 [icons]
-icons = "awesome4"
+icons = "awesome6"
+
+#[[block]]
+#block = "music"
+
+[[block]]
+block = "custom"
+interval = 60
+command = "khal list now 1d --format '{start-time' --day-format '' --notstarted | head -n1"
+
+[[block]]
+block = "maildir"
+interval = 2
+inboxes = [ "~/var/mail/*/*" ]
+threshold_warning = 1
+threshold_critical = 10
+display_type = "new"
 
 [[block]]
 block = "battery"
@@ -22,3 +38,4 @@ cmd = "pavucontrol"
 block = "time"
 interval = 10
 format = " $timestamp.datetime(f:'%d.%m %R') "
+
