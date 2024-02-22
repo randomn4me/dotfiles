@@ -1,0 +1,39 @@
+[calendars]
+
+[[peasec]]
+path = $HOME/var/calendar/peasec/calendar
+type = calendar
+
+[[audacis-philipp]]
+path = $HOME/var/calendar/audacis/personal
+type = calendar
+
+[[audacis-camilla]]
+path = $HOME/var/calendar/audacis/personal_shared_by_camillakuehn
+type = calendar
+
+[[audacis-kids]]
+path = $HOME/var/calendar/audacis/imported-kidsics-1_shared_by_camillakuehn
+type = calendar
+
+[[audacis-ferien]]
+path = $HOME/var/calendar/audacis/ferien-3
+type = calendar
+
+[[audacis-unikita]]
+path = $HOME/var/calendar/audacis/unikita
+type = calendar
+
+[[audacis-birthdays]]
+path = $HOME/var/calendar/audacis/contact_birthdays
+type = calendar
+
+[locale]
+timeformat = %H:%M
+dateformat = %Y-%m-%d
+longdateformat = %Y-%m-%d
+datetimeformat = %Y-%m-%d %H:%M
+longdatetimeformat = %Y-%m-%d %H:%M
+
+[default]
+default_calendar = peasec

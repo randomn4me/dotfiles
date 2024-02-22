@@ -1,21 +1,66 @@
 [general]
-status_path = "~/.cache/vdirsyncer/status/"
+status_path = "/home/r4ndom/.local/share/vdirsyncer/status"
 
-# CARDDAV
-[pair audacis_contacts]
-a = "audacis_contacts_local"
-b = "audacis_contacts_remote"
+### Pairs
+
+[pair calendar_audacis]
+a = "calendar_audacis_remote"
+b = "calendar_audacis_local"
 collections = ["from a", "from b"]
-conflict_resolution = "b wins"
+conflict_resolution = "a wins"
+metadata = ["color"]
+
+[pair calendar_peasec]
+a = "calendar_peasec_remote"
+b = "calendar_peasec_local"
+collections = ["from a", "from b"]
+conflict_resolution = "a wins"
+metadata = ["color"]
+
+[pair contacts_audacis]
+a = "contacts_audacis_remote"
+b = "contacts_audacis_local"
+collections = ["from b", "from a"]
+conflict_resolution = "a wins"
 metadata = ["displayname"]
 
-[storage audacis_contacts_local]
-type = "filesystem"
-path = "~/var/vdirsyncer/audacis_contacts/"
-fileext = ".vcf"
 
-[storage audacis_contacts_remote]
-type = "carddav"
-url = "https://cloud.audacis.net/remote.php/dav/"
+### Local storages
+
+[storage calendar_audacis_local]
+fileext = ".ics"
+path = "/home/r4ndom/var/calendar/audacis"
+post_hook = ""
+type = "filesystem"
+
+[storage calendar_peasec_local]
+fileext = ".ics"
+path = "/home/r4ndom/var/calendar/peasec"
+post_hook = ""
+type = "filesystem"
+
+[storage contacts_audacis_local]
+fileext = ".vcf"
+path = "/home/r4ndom/var/contacts/audacis"
+post_hook = ""
+type = "filesystem"
+
+### Remote storages
+
+[storage calendar_audacis_remote]
+password.fetch = ["command", "/usr/bin/cat", "/home/r4ndom/usr/misc/cloud.audacis.net"]
+type = "caldav"
+url = "https://cloud.audacis.net/remote.php/dav"
 username = "philippkuehn"
-password.fetch = ["command", "/usr/bin/cat", "/home/phil/usr/misc/cloud.audacis.net"]
+
+[storage calendar_peasec_remote]
+password.fetch = ["command", "/usr/bin/cat", "/home/r4ndom/usr/misc/ba01viny"]
+type = "caldav"
+url = "https://mail.tu-darmstadt.de:1443/users/kuehn@peasec.tu-darmstadt.de/calendar"
+username = "ba01viny"
+
+[storage contacts_audacis_remote]
+password.fetch = ["command", "/usr/bin/cat", "/home/r4ndom/usr/misc/cloud.audacis.net"]
+type = "carddav"
+url = "https://cloud.audacis.net/remote.php/dav"
+username = "philippkuehn"
