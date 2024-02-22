@@ -1,0 +1,106 @@
+################################################################################
+# Audacis
+################################################################################
+
+IMAPAccount audacis
+Host mail.your-server.de
+User philipp@audacis.net
+PassCmd "cat ~/usr/misc/mail.audacis.net"
+SSLType IMAPS
+
+IMAPStore audacis-remote
+Account audacis
+
+MaildirStore audacis-local
+SubFolders Verbatim
+Path ~/var/mail/audacis/
+Inbox ~/var/mail/audacis/Inbox
+
+Channel audacis
+Far :audacis-remote:
+Near :audacis-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
+
+
+################################################################################
+# Personalvorstand
+################################################################################
+
+IMAPAccount personalvorstand
+Host mail.your-server.de
+User personalvorstand@unikita-darmstadt.de
+PassCmd "cat ~/usr/misc/personalvorstand"
+SSLType IMAPS
+
+IMAPStore personalvorstand-remote
+Account personalvorstand
+
+MaildirStore personalvorstand-local
+SubFolders Verbatim
+Path ~/var/mail/personalvorstand/
+Inbox ~/var/mail/personalvorstand/Inbox
+
+Channel personalvorstand
+Far :personalvorstand-remote:
+Near :personalvorstand-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
+
+
+################################################################################
+# Sink
+################################################################################
+
+IMAPAccount sink
+Host mail.your-server.de
+User sink@audacis.net
+PassCmd "cat ~/usr/misc/sink.audacis.net"
+SSLType IMAPS
+
+IMAPStore sink-remote
+Account sink
+
+MaildirStore sink-local
+SubFolders Verbatim
+Path ~/var/mail/sink/
+Inbox ~/var/mail/sink/Inbox
+
+Channel sink
+Far :sink-remote:
+Near :sink-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
+
+
+################################################################################
+# PEASEC
+################################################################################
+
+IMAPAccount peasec
+Host mail.tu-darmstadt.de
+User ba01viny
+PassCmd "cat ~/usr/misc/ba01viny"
+SSLType IMAPS
+
+IMAPStore peasec-remote
+Account peasec
+
+MaildirStore peasec-local
+SubFolders Verbatim
+Path ~/var/mail/peasec/
+Inbox ~/var/mail/peasec/Inbox
+
+Channel peasec
+Far :peasec-remote:
+Near :peasec-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
