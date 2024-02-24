@@ -1,0 +1,9 @@
+[Unit]
+Description=Msmtpq timer
+
+[Timer]
+OnBootSec=1m
+OnUnitActiveSec=30s
+
+[Install]
+WantedBy=timers.target

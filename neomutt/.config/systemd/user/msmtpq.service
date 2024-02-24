@@ -1,0 +1,11 @@
+[Unit]
+Wants=network-online.target
+After=network-online.target
+Description=Send mails via msmtpq
+
+[Service]
+Type=oneshot
+ExecStart=/home/r4ndom/bin/msmtp-queue -r
+
+[Install]
+WantedBy=default.target
