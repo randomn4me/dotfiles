@@ -1,26 +1,37 @@
-set $mod Mod1
-
 font pango:ShureTechMonoNerdFont-Regular 10
 default_border pixel
 
+# class                 border  backgr. text    indicator child_border
+client.focused          #c0caf5 #285577 #ffffff #2e7de9   #c0caf5
+client.focused_inactive #414868 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #f52a65 #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+client.background       #1a1b26
+
+set $i3lock i3lock --nofork -c 1a1b26
+
+exec --no-startup-id xss-lock --transfer-sleep-lock -- $i3lock
 exec --no-startup-id autorandr --change
+exec --no-startup-id dunst -config $XDG_CONFIG_HOME/dunst/config
 
-set $refresh_i3status killall -SIGRTMIN+1 i3status-rs
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+####################
+# keybindings
+####################
+
+set $mod Mod1
 floating_modifier $mod
 
 bindsym $mod+Return exec alacritty
 
 bindsym $mod+q kill
+bindsym $mod+w exec dunstctl close
 
 bindsym $mod+space exec --no-startup-id dmenu_run
 bindsym $mod+Shift+q exec --no-startup-id shutdown-menu
+bindsym ctrl+$mod+l exec $i3lock
 
 # change focus
 bindsym $mod+h focus left
@@ -72,11 +83,19 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+Esc exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+bindsym XF86AudioRaiseVolume exec --no-startup-id vol +
+bindsym XF86AudioLowerVolume exec --no-startup-id vol -
+bindsym XF86AudioMute exec --no-startup-id vol t
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+bindsym XF86AudioNext exec --no-startup-id mpc next
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
+
+
 mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 20 px
+        bindsym j resize grow height 20 px
+        bindsym k resize shrink height 20 px
+        bindsym l resize grow width 20 px
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -90,10 +109,20 @@ bar {
     status_command i3status-rs
 }
 
-for_window [window_role="pop-up"]                       floating enable
-for_window [window_role="bubble"]                       floating enable 
-for_window [window_role="task_dialog"]                  floating enable
-for_window [window_role="Preferences"]                  floating enable
-for_window [window_type="dialog"]                       floating enable 
-for_window [window_type="menu"]                         floating enable
-for_window [window_type="Alert"]                        floating enable
+# window rules
+assign [class="obsidian"] $ws2
+assign [class="zotero"] $ws2
+
+assign [class="Signal"] $ws4
+
+assign [class="firefox"] $ws5
+
+assign [class="zoom"] $ws6
+
+for_window [window_role="pop-up"]      floating enable
+for_window [window_role="bubble"]      floating enable 
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"]      floating enable 
+for_window [window_type="menu"]        floating enable
+for_window [window_type="Alert"]       floating enable

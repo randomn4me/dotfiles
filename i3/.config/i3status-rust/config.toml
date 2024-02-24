@@ -4,15 +4,20 @@ icons_format = "{icon}"
 theme = "space-villain"
 
 [icons]
-icons = "awesome6"
-
-#[[block]]
-#block = "music"
+icons = "awesome4"
 
 [[block]]
 block = "custom"
-interval = 60
-command = "khal list now 1d --format '{start-time' --day-format '' --notstarted | head -n1"
+command = "/usr/bin/mpc current 2> /dev/null"
+interval = 2
+
+[[block]]
+block = "taskwarrior"
+interval = 30
+data_location = "~/var/task"
+[[block.filters]]
+name = "today"
+filter = "+PENDING +OVERDUE or +DUETODAY"
 
 [[block]]
 block = "maildir"
@@ -23,19 +28,26 @@ threshold_critical = 10
 display_type = "new"
 
 [[block]]
+block = "custom"
+interval = 60
+command = "i3status_rs-appointments"
+json = true
+hide_when_empty = true
+
+[[block]]
+block = "sound"
+max_vol = 100
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
+
+[[block]]
 block = "battery"
 device = "BAT0"
 interval = 30
 full_format = " $icon $percentage "
 
 [[block]]
-block = "sound"
-[[block.click]]
-button = "left"
-cmd = "pavucontrol"
-
-[[block]]
 block = "time"
 interval = 10
 format = " $timestamp.datetime(f:'%d.%m %R') "
-
