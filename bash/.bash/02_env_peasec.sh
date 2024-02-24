@@ -1,1 +1,1 @@
-WORKON_HOME=$HOME/var/pipenvs
+export WORKON_HOME=$HOME/var/pipenvs

@@ -31,26 +31,3 @@ alias rice="curl -L git.io/rice; tput sgr0"
 alias wiki='wikicurses'
 alias python='python -q'
 alias o='open'
-
-mvp() {
-	for f in $@; do
-		test -f "$f" || (echo "$f is no file" && exit 1)
-		mv "$f" $PAPER_PATH
-	done
-}
-
-mvtodo() {
-	for f in $@; do
-		test -f "$f" || (echo "$f is no file" && exit 1)
-		mv "$f" $PEASEC/todo
-	done
-}
-
-pdfreduce() {
-	test ! -f $1 && echo "Usage: pdfreduce <file>" && exit 1
-
-	filename="${1%.*}"
-
-	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen \
-		-dNOPAUSE -dQUIET -dBATCH -sOutputFile="${filename}_reduced.pdf" "$1"
-}
