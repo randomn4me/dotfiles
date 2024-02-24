@@ -1,5 +1,5 @@
 [Unit]
-Description=Sync vdirsyncer hourly
+Description=Sync vdirsyncer every 5min
 
 [Timer]
 OnBootSec=2min
