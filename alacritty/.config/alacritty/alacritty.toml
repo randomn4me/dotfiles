@@ -1,16 +1,16 @@
 [font]
-	size = 10
+	size = 11
 
 [font.bold]
-family = "MesloLGS Nerd Font Mono"
+family = "Inconsolata Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "MesloLGS Nerd Font Mono"
-style = "Italic"
+family = "Inconsolata Nerd Font Mono"
+style = "Regular"
 
 [font.normal]
-family = "MesloLGS Nerd Font Mono"
+family = "Inconsolata Nerd Font Mono"
 style = "Regular"
 
 [font.bold_italic]
