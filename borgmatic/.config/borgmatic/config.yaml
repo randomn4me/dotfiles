@@ -1,0 +1,35 @@
+source_directories:
+    - /home
+
+repositories:
+    - path: ssh://u340000@u340000.your-storagebox.de:23/./borg/peasec
+      label: storagebox
+    - path: /run/media/r4ndom/backup/borg-backup
+      label: hdd
+
+keep_hourly: 12
+keep_daily: 15
+keep_weekly: 8
+keep_monthly: 6
+keep_yearly: 4
+
+exclude_patterns:
+    - '*.pyc'
+    - '**/.cache'
+
+exclude_caches: true
+
+exclude_if_present:
+    - .nobackup
+
+checks:
+    - name: repository
+    - name: archives
+      frequency: 1 weeks
+
+encryption_passcommand: 'cat /home/r4ndom/usr/misc/borg'
+ssh_command: 'ssh -i /home/r4ndom/.ssh/storagebox'
+relocated_repo_access_is_ok: true
+
+on_error:
+    - echo "Error during prune/create/check."
