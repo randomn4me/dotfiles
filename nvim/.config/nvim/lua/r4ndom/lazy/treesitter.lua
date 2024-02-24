@@ -23,6 +23,9 @@ return {
                 -- `false` will disable the whole extension
                 enable = true,
 
+                -- vimtex asks for it
+                disable = { "latex" },
+
                 -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
                 -- Set this to `true` if you depend on "syntax" being enabled (like for indentation).
                 -- Using this option may slow down your editor, and you may see some duplicate highlights.
@@ -35,7 +38,7 @@ return {
         treesitter_parser_config.templ = {
             install_info = {
                 url = "https://github.com/vrischmann/tree-sitter-templ.git",
-                files = {"src/parser.c", "src/scanner.c"},
+                files = { "src/parser.c", "src/scanner.c" },
                 branch = "master",
             },
         }
@@ -43,4 +46,3 @@ return {
         vim.treesitter.language.register("templ", "templ")
     end
 }
-
