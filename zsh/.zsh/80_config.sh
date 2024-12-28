@@ -1,4 +1,10 @@
+source_when_exists() {
+    test -f $1 && source $1
+}
+
 fpath+=$HOME/.zsh/completion
+fpath+=/opt/homebrew/share/zsh/site-functions
+fpath+=/opt/homebrew/opt/task@2/share/zsh/site-functions 
 
 autoload -Uz compinit
 compinit
@@ -6,8 +12,11 @@ compinit
 zstyle ':completion:*' menu select
 setopt COMPLETE_ALIASES
 
-# ignore duplicates in history file (duplicates are still inserted in file)
-setopt HIST_IGNORE_ALL_DUPS
+source_when_exists /usr/share/fzf/key-bindings.zsh
+source_when_exists /usr/share/fzf/completion.zsh
+source_when_exists /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
-test -f /usr/share/fzf/key-bindings.zsh && source /usr/share/fzf/key-bindings.zsh
-test -f /usr/share/fzf/completion.zsh && source /usr/share/fzf/completion.zsh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+setopt correct

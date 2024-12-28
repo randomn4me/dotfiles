@@ -1,11 +1,4 @@
-if [[ "$EUID" -ne "0" ]]; then
-	LEVEL="%F{white}"
-else
-	LEVEL="%F{red}"
-fi
-
-# prompt
-PS1="%(4~|../%3~|%~) ${LEVEL}>>%f "
+PS1="%(4~|…/%3~|%~) »%f "
 
 if [ "$TERM" = "linux" ]; then
 	/bin/echo -e "

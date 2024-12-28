@@ -1,2 +1,2 @@
 test -f $HOME/.zshrc && source $HOME/.zshrc
-source $HOME/.profile
+test -f $HOME/.profile && source $HOME/.profile

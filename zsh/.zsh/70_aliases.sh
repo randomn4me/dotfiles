@@ -1,5 +1,5 @@
-alias cat="/usr/bin/bat"
-alias ls="exa"
+alias cat="bat"
+alias ls="eza"
 alias la="ls -ahF --color=auto"
 alias ll="ls -lhF --color=auto"
 alias l="ls -1hF --color=auto"
@@ -17,7 +17,6 @@ alias diss="cd $HOME/src/latex/diss"
 
 # useful
 alias mp3dl='yt-dlp -x --audio-format mp3'
-alias rm-orphans='test -z "`paru -Qdtq`" && echo "no orphan" || paru -Rns $(paru -Qdtq)'
 alias kernelcodestyle="curl -s https://www.kernel.org/doc/Documentation/process/coding-style.rst | less"
 alias csv='column -t -s\;'
 alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
@@ -39,6 +38,9 @@ alias chrome="firefox"
 alias starwars="telnet towel.blinkenlights.nl"
 alias t="task"
 alias mutt="neomutt"
+
+alias vim="nvim"
+alias vi="nvim"
 
 sanitize() {
     $(echo "$@" | tr [A-Z\ ] [a-z\-])
@@ -68,7 +70,3 @@ pdfreduce() {
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen \
 		-dNOPAUSE -dQUIET -dBATCH -sOutputFile="${filename}_reduced.pdf" "$1"
 }
-
-for dir in `ls ~/src/latex/paper`; do
-    alias $(basename $dir)="cd ~/src/latex/paper/$dir"
-done
