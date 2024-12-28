@@ -1,0 +1,8 @@
+font-family = "FiraMono Nerd Font Mono"
+font-size = 14
+
+mouse-hide-while-typing = true
+
+shell-integration = zsh
+
+theme = dark:tokyonight,light:tokyonight-day
