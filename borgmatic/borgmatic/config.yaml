@@ -1,11 +1,12 @@
 source_directories:
-    - /home
+    - /Users/pkuehn/Documents
+    - /Users/pkuehn/Music
+    - /Users/pkuehn/var
+    - /Users/pkuehn/Pictures
 
 repositories:
     - path: ssh://u340000@u340000.your-storagebox.de:23/./borg/peasec
       label: storagebox
-    - path: /run/media/r4ndom/backup/borg-backup
-      label: hdd
 
 keep_hourly: 12
 keep_daily: 15
@@ -17,6 +18,8 @@ exclude_patterns:
     - '*.pyc'
     - '**/.cache'
 
+match_archives: '*'
+
 exclude_caches: true
 
 exclude_if_present:
@@ -27,8 +30,8 @@ checks:
     - name: archives
       frequency: 1 weeks
 
-encryption_passcommand: 'cat /home/r4ndom/usr/misc/borg'
-ssh_command: 'ssh -i /home/r4ndom/.ssh/storagebox'
+encryption_passcommand: 'cat /Users/pkuehn/Documents/misc/borg'
+ssh_command: 'ssh -i /Users/pkuehn/.ssh/storagebox'
 relocated_repo_access_is_ok: true
 
 on_error:
