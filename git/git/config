@@ -1,6 +1,6 @@
 [alias]
 	st = "status"
-	tree = "log--oneline --graph --decorate --all"
+	tree = "log --oneline --graph --decorate --all"
 
 [init]
 	defaultBranch = "main"
