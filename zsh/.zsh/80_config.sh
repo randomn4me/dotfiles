@@ -3,8 +3,6 @@ source_when_exists() {
 }
 
 fpath+=$HOME/.zsh/completion
-fpath+=/opt/homebrew/share/zsh/site-functions
-fpath+=/opt/homebrew/opt/task@2/share/zsh/site-functions 
 
 autoload -Uz compinit
 compinit

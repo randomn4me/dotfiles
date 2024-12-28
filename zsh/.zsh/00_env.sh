@@ -14,7 +14,4 @@ typeset -U PATH
 export GOPATH=$HOME/src/go
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$GOPATH/bin:$PATH
 
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/opt/task@2/bin:$PATH"
-
 test -d $HOME/.cargo && test -f $HOME/.cargo/env && source $HOME/.cargo/env
