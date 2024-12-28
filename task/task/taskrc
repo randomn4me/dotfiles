@@ -1,11 +1,6 @@
 data.location=~/var/task
 
-include /usr/share/doc/task/rc/solarized-dark-256.theme
-
 weekstart = Monday
-include /usr/share/doc/task/rc/holidays.de-DE.rc
-
-default.due=2h
 
 report.next.filter=status:pending and -maybe
 
