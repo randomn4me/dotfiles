@@ -1,10 +1,31 @@
-[alias]
-	st = "status"
-	tree = "log --oneline --graph --decorate --all"
+[user]
+	name = Philipp Kühn
+	email = git@audacis.net
+
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
+
+[url "ssh://git@gitlab.com/"]
+    insteadOf = https://gitlab.com/
 
 [init]
 	defaultBranch = "main"
 
-[user]
-	name = "Philipp Kühn"
-	email = "git@audacis.net"
+[commit]
+    template = ~/.config/git/git-commit-template
+
+[core]
+    editor = nvim
+    pager = delta
+
+[push]
+	autoSetupRemote = true
+	default = current
+
+[merge]
+    conflictstyle = diff3
+
+[alias]
+	st = "status"
+	tree = "log --oneline --graph --decorate --all"
+
