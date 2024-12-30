@@ -1,8 +1,10 @@
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/task@2/bin:$PATH"
+
+
 if type brew &>/dev/null; then
     eval "$(brew shellenv)"
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-    export PATH="/opt/homebrew/bin:$PATH"
-    export PATH="/opt/homebrew/opt/task@2/bin:$PATH"
 fi
 
 fpath+=/opt/homebrew/share/zsh/site-functions

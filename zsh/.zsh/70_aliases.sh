@@ -36,11 +36,8 @@ alias o='open'
 alias chrome="firefox"
 #alias mkdate="mkdir $(date +%F); cd $(date +%F)"
 alias starwars="telnet towel.blinkenlights.nl"
-alias t="task"
+alias task5="task limit:5"
 alias mutt="neomutt"
-
-alias vim="nvim"
-alias vi="nvim"
 
 sanitize() {
     $(echo "$@" | tr [A-Z\ ] [a-z\-])
