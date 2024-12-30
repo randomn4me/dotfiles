@@ -18,6 +18,7 @@ return {
         formatters_by_ft = {
             lua = { "stylua" },
             python = { "ruff" },
+            bash = { "beautysh" },
             _ = { "trim_newlines" },
         },
         -- Set default options
