@@ -6,3 +6,6 @@ mouse-hide-while-typing = true
 shell-integration = zsh
 
 theme = dark:tokyonight,light:tokyonight-day
+
+keybind = global:super+shift+plus=toggle_quick_terminal
+quick-terminal-animation-duration = 0.1
