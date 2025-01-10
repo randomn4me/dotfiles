@@ -1,5 +1,7 @@
 data.location=~/var/task
 
+include colors.theme
+
 weekstart = Monday
 
 report.next.filter=status:pending and -maybe
@@ -16,6 +18,9 @@ urgency.project.coefficient=0.0
 urgency.tags.coefficient=0.0
 urgency.scheduled.coefficient=0.0
 urgency.age.coefficient=2.0
+
+urgency.blocking.coefficient=1.0
+urgency.blocked.coefficient=-2.0
 
 urgency.uda.priority.H.coefficient=6.0 # high Priority
 urgency.uda.priority.M.coefficient=3.0 # medium Priority
