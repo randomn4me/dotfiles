@@ -1,6 +1,7 @@
 return {
 	"lervag/vimtex",
 	lazy = false,
+	ft = "tex",
 	config = function()
 		vim.api.nvim_create_autocmd({ "FileType" }, {
 			group = vim.api.nvim_create_augroup("lazyvim_vimtex_conceal", { clear = true }),

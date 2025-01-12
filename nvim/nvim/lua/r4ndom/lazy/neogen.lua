@@ -1,10 +1,14 @@
 return {
-    "danymat/neogen", 
-    config = function ()
-        require('neogen').setup({ snippet_engine = "luasnip" })
+	"danymat/neogen",
+	opts = { snippet_engine = "luasnip" },
+	config = function()
+		require("neogen").setup()
 
-        local opts = { noremap = true, silent = true }
-
-        vim.api.nvim_set_keymap("n", "<Leader>n", ":lua require('neogen').generate()<CR>", opts)
-    end,
+		vim.api.nvim_set_keymap(
+			"n",
+			"<Leader>n",
+			":lua require('neogen').generate()<CR>",
+			{ noremap = true, silent = true }
+		)
+	end,
 }

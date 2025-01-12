@@ -35,16 +35,13 @@ return {
 			Keyword = "",
 			Snippet = "",
 			Color = "󰌁",
-			-- Color = "",
 			File = "",
 			Reference = "",
 			Folder = "",
 			EnumMember = "",
 			-- spell = "",
-			-- EnumMember = "",
 			Constant = "󰀫",
-			Struct = "",
-			-- Struct = "",
+			Struct = "",
 			Event = "",
 			Operator = "󰘧",
 			TypeParameter = "",
@@ -120,12 +117,6 @@ return {
 			window = {
 				completion = cmp.config.window.bordered(),
 				documentation = cmp.config.window.bordered(),
-				-- completion = {
-				--   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-				-- },
-				-- documentation = {
-				--   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-				-- },
 			},
 			performance = {
 				trigger_debounce_time = 500,
