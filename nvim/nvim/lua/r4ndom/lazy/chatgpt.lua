@@ -1,6 +1,5 @@
 return {
 	"jackMort/ChatGPT.nvim",
-	event = "VeryLazy",
 	ft = { "tex" },
 	opts = {
 		openai_params = {
