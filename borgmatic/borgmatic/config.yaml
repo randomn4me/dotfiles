@@ -1,8 +1,8 @@
 source_directories:
     - /Users/pkuehn/Documents
-    - /Users/pkuehn/Music
     - /Users/pkuehn/var
     - /Users/pkuehn/Pictures
+    - /Users/pkuehn/src
 
 repositories:
     - path: ssh://u340000@u340000.your-storagebox.de:23/./borg/peasec
@@ -17,6 +17,10 @@ keep_yearly: 4
 exclude_patterns:
     - '*.pyc'
     - '**/.cache'
+    - '**/.venv'
+    - '**/.devenv'
+    - '**/*CR2'
+    - '**/*CR3'
 
 match_archives: '*'
 
@@ -33,6 +37,3 @@ checks:
 encryption_passcommand: 'cat /Users/pkuehn/Documents/misc/borg'
 ssh_command: 'ssh -i /Users/pkuehn/.ssh/storagebox'
 relocated_repo_access_is_ok: true
-
-on_error:
-    - echo "Error during prune/create/check."
