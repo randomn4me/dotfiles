@@ -1,6 +1,7 @@
 return {
 	"jackMort/ChatGPT.nvim",
 	ft = { "tex" },
+	enabled = false,
 	opts = {
 		openai_params = {
 			model = "gpt-4-1106-preview",

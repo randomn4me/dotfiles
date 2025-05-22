@@ -1,6 +1,13 @@
 return {
 	"tadmccorkle/markdown.nvim",
 	ft = "markdown", -- or 'event = "VeryLazy"'
+	config = {
+		on_attach = function(bufnr)
+			local map = vim.keymap.set
+			local opts = { buffer = bufnr }
+			map("n", "<CR>", "<Cmd>MDTaskToggle<CR>", opts)
+		end,
+	},
 	opts = {
 		mappings = {
 			inline_surround_toggle = "gs",

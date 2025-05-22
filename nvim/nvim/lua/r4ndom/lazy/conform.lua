@@ -9,6 +9,7 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "ruff" },
+			tex = { "latexindent" },
 			bash = { "beautysh" },
 			_ = { "trim_newlines" },
 		},
@@ -16,12 +17,9 @@ return {
 			lsp_format = "fallback",
 		},
 		-- Set up format-on-save
-		format_on_save = { timeout_ms = 100 },
-		-- Customize formatters
-		formatters = {
-			shfmt = {
-				prepend_args = { "-i", "2" },
-			},
+		format_on_save = {
+			timeout_ms = 800,
+			lsp_fallback = true,
 		},
 	},
 	init = function()

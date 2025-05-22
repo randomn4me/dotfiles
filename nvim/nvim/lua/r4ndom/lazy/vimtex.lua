@@ -15,16 +15,15 @@ return {
 		vim.g.vimtex_view_method = "general"
 		vim.g.latex_view_general_viewer = "zathura"
 
-		vim.g.vimtex_format_enabled = true -- Enable formatting with latexindent
-		vim.g.vimtex_format_program = "latexindent"
-
 		vim.g.vimtex_compiler_latexmk = { out_dir = "out", aux_dir = "out" }
 		vim.g.vimtex_log_ignore = { -- Suppress specific log messages
 			"Underfull",
 			"Overfull",
 			"specifier changed to",
 			"Token not allowed in a PDF string",
+			"multiply defined",
 		}
+		vim.g.vimtex_quickfix_ignore = vim.g.vimtex_log_ignore
 		vim.g.tex_flavor = "latex"
 	end,
 }
