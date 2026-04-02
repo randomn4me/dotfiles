@@ -5,8 +5,12 @@ source_directories:
     - /Users/pkuehn/src
 
 repositories:
-    - path: ssh://u340000@u340000.your-storagebox.de:23/./borg/peasec
+    - path: ssh://u487410@u487410.your-storagebox.de:23/./borg/peasec
       label: storagebox
+    - path: ssh://u489939@u489939.your-storagebox.de:23/./borg/peasec
+      label: storagebox-helsinki
+
+archive_name_format: "macbook-{now:%Y-%m-%dT%H:%M:%S.%f}"
 
 keep_hourly: 12
 keep_daily: 15
@@ -19,8 +23,7 @@ exclude_patterns:
     - '**/.cache'
     - '**/.venv'
     - '**/.devenv'
-    - '**/*CR2'
-    - '**/*CR3'
+    - 'src/**/target'
 
 match_archives: '*'
 
@@ -28,6 +31,8 @@ exclude_caches: true
 
 exclude_if_present:
     - .nobackup
+
+lock_wait: 1
 
 checks:
     - name: repository
