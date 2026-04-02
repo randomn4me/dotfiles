@@ -1,14 +1,26 @@
-crossing
+##############################
+
+# Music
+Music/Media.localized/**
+Music/Music Library.musiclibrary/**
+
+
+.localized
+
+# Documents
+crossing/**
+obsidian/.trash/**
+
+# Pictures
+Lightroom*/**
+Photos\ Library.photoslibrary/**
+
+##############################
 
 # Temporary files
 *.tmp
 *.temp
 .DS_Store
-
-# Cache directories
-*/Library/Caches/**
-*/Library/Application Support/Google/Chrome/Default/Cache/**
-*/Library/Containers/com.docker.docker/**
 
 # Package managers
 */node_modules/**
