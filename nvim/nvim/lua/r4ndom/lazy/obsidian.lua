@@ -71,6 +71,22 @@ return {
 		{ "<leader>of", "<cmd>ObsidianQuickSwitch<cr>", desc = "Obsidian Quick Switch" },
 		{ "<leader>ot", "<cmd>ObsidianTemplate<cr>", desc = "Obsidian Templates" },
 		{ "<leader>ob", "<cmd>ObsidianBacklinks<cr>", desc = "Obsidian Backlinks" },
+		{ "<leader>od", function()
+			local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+			local row
+			for i, line in ipairs(lines) do
+				if line:match("^%d%d%d%d%-%d%d%-%d%d$") then
+					row = i - 1
+					break
+				end
+			end
+			if not row then
+				row = vim.api.nvim_win_get_cursor(0)[1] - 1
+			end
+			vim.api.nvim_buf_set_lines(0, row, row, false, { os.date("%Y-%m-%d"), "", "" })
+			vim.api.nvim_win_set_cursor(0, { row + 2, 0 })
+			vim.cmd("startinsert")
+		end, desc = "Insert today's date" },
 	},
 }
 

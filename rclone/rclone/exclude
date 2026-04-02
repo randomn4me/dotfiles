@@ -1,0 +1,28 @@
+crossing
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+
+# Cache directories
+*/Library/Caches/**
+*/Library/Application Support/Google/Chrome/Default/Cache/**
+*/Library/Containers/com.docker.docker/**
+
+# Package managers
+*/node_modules/**
+*/.npm/**
+*/.cargo/**
+*/.rustup/**
+
+# Virtual environments
+*/venv/**
+*/.venv/**
+*/env/**
+*/.env/**
+
+# Large data and logs
+*.log
+*.iso
+*.dmg
