@@ -5,8 +5,8 @@
 IMAPAccount audacis
 Host mail.your-server.de
 User philipp@audacis.net
-PassCmd "cat ~/usr/misc/mail.audacis.net"
-SSLType IMAPS
+PassCmd "cat ~/Documents/misc/mail.audacis.net"
+TLSType IMAPS
 
 IMAPStore audacis-remote
 Account audacis
@@ -26,41 +26,14 @@ SyncState *
 
 
 ################################################################################
-# Personalvorstand
-################################################################################
-
-IMAPAccount personalvorstand
-Host mail.your-server.de
-User personalvorstand@unikita-darmstadt.de
-PassCmd "cat ~/usr/misc/personalvorstand"
-SSLType IMAPS
-
-IMAPStore personalvorstand-remote
-Account personalvorstand
-
-MaildirStore personalvorstand-local
-SubFolders Verbatim
-Path ~/var/mail/personalvorstand/
-Inbox ~/var/mail/personalvorstand/Inbox
-
-Channel personalvorstand
-Far :personalvorstand-remote:
-Near :personalvorstand-local:
-Patterns *
-Create Both
-Expunge Both
-SyncState *
-
-
-################################################################################
 # Sink
 ################################################################################
 
 IMAPAccount sink
 Host mail.your-server.de
 User sink@audacis.net
-PassCmd "cat ~/usr/misc/sink.audacis.net"
-SSLType IMAPS
+PassCmd "cat ~/Documents/misc/sink.audacis.net"
+TLSType IMAPS
 
 IMAPStore sink-remote
 Account sink
@@ -86,8 +59,9 @@ SyncState *
 IMAPAccount peasec
 Host mail.tu-darmstadt.de
 User ba01viny
-PassCmd "cat ~/usr/misc/ba01viny"
-SSLType IMAPS
+PassCmd "cat ~/Documents/misc/ba01viny"
+TLSType IMAPS
+PipelineDepth 1 # https://kdecherf.com/blog/2017/05/01/mbsync-and-office-365/
 
 IMAPStore peasec-remote
 Account peasec

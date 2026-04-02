@@ -1,0 +1,53 @@
+##############################
+# Binds
+##############################
+
+bind  index        <space>  "sync-mailbox"
+bind  index        x        "noop"
+bind  index        g        "noop"
+bind  index        gg       "first-entry"
+bind  index        G        "last-entry"
+bind  index        -        "collapse-thread"
+bind  index        0        "noop"
+bind  index        1        "noop"
+bind  index        2        "noop"
+bind  index        3        "noop"
+bind  index        4        "noop"
+bind  index        5        "noop"
+bind  index        6        "noop"
+bind  index        7        "noop"
+bind  index        8        "noop"
+bind  index        9        "noop"
+
+bind  index,pager  K        "sidebar-prev"
+bind  index,pager  J        "sidebar-next"
+bind  index,pager  L        "sidebar-open"
+bind  index,pager  R        "group-reply"
+bind  index,pager  N        "search-opposite"
+bind  index,pager  d        "noop"
+bind  index,pager  dd       "delete-message"
+
+bind  pager        j        "next-line"
+bind  pager        k        "previous-line"
+bind  pager        g        "noop"
+bind  pager        gg       "top"
+bind  pager        G        "bottom"
+bind  pager        q        "exit"
+
+bind  editor       <Tab>    "complete-query"
+
+
+##############################
+# Macros
+##############################
+macro  index        A      "<pipe-message>khard add-email<return>"
+
+macro  index,pager  2      "<enter-command>source ~/.config/neomutt/audacis<enter><change-folder>!<enter>"
+macro  index,pager  3      "<enter-command>source ~/.config/neomutt/peasec<enter><change-folder>!<enter>"
+macro  index,pager  4      "<enter-command>source ~/.config/neomutt/sink<enter><change-folder>!<enter>"
+macro  index,pager  <f12>  "<enter-command>unset wait_key<enter><shell-escape>mbsync -a<enter>"
+
+macro  pager        b      "<pipe-message>urlscan<enter>"
+
+macro  attach       S      "<save-entry><kill-line>~/Downloads/"
+

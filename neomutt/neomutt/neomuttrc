@@ -1,0 +1,6 @@
+source ./neomutt-settings
+source ./neomutt-mappings
+source ./neomutt-colors
+source ./neomutt-markdown
+
+source /Users/pkuehn/.config/neomutt/peasec

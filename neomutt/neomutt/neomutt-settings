@@ -1,0 +1,41 @@
+##############################
+# Config
+##############################
+
+set  header_cache       =  "/Users/pkuehn/.cache/neomutt/headers/"
+set  message_cachedir   =  "/Users/pkuehn/.cache/neomutt/messages/"
+set  editor             =  "$EDITOR"
+set  implicit_autoview  =  yes
+set  crypt_use_gpgme    =  yes
+
+alternative_order text/enriched text/plain text
+
+set delete = yes
+
+set abort_noattach=ask-yes
+set abort_noattach_regex="\\<(anhängen|angehängt|anhang|anhänge|hängt an|anbei|attach|attached|attachments|append)\\>"
+set attach_format="%I %t%2n %T%.40d%> [%.15m/%.10M, %?C?%C, ?%s]"
+set color_directcolor=yes
+set compose_format="%>-(~size: %l, Atts: %a)-"
+set date_format="%F, %T"
+set edit_headers=yes
+set fast_reply=yes
+set forward_format="Fwd: %s"
+set forward_quote=yes
+set index_format="%S [%{%m-%d}]  %-15.15F  %s"
+set mailcap_path=/Users/pkuehn/.config/neomutt/mailcap
+set markers=no
+set menu_scroll=yes
+set pager_format="-(%C/%m)-%>-(%P)"
+set pager_stop=yes
+set postpone=ask-yes
+set query_command="khard email --parsable '%s'"
+set sendmail_wait=-1
+set sidebar_folder_indent=yes
+set sidebar_indent_string= 
+set sidebar_sort_method=path
+set sig_dashes=no
+set sig_on_top=yes
+set sort_aux=reverse-last-date-received
+set status_format="-%?V?(Limit: %V)?-%>-(%P)-"
+
