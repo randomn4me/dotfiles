@@ -1,5 +1,5 @@
 [general]
-status_path = "/home/r4ndom/.local/share/vdirsyncer/status"
+status_path = "/Users/pkuehn/.local/share/vdirsyncer/status"
 
 ### Pairs
 
@@ -29,38 +29,39 @@ metadata = ["displayname"]
 
 [storage calendar_audacis_local]
 fileext = ".ics"
-path = "/home/r4ndom/var/calendar/audacis"
+path = "/Users/pkuehn/var/calendar/audacis"
 post_hook = ""
 type = "filesystem"
 
 [storage calendar_peasec_local]
 fileext = ".ics"
-path = "/home/r4ndom/var/calendar/peasec"
+path = "/Users/pkuehn/var/calendar/peasec"
 post_hook = ""
 type = "filesystem"
 
 [storage contacts_audacis_local]
 fileext = ".vcf"
-path = "/home/r4ndom/var/contacts/audacis"
+path = "/Users/pkuehn/var/contacts/audacis"
 post_hook = ""
 type = "filesystem"
 
 ### Remote storages
 
 [storage calendar_audacis_remote]
-password.fetch = ["command", "/usr/bin/cat", "/home/r4ndom/usr/misc/cloud.audacis.net"]
+password.fetch = ["command", "/opt/homebrew/bin/bat", "/Users/pkuehn/Documents/misc/cloud.audacis.net"]
 type = "caldav"
 url = "https://cloud.audacis.net/remote.php/dav"
 username = "philippkuehn"
 
 [storage calendar_peasec_remote]
-password.fetch = ["command", "/usr/bin/cat", "/home/r4ndom/usr/misc/ba01viny"]
+password.fetch = ["command", "/opt/homebrew/bin/bat", "/Users/pkuehn/Documents/misc/ba01viny"]
 type = "caldav"
 url = "https://mail.tu-darmstadt.de:1443/users/kuehn@peasec.tu-darmstadt.de/calendar"
 username = "ba01viny"
+verify_fingerprint = "87:84:F4:85:5C:F4:64:7E:02:DF:E0:54:80:C7:6D:8C:65:0A:77:37:E2:BD:FA:C7:95:AA:E0:63:EE:2F:61:0E"
 
 [storage contacts_audacis_remote]
-password.fetch = ["command", "/usr/bin/cat", "/home/r4ndom/usr/misc/cloud.audacis.net"]
+password.fetch = ["command", "/opt/homebrew/bin/bat", "/Users/pkuehn/Documents/misc/cloud.audacis.net"]
 type = "carddav"
 url = "https://cloud.audacis.net/remote.php/dav"
 username = "philippkuehn"
