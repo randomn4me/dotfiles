@@ -1,5 +1,6 @@
 vim.opt.guicursor = ""
 vim.opt.conceallevel = 2
+vim.o.exrc = true
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -33,3 +34,14 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+
+-- Auto-reload files when changed on disk
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+    pattern = "*",
+    callback = function()
+        if vim.fn.mode() ~= "c" then
+            vim.cmd("checktime")
+        end
+    end,
+})

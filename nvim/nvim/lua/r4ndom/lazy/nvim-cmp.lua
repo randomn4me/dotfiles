@@ -60,8 +60,6 @@ return {
 						nvim_lsp = "[LSP]",
 						buffer = "[Buffer]",
 						spell = "[Spell]",
-						-- orgmode = "[Org]",
-						-- latex_symbols = "[Symbols]",
 						cmdline = "[CMD]",
 						path = "[Path]",
 					})[entry.source.name]

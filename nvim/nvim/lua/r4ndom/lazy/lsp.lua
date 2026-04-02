@@ -8,27 +8,20 @@ return {
 		{ "williamboman/mason-lspconfig.nvim" },
 	},
 	init = function()
-		-- Reserve a space in the gutter
-		-- This will avoid an annoying layout shift in the screen
 		vim.opt.signcolumn = "yes"
 	end,
+	opts = {
+		diagnostics = { virtual_text = { prefix = "icons" } },
+	},
 	config = function()
-		local lspconfig = require("lspconfig")
-
-		lspconfig.ltex.setup({
+		-- Configure ltex language server using new vim.lsp.config API
+		vim.lsp.config.ltex = {
+			filetypes = { "markdown", "tex", "text" },
 			on_attach = function(client, bufnr)
 				-- Your custom on_attach logic, such as keybindings or other features
 				print("LTeX Language Server attached to buffer " .. bufnr)
 			end,
-			filetypes = { "markdown", "tex", "text" },
-		})
-
-		local lsp_defaults = require("lspconfig").util.default_config
-
-		-- Add cmp_nvim_lsp capabilities settings to lspconfig
-		-- This should be executed before you configure any language server
-		lsp_defaults.capabilities =
-			vim.tbl_deep_extend("force", lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
+		}
 
 		-- LspAttach is where you enable features that only work
 		-- if there is a language server active in the file
@@ -49,17 +42,6 @@ return {
 				vim.keymap.set("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 				vim.keymap.set("n", "<leader>c", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 			end,
-		})
-
-		require("mason-lspconfig").setup({
-			ensure_installed = {},
-			handlers = {
-				-- this first function is the "default handler"
-				-- it applies to every language server without a "custom handler"
-				function(server_name)
-					require("lspconfig")[server_name].setup({})
-				end,
-			},
 		})
 	end,
 }

@@ -1,7 +1,11 @@
 return {
-    "ggandor/leap.nvim",
+    url = "https://codeberg.org/andyg/leap.nvim",
     dependencies = { "tpope/vim-repeat" },
     config = function()
-        require('leap').create_default_mappings()
+        local leap = require('leap')
+        -- Sneak-style mappings
+        vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)')
+        vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)')
+        vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
     end,
 }
