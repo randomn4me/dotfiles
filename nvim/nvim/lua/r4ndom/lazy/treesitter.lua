@@ -1,44 +1,40 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	branch = "main",
+	lazy = false,
 	build = ":TSUpdate",
 	config = function()
-		require("nvim-treesitter.configs").setup({
-			-- A list of parser names, or "all"
-			ensure_installed = {
-				"vimdoc",
-				"c",
-				"lua",
-				"rust",
-				"jsdoc",
-				"bash",
-				"go",
-			},
+		local ts = require("nvim-treesitter")
 
-			sync_install = false,
-			auto_install = true,
-
-			indent = {
-				enable = true,
-			},
-
-			highlight = {
-				enable = true,
-
-				-- vimtex asks for it
-				disable = { "latex" },
-				additional_vim_regex_highlighting = { "markdown" },
-			},
-		})
-
-		local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-		treesitter_parser_config.templ = {
-			install_info = {
-				url = "https://github.com/vrischmann/tree-sitter-templ.git",
-				files = { "src/parser.c", "src/scanner.c" },
-				branch = "master",
-			},
+		local ensure_installed = {
+			"vimdoc",
+			"c",
+			"lua",
+			"rust",
+			"jsdoc",
+			"bash",
+			"go",
+			"markdown",
+			"markdown_inline",
 		}
 
+		ts.install(ensure_installed)
+
 		vim.treesitter.language.register("templ", "templ")
+
+		-- Highlighting is provided by Neovim; enable it per filetype.
+		vim.api.nvim_create_autocmd("FileType", {
+			callback = function(args)
+				local ft = vim.bo[args.buf].filetype
+				-- vimtex owns LaTeX/BibTeX highlighting; treesitter conflicts with it.
+				if ft == "tex" or ft == "bib" then
+					return
+				end
+				local lang = vim.treesitter.language.get_lang(ft)
+				if lang and vim.treesitter.language.add(lang) then
+					vim.treesitter.start(args.buf, lang)
+				end
+			end,
+		})
 	end,
 }
