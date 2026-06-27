@@ -23,6 +23,14 @@ return {
 			end,
 		}
 
+		-- Tinymist is the Typst language server (preview, completion,
+		-- diagnostics, hover). Use its bundled formatter.
+		vim.lsp.config.tinymist = {
+			settings = {
+				formatterMode = "typstyle",
+			},
+		}
+
 		-- LspAttach is where you enable features that only work
 		-- if there is a language server active in the file
 		vim.api.nvim_create_autocmd("LspAttach", {

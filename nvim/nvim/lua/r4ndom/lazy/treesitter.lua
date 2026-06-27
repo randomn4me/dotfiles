@@ -16,6 +16,7 @@ return {
 			"go",
 			"markdown",
 			"markdown_inline",
+			"typst",
 		}
 
 		ts.install(ensure_installed)
