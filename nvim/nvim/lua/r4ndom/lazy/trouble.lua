@@ -5,12 +5,12 @@ return {
 
 		vim.keymap.set("n", "<leader>fd", function()
 			require("trouble.sources.telescope").open("diagnostics")
-		end)
+		end, { desc = "Search diagnostics" })
 		vim.keymap.set("n", "[t", function()
 			require("trouble").next({ skip_groups = true, jump = true })
-		end)
+		end, { desc = "Next trouble item" })
 		vim.keymap.set("n", "]t", function()
 			require("trouble").previous({ skip_groups = true, jump = true })
-		end)
+		end, { desc = "Prev trouble item" })
 	end,
 }
