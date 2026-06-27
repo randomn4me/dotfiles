@@ -21,3 +21,5 @@ test -d $HOME/.cargo && test -f $HOME/.cargo/env && source $HOME/.cargo/env
 
 # haskell ghcup
 export PATH="$HOME/.ghcup/bin:$PATH"
+
+export RCLONE_EXCLUDE_IF_PRESENT=".nobackup"
