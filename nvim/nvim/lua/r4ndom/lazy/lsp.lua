@@ -17,6 +17,15 @@ return {
 		-- Configure ltex language server using new vim.lsp.config API
 		vim.lsp.config.ltex = {
 			filetypes = { "markdown", "tex", "text" },
+			-- JDK 26 enforces JAXP entity-size limits that LanguageTool's bundled
+			-- grammar.xml exceeds ("Could not activate rules"). Lift the limits.
+			cmd_env = {
+				JAVA_OPTS = table.concat({
+					"-Djdk.xml.totalEntitySizeLimit=0",
+					"-Djdk.xml.maxGeneralEntitySizeLimit=0",
+					"-Djdk.xml.entityExpansionLimit=0",
+				}, " "),
+			},
 			on_attach = function(client, bufnr)
 				-- Your custom on_attach logic, such as keybindings or other features
 				print("LTeX Language Server attached to buffer " .. bufnr)
