@@ -17,7 +17,6 @@ return {
 			lua = { "stylua" },
 			nix = { "nixfmt" },
 			python = { "ruff" },
-			tex = { "latexindent" },
 			bib = { "bibtex-tidy" },
 			bash = { "beautysh" },
 			["_"] = { "trim_newlines" },
