@@ -1,0 +1,34 @@
+# herdr configuration
+# Full reference: herdr --default-config
+
+[theme]
+name = "tokyo-night"
+
+auto_switch = false
+[terminal]
+new_cwd = "follow"
+
+[keys]
+# tmux muscle memory: detach is prefix+q by default
+detach = "prefix+d"
+
+# Workspace cycling is unbound by default. shift+j/k are free;
+# shift+n stays new_workspace, shift+p stays rename_pane.
+previous_workspace = "prefix+shift+k"
+next_workspace = "prefix+shift+j"
+switch_workspace = "prefix+shift+1..9"
+switch_tab = ["prefix+1..9", "ctrl+1..9"]
+
+# Jump straight to an agent row in the sidebar.
+focus_agent = ["prefix+alt+1..9", "ctrl+alt+1..9"]
+
+# Navigate mode (prefix+w): j/k walk the workspace list; panes move to ctrl+j/k.
+# h/l stay on panes, left/right arrows are permanent aliases for them.
+navigate_workspace_up = ["k", "up"]
+navigate_workspace_down = ["j", "down"]
+navigate_pane_up = "ctrl+k"
+navigate_pane_down = "ctrl+j"
+
+[ui]
+agent_panel_sort = "spaces"
+show_agent_labels_on_pane_borders = true
