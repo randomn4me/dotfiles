@@ -71,7 +71,7 @@ local function set_obsidian_keymaps(bufnr)
 end
 
 return {
-	"epwalsh/obsidian.nvim",
+	"obsidian-nvim/obsidian.nvim",
 	lazy = true,
 	ft = "markdown",
 	dependencies = {
@@ -119,14 +119,6 @@ return {
 	end,
 	opts = {
 		workspaces = workspaces,
-
-		daily_notes = {
-			-- Optional, if you keep daily notes in a separate directory.
-			folder = "journal",
-			date_format = "%Y-%m-%d",
-			alias_format = "%B %-d, %Y",
-			template = "journaling.md",
-		},
 
 		disable_frontmatter = true,
 
