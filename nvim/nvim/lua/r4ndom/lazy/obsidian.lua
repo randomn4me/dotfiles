@@ -31,11 +31,11 @@ local function set_obsidian_keymaps(bufnr)
 	local map = function(lhs, rhs, desc)
 		vim.keymap.set("n", lhs, rhs, { buffer = bufnr, desc = desc })
 	end
-	map("<leader>oa", "<cmd>ObsidianOpen<cr>", "Open in Obsidian App")
-	map("<leader>on", "<cmd>ObsidianNew<cr>", "Obsidian New")
-	map("<leader>of", "<cmd>ObsidianQuickSwitch<cr>", "Obsidian Quick Switch")
-	map("<leader>ot", "<cmd>ObsidianTemplate<cr>", "Obsidian Templates")
-	map("<leader>ob", "<cmd>ObsidianBacklinks<cr>", "Obsidian Backlinks")
+	map("<leader>oa", "<cmd>Obsidian open<cr>", "Open in Obsidian App")
+	map("<leader>on", "<cmd>Obsidian new<cr>", "Obsidian New")
+	map("<leader>of", "<cmd>Obsidian quick_switch<cr>", "Obsidian Quick Switch")
+	map("<leader>ot", "<cmd>Obsidian template<cr>", "Obsidian Templates")
+	map("<leader>ob", "<cmd>Obsidian backlinks<cr>", "Obsidian Backlinks")
 	map("<leader>od", function()
 		local today = os.date("%Y-%m-%d")
 		local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
@@ -75,9 +75,6 @@ return {
 	lazy = true,
 	ft = "markdown",
 	dependencies = {
-		-- Required.
-		"nvim-lua/plenary.nvim",
-		"hrsh7th/nvim-cmp",
 		"nvim-telescope/telescope.nvim",
 		"nvim-treesitter",
 	},
@@ -106,7 +103,7 @@ return {
 					return
 				end
 				vim.schedule(function()
-					vim.cmd("ObsidianTemplate note.md")
+					vim.cmd("Obsidian template note.md")
 					vim.schedule(function()
 						local first = vim.api.nvim_buf_get_lines(0, 0, 1, false)[1]
 						if first and first:match("^#") then
@@ -120,28 +117,16 @@ return {
 	opts = {
 		workspaces = workspaces,
 
-		disable_frontmatter = true,
+		legacy_commands = false,
+
+		frontmatter = { enabled = false },
 
 		completion = {
-			nvim_cmp = true,
 			min_chars = 2,
 		},
 
-		mappings = {
-			["gf"] = {
-				action = function()
-					return require("obsidian").util.gf_passthrough()
-				end,
-				opts = { noremap = false, expr = true, buffer = true },
-			},
-		},
-
-		follow_url_func = function(url)
-			vim.ui.open(url) -- need Neovim 0.10.0+
-		end,
-
 		templates = {
-			subdir = "templates",
+			folder = "templates",
 			date_format = "%Y-%m-%d",
 			time_format = "%H:%M",
 			-- A map for custom variables, the key should be the variable and the value a function
@@ -149,12 +134,12 @@ return {
 		},
 
 		note_id_func = function(title)
-			return title
+			return title or tostring(os.time())
 		end,
 
 		picker = {
 			name = "telescope.nvim",
-			mappings = {
+			note_mappings = {
 				new = "<C-n>",
 				insert_link = "<C-l>",
 			},
