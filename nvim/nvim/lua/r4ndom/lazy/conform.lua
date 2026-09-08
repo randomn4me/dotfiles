@@ -18,7 +18,7 @@ return {
 			nix = { "nixfmt" },
 			python = { "ruff" },
 			bib = { "bibtex-tidy" },
-			bash = { "beautysh" },
+			sh = { "beautysh" },
 			["_"] = { "trim_newlines" },
 		},
 		format_on_save = {

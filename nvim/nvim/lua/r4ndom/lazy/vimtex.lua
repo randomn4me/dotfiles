@@ -13,7 +13,7 @@ return {
 		vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
 
 		vim.g.vimtex_view_method = "general"
-		vim.g.latex_view_general_viewer = "zathura"
+		vim.g.vimtex_view_general_viewer = "zathura"
 
 		vim.g.vimtex_compiler_latexmk = { out_dir = "out", aux_dir = "out" }
 		vim.g.vimtex_log_ignore = { -- Suppress specific log messages

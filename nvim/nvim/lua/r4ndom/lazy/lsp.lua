@@ -10,10 +10,9 @@ return {
 	init = function()
 		vim.opt.signcolumn = "yes"
 	end,
-	opts = {
-		diagnostics = { virtual_text = { prefix = "icons" } },
-	},
 	config = function()
+		vim.diagnostic.config({ virtual_text = true })
+
 		-- Configure ltex language server using new vim.lsp.config API
 		vim.lsp.config.ltex = {
 			filetypes = { "markdown", "tex", "text" },

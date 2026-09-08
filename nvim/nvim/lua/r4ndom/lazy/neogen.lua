@@ -1,8 +1,8 @@
 return {
 	"danymat/neogen",
 	opts = { snippet_engine = "luasnip" },
-	config = function()
-		require("neogen").setup()
+	config = function(_, opts)
+		require("neogen").setup(opts)
 
 		vim.api.nvim_set_keymap(
 			"n",

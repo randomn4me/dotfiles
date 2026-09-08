@@ -51,7 +51,7 @@ return {
 			formatting = {
 				fields = { "kind", "abbr", "menu" },
 				format = function(entry, vim_item)
-					vim_item.kind = string.format("%s", kind_icons[vim_item.kind]) -- Kind icons
+					vim_item.kind = kind_icons[vim_item.kind] or vim_item.kind -- Kind icons
 					vim_item.menu = ({
 						-- vimtex = (vim_item.menu ~= nil and vim_item.menu or "[VimTex]"),
 						-- vimtex = test_fn(vim_item.menu, entry.source.name),

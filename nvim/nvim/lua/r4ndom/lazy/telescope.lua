@@ -17,8 +17,8 @@ return {
 				},
 				sorting_strategy = "ascending",
 				file_ignore_patterns = {
-					"*pdf",
-					"*.doc*",
+					"%.pdf$",
+					"%.docx?$",
 				},
 			},
 		})
