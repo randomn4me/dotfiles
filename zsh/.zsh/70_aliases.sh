@@ -24,8 +24,6 @@ alias scp="scp -r"
 alias rice="curl -L git.io/rice"
 alias o='open'
 alias starwars="telnet towel.blinkenlights.nl"
-alias neomutt="TERM=xterm-direct neomutt"
-alias mutt="TERM=xterm-direct neomutt"
 alias todo="vim $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/obsidian/todo.md"
 
 sanitize() {
