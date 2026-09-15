@@ -11,23 +11,14 @@ return {
 	end,
 	config = function()
 		require("mason-lspconfig").setup({
-			ensure_installed = { "tinymist" },
+			ensure_installed = { "tinymist", "ltex_plus" },
 		})
 
 		vim.diagnostic.config({ virtual_text = true })
 
-		-- Configure ltex language server using new vim.lsp.config API
-		vim.lsp.config.ltex = {
+		-- ltex_plus is the maintained fork of the archived ltex-ls.
+		vim.lsp.config.ltex_plus = {
 			filetypes = { "markdown", "tex", "text" },
-			-- JDK 26 enforces JAXP entity-size limits that LanguageTool's bundled
-			-- grammar.xml exceeds ("Could not activate rules"). Lift the limits.
-			cmd_env = {
-				JAVA_OPTS = table.concat({
-					"-Djdk.xml.totalEntitySizeLimit=0",
-					"-Djdk.xml.maxGeneralEntitySizeLimit=0",
-					"-Djdk.xml.entityExpansionLimit=0",
-				}, " "),
-			},
 			on_attach = function(client, bufnr)
 				-- Your custom on_attach logic, such as keybindings or other features
 				print("LTeX Language Server attached to buffer " .. bufnr)

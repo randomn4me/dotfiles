@@ -3,13 +3,10 @@ return {
 	-- v2 is still landing breaking changes; upstream advises pinning to v1.
 	version = "1.*",
 	dependencies = {
-		"L3MON4D3/LuaSnip",
 		"petertriho/cmp-git",
 	},
 	event = { "InsertEnter", "CmdlineEnter" },
 	opts = {
-		snippets = { preset = "luasnip" },
-
 		-- Keys carried over from the previous nvim-cmp setup.
 		keymap = {
 			preset = "none",

@@ -10,5 +10,5 @@ return {
 			desc = "Generate annotation",
 		},
 	},
-	opts = { snippet_engine = "luasnip" },
+	opts = { snippet_engine = "nvim" },
 }
