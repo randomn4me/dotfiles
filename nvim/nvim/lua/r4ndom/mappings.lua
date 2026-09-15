@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "Open file explorer" })
 vim.keymap.set("n", "<leader>w", "<cmd>:w<cr>", { desc = "Save file" })
 vim.keymap.set("n", "<leader>q", "<cmd>:q<cr>", { desc = "Quit" })
 

@@ -21,8 +21,6 @@ return {
 
 		ts.install(ensure_installed)
 
-		vim.treesitter.language.register("templ", "templ")
-
 		-- Highlighting is provided by Neovim; enable it per filetype.
 		vim.api.nvim_create_autocmd("FileType", {
 			callback = function(args)
