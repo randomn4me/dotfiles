@@ -19,6 +19,11 @@ return {
 		-- ltex_plus is the maintained fork of the archived ltex-ls.
 		vim.lsp.config.ltex_plus = {
 			filetypes = { "markdown", "tex", "text" },
+			-- Detect the language per document; the en-US default flags every
+			-- German word as a spelling mistake.
+			settings = {
+				ltex = { language = "auto" },
+			},
 			on_attach = function(client, bufnr)
 				-- Your custom on_attach logic, such as keybindings or other features
 				print("LTeX Language Server attached to buffer " .. bufnr)
