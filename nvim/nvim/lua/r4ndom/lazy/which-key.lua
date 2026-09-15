@@ -4,7 +4,7 @@ return {
 	opts = {
 		-- Popup layout: "classic" (full-width bar), "modern" (bottom window),
 		-- "helix" (compact box in the bottom-right corner).
-		preset = "helix",
+		preset = "classic",
 		-- Milliseconds before the popup opens; typing faster never shows it.
 		delay = 500,
 		-- Report overlapping or broken mappings via vim.notify.
