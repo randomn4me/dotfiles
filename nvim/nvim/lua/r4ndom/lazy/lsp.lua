@@ -45,7 +45,9 @@ return {
 			callback = function(event)
 				local opts = { buffer = event.buf }
 
-				vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", vim.tbl_extend("force", opts, { desc = "LSP info" }))
+				vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code action" }))
+				vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, vim.tbl_extend("force", opts, { desc = "Rename symbol" }))
+				vim.keymap.set("n", "<leader>ci", "<cmd>LspInfo<cr>", vim.tbl_extend("force", opts, { desc = "LSP info (checkhealth)" }))
 
 				-- K, grn, gra, grr, gri, grt and <C-s> (insert) are Neovim defaults.
 				vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", vim.tbl_extend("force", opts, { desc = "Go to definition" }))

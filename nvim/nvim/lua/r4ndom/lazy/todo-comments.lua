@@ -9,14 +9,14 @@ return {
 			function()
 				vim.cmd("TodoTelescope keywords=TODO")
 			end,
-			desc = "Search TODOs via telescope",
+			desc = "Find TODO comments",
 		},
 		{
 			"<leader>fn",
 			function()
 				vim.cmd("TodoTelescope keywords=NOTE")
 			end,
-			desc = "Search NOTEs via telescope",
+			desc = "Find NOTE comments",
 		},
 	},
 	opts = {},

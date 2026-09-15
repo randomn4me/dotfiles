@@ -2,7 +2,7 @@ return {
 	"folke/trouble.nvim",
 	cmd = "Trouble",
 	keys = {
-		{ "<leader>fd", "<cmd>Trouble diagnostics toggle<cr>", desc = "Toggle diagnostics" },
+		{ "<leader>cd", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics list (trouble)" },
 		{
 			"]t",
 			function()

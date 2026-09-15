@@ -11,28 +11,28 @@ return {
 			function()
 				require("telescope.builtin").find_files()
 			end,
-			desc = "Telescope find files",
+			desc = "Find files",
 		},
 		{
 			"<leader>fw",
 			function()
 				require("telescope.builtin").live_grep()
 			end,
-			desc = "Telescope live grep",
+			desc = "Find word (live grep)",
 		},
 		{
 			"<leader>fh",
 			function()
 				require("telescope.builtin").help_tags()
 			end,
-			desc = "Telescope find help",
+			desc = "Find help tags",
 		},
 		{
 			"<leader>fs",
 			function()
 				require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") })
 			end,
-			desc = "Telescope grep string",
+			desc = "Find string (prompted grep)",
 		},
 	},
 	config = function()

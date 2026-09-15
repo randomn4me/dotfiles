@@ -3,11 +3,11 @@ return {
 	cmd = "Neogen",
 	keys = {
 		{
-			"<leader>n",
+			"<leader>cn",
 			function()
 				require("neogen").generate()
 			end,
-			desc = "Generate annotation",
+			desc = "Generate doc annotation (neogen)",
 		},
 	},
 	opts = { snippet_engine = "nvim" },
