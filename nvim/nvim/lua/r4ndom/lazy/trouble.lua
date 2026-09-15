@@ -2,22 +2,16 @@ return {
 	"folke/trouble.nvim",
 	cmd = "Trouble",
 	keys = {
+		{ "<leader>fd", "<cmd>Trouble diagnostics toggle<cr>", desc = "Toggle diagnostics" },
 		{
-			"<leader>fd",
-			function()
-				require("trouble.sources.telescope").open("diagnostics")
-			end,
-			desc = "Search diagnostics",
-		},
-		{
-			"[t",
+			"]t",
 			function()
 				require("trouble").next({ skip_groups = true, jump = true })
 			end,
 			desc = "Next trouble item",
 		},
 		{
-			"]t",
+			"[t",
 			function()
 				require("trouble").prev({ skip_groups = true, jump = true })
 			end,
