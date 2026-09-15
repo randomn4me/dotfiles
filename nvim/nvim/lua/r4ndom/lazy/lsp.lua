@@ -10,6 +10,10 @@ return {
 		vim.opt.signcolumn = "yes"
 	end,
 	config = function()
+		require("mason-lspconfig").setup({
+			ensure_installed = { "tinymist" },
+		})
+
 		vim.diagnostic.config({ virtual_text = true })
 
 		-- Configure ltex language server using new vim.lsp.config API

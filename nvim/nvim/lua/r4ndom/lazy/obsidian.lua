@@ -79,8 +79,15 @@ return {
 		"nvim-treesitter",
 	},
 	init = function()
-		if vim.fn.executable("ob") == 1 and os.execute("pgrep -f 'ob sync' > /dev/null 2>&1") ~= 0 then
-			vim.fn.jobstart({ "ob", "sync", "--continuous" }, { detach = true })
+		-- Check asynchronously; a blocking pgrep added ~18ms to every start.
+		if vim.fn.executable("ob") == 1 then
+			vim.system({ "pgrep", "-f", "ob sync" }, {}, function(res)
+				if res.code ~= 0 then
+					vim.schedule(function()
+						vim.fn.jobstart({ "ob", "sync", "--continuous" }, { detach = true })
+					end)
+				end
+			end)
 		end
 
 		-- Obsidian shortcuts only apply inside a vault (paths from workspaces above).

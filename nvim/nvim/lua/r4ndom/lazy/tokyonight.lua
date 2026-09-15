@@ -1,6 +1,8 @@
 return {
     {
         "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000, -- load before other plugins so highlights are ready
         config = function()
             require("tokyonight").setup({
                 -- your configuration comes here

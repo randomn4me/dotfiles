@@ -1,10 +1,6 @@
 return {
 	"mason-org/mason.nvim",
-	lazy = false,
-    config = function()
-        require("mason").setup()
-        require("mason-lspconfig").setup({
-            ensure_installed = { "tinymist" },
-        })
-    end,
+	-- Loaded as an nvim-lspconfig dependency on first buffer read.
+	cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonUpdate", "MasonLog" },
+	opts = {},
 }
