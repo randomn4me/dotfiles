@@ -35,6 +35,13 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+vim.opt.spelllang = { "en", "de" }
+-- zg adds to English, 2zg to German
+vim.opt.spellfile = {
+    vim.fn.stdpath("config") .. "/spell/en.utf-8.add",
+    vim.fn.stdpath("config") .. "/spell/de.utf-8.add",
+}
+
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevelstart = 99
