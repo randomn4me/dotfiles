@@ -30,7 +30,7 @@ return {
 			mappings = true, -- icons next to labels, served by mini.icons
 		},
 		-- One letter per domain under <leader>. Single keys (w save, q quit,
-		-- e explorer, y/Y clipboard, g git) stay top-level because they are the
+		-- e explorer, y/Y clipboard, g git, s cloak) stay top-level because they are the
 		-- most frequent. Groups without mappings in the current buffer are hidden.
 		spec = {
 			{ "<leader>f", group = "find (telescope)" },

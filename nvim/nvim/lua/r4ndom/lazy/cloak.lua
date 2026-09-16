@@ -1,6 +1,9 @@
 return {
 	"laytan/cloak.nvim",
 	lazy = false,
+	keys = {
+		{ "<leader>s", "<cmd>CloakToggle<cr>", desc = "Toggle secret cloaking" },
+	},
 	config = function()
 		require("cloak").setup({
 			enabled = true,
