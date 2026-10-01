@@ -1,70 +1,72 @@
+# TokyoNight: color0-15 resolve to the terminal palette (Ghostty theme = TokyoNight),
+# rgb531 approximates the orange (#ff9e64) that has no ANSI slot.
 rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
 
 # General decoration
-color.label=
-color.label.sort=
-color.alternate=
-color.header=color3
-color.footnote=color3
-color.warning=bold red
-color.error=white on red
-color.debug=color4
+color.label=color4
+color.label.sort=color5
+color.alternate=on color235
+color.header=color4
+color.footnote=color8
+color.warning=color3
+color.error=color0 on color1
+color.debug=color8
 
 # Task state
-color.completed=
-color.deleted=
-color.active=rgb555 on rgb410
-color.recurring=rgb013
-color.scheduled=on rgb001
+color.completed=color8
+color.deleted=color8
+color.active=color0 on color2
+color.recurring=color6
+color.scheduled=color4
 color.until=
-color.blocked=
-color.blocking=
+color.blocked=color8
+color.blocking=color5
 
 # Project
 color.project.none=
 
 # Priority
-color.uda.priority.H=color255
-color.uda.priority.L=color245
-color.uda.priority.M=color250
+color.uda.priority.H=rgb531
+color.uda.priority.M=color3
+color.uda.priority.L=color8
 
 # Tags
-color.tag.next=rgb440
+color.tag.next=bold color5
 color.tag.none=
 color.tagged=
 
 # Due
-color.due.today=rgb400
-color.due=color5
-color.overdue=color9
+color.due.today=bold color3
+color.due=color6
+color.overdue=bold color1
 
 # Report: burndown
-color.burndown.done=on rgb010
-color.burndown.pending=on color9
-color.burndown.started=on color11
+color.burndown.done=on color2
+color.burndown.pending=on color1
+color.burndown.started=on color3
 
 # Report: history
-color.history.add=color0 on rgb500
-color.history.delete=color0 on rgb550
-color.history.done=color0 on rgb050
+color.history.add=color0 on color4
+color.history.delete=color0 on color1
+color.history.done=color0 on color2
 
 # Report: summary
-color.summary.background=white on color0
-color.summary.bar=black on rgb141
+color.summary.background=on color235
+color.summary.bar=color0 on color2
 
 # Command: calendar
-color.calendar.due.today=color15 on color1
-color.calendar.due=color0 on color1
-color.calendar.holiday=color0 on color11
-color.calendar.overdue=color0 on color9
-color.calendar.today=color15 on rgb013
-color.calendar.weekend=on color235
-color.calendar.weeknumber=rgb013
+color.calendar.due.today=color0 on color3
+color.calendar.due=color0 on color6
+color.calendar.holiday=color0 on color5
+color.calendar.overdue=color0 on color1
+color.calendar.today=color0 on color4
+color.calendar.weekend=color8
+color.calendar.weeknumber=color8
 
 # Command: sync
-color.sync.added=rgb010
-color.sync.changed=color11
-color.sync.rejected=color9
+color.sync.added=color2
+color.sync.changed=color3
+color.sync.rejected=color1
 
 # Command: undo
 color.undo.after=color2

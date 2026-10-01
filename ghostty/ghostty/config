@@ -10,3 +10,6 @@ theme = TokyoNight
 keybind = global:super+shift+plus=toggle_quick_terminal
 quick-terminal-animation-duration = 0.1
 keybind = shift+enter=text:\n
+
+# subtle TokyoNight row highlight (bg #1a1b26), used by taskwarrior color.alternate
+palette = 235=#1f2231
